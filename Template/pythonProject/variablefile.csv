@@ -1,0 +1,4 @@
+adjust_tcp_mss,no
+ip_address,192.168.255.103/32
+interface_management_profile,Ping
+loopback_interface_ID,103

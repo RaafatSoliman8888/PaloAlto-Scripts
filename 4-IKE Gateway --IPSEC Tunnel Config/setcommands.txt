@@ -1,0 +1,19 @@
+set network ike gateway {ike_gateway_name} authentication pre-shared-key key {pre_shared_key}
+
+set network ike gateway {ike_gateway_name} protocol ikev2 dpd enable yes
+set network ike gateway {ike_gateway_name} protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway {ike_gateway_name} protocol ikev1 dpd enable yes
+set network ike gateway {ike_gateway_name} protocol version ikev2
+set network ike gateway {ike_gateway_name} protocol-common nat-traversal enable no
+set network ike gateway {ike_gateway_name} protocol-common fragmentation enable no
+set network ike gateway {ike_gateway_name} local-address interface {local_interface}
+set network ike gateway {ike_gateway_name} peer-address ip {peer_address}
+set network ike gateway {ike_gateway_name} local-id type ufqdn id {ufqdn_local_id}
+set network ike gateway {ike_gateway_name} peer-id type ipaddr id {peer_id}
+
+set network tunnel ipsec {ipsec_tunnel_name} auto-key ike-gateway {ike_gateway_name}
+set network tunnel ipsec {ipsec_tunnel_name} auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec {ipsec_tunnel_name} tunnel-monitor enable no
+set network tunnel ipsec {ipsec_tunnel_name} tunnel-interface {tunnel_interface}
+
+set network tunnel ipsec IPSec_Tunnel_{ipsec_tunnel_name} auto-key ike-gateway IPSec_Gateway_{ike_gateway_name}

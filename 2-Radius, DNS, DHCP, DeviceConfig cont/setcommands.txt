@@ -1,0 +1,82 @@
+set shared server-profile radius {radius_server_profile} protocol PAP
+set shared server-profile radius {radius_server_profile} server {radius_server_name} secret {radius_secret}
+set shared server-profile radius {radius_server_profile} server {radius_server_name} port 1812
+set shared server-profile radius {radius_server_profile} server {radius_server_name} ip-address {radius_ip_address}
+set shared authentication-profile {auth_profile_name} method radius server-profile {radius_server_profile}
+set shared authentication-profile {auth_profile_name} multi-factor-auth mfa-enable no
+set shared authentication-profile {auth_profile_name} allow-list all
+set shared authentication-profile {auth_profile_name} user-domain {user_domain}
+
+set network dns-proxy "{dns_proxy_name}" cache max-ttl enabled no
+set network dns-proxy "{dns_proxy_name}" cache enabled yes
+set network dns-proxy "{dns_proxy_name}" default primary {dns_primary}
+set network dns-proxy "{dns_proxy_name}" tcp-queries enabled no
+set network dns-proxy "{dns_proxy_name}" interface {dns_interface}
+
+set network dhcp interface {dhcp_interface} server ip-pool {dhcp_ip_pool}
+set network dhcp interface {dhcp_interface} server mode auto
+set network dhcp interface {dhcp_interface} server option dns primary {dhcp_dns_primary}
+set network dhcp interface {dhcp_interface} server option lease unlimited
+set network dhcp interface {dhcp_interface} server option gateway {dhcp_gateway}
+set network dhcp interface {dhcp_interface} server option subnet-mask {dhcp_subnet_mask}
+
+
+set deviceconfig system route service autofocus source address {service_ip_address}
+set deviceconfig system route service autofocus source interface {service_interface}
+set deviceconfig system route service crl-status source address {service_ip_address}
+set deviceconfig system route service crl-status source interface {service_interface}
+set deviceconfig system route service data-services source address {service_ip_address}
+set deviceconfig system route service data-services source interface {service_interface}
+set deviceconfig system route service ddns source address {service_ip_address}
+set deviceconfig system route service ddns source interface {service_interface}
+set deviceconfig system route service deployments source address {service_ip_address}
+set deviceconfig system route service deployments source interface {service_interface}
+set deviceconfig system route service dns source address {service_ip_address}
+set deviceconfig system route service dns source interface {service_interface}
+set deviceconfig system route service edl-updates source address {service_ip_address}
+set deviceconfig system route service edl-updates source interface {service_interface}
+set deviceconfig system route service email source address {service_ip_address}
+set deviceconfig system route service email source interface {service_interface}
+set deviceconfig system route service http source address {service_ip_address}
+set deviceconfig system route service http source interface {service_interface}
+set deviceconfig system route service iot source address {service_ip_address}
+set deviceconfig system route service iot source interface {service_interface}
+set deviceconfig system route service ldap source address {service_ip_address}
+set deviceconfig system route service ldap source interface {service_interface}
+set deviceconfig system route service mdm source address {service_ip_address}
+set deviceconfig system route service mdm source interface {service_interface}
+set deviceconfig system route service mfa source address {service_ip_address}
+set deviceconfig system route service mfa source interface {service_interface}
+set deviceconfig system route service netflow source address {service_ip_address}
+set deviceconfig system route service netflow source interface {service_interface}
+set deviceconfig system route service ntp source address {service_ip_address}
+set deviceconfig system route service ntp source interface {service_interface}
+set deviceconfig system route service paloalto-networks-services source address {service_ip_address}
+set deviceconfig system route service paloalto-networks-services source interface {service_interface}
+set deviceconfig system route service proxy source address {service_ip_address}
+set deviceconfig system route service proxy source interface {service_interface}
+set deviceconfig system route service radius source address {service_ip_address}
+set deviceconfig system route service radius source interface {service_interface}
+set deviceconfig system route service scep source address {service_ip_address}
+set deviceconfig system route service scep source interface {service_interface}
+set deviceconfig system route service snmp source address {service_ip_address}
+set deviceconfig system route service snmp source interface {service_interface}
+set deviceconfig system route service syslog source address {service_ip_address}
+set deviceconfig system route service syslog source interface {service_interface}
+set deviceconfig system route service uid-agent source address {service_ip_address}
+set deviceconfig system route service uid-agent source interface {service_interface}
+set deviceconfig system route service url-updates source address {service_ip_address}
+set deviceconfig system route service url-updates source interface {service_interface}
+set deviceconfig system route service vmmonitor source address {service_ip_address}
+set deviceconfig system route service vmmonitor source interface {service_interface}
+set deviceconfig system route service wildfire-private source address {service_ip_address}
+set deviceconfig system route service wildfire-private source interface {service_interface}
+set deviceconfig system route service ztp source address {service_ip_address}
+set deviceconfig system route service ztp source interface {service_interface}
+
+set deviceconfig system authentication-profile {auth_profile_name}
+set deviceconfig system domain {user_domain}.local
+
+set deviceconfig system dns-setting dns-proxy-object {dns_proxy_name}
+set deviceconfig setting config rematch yes
+set deviceconfig setting management hostname-type-in-syslog FQDN

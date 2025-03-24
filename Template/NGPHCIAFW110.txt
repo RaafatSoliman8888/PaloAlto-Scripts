@@ -1,0 +1,2000 @@
+set deviceconfig system authentication-profile SWAF235_RADIUS_AUTHPROFILE
+set deviceconfig system device-telemetry device-health-performance yes
+set deviceconfig system device-telemetry product-usage yes
+set deviceconfig system device-telemetry threat-prevention yes
+set deviceconfig system device-telemetry region Americas
+set deviceconfig system ip-address 10.34.154.151
+set deviceconfig system netmask 255.255.255.240
+set deviceconfig system update-server updates.paloaltonetworks.com
+set deviceconfig system update-schedule threats recurring sync-to-peer yes
+set deviceconfig system update-schedule threats recurring daily at 00:30
+set deviceconfig system update-schedule threats recurring daily action download-and-install
+set deviceconfig system update-schedule global-protect-clientless-vpn recurring weekly at 00:00
+set deviceconfig system update-schedule global-protect-clientless-vpn recurring weekly day-of-week sunday
+set deviceconfig system update-schedule global-protect-clientless-vpn recurring weekly action download-and-install
+set deviceconfig system update-schedule global-protect-datafile recurring daily at 01:00
+set deviceconfig system update-schedule global-protect-datafile recurring daily action download-and-install
+set deviceconfig system update-schedule wildfire recurring every-hour at 15
+set deviceconfig system update-schedule wildfire recurring every-hour action download-and-install
+set deviceconfig system update-schedule wildfire recurring every-hour sync-to-peer yes
+set deviceconfig system timezone Africa/Lagos
+set deviceconfig system service disable-telnet yes
+set deviceconfig system service disable-http yes
+set deviceconfig system service disable-snmp no
+set deviceconfig system hostname NGPHCIAFW110
+set deviceconfig system type static
+set deviceconfig system default-gateway 10.34.154.150
+set deviceconfig system dns-setting servers primary 10.34.152.200
+set deviceconfig system route service radius source address 10.34.154.162/28
+set deviceconfig system route service radius source interface ethernet1/18
+set deviceconfig system ntp-servers primary-ntp-server ntp-server-address africa.pool.ntp.org
+set deviceconfig system ntp-servers primary-ntp-server authentication-type none
+set deviceconfig system ssl-tls-service-profile ngphciafw110
+set deviceconfig system snmp-setting access-setting version v2c
+set deviceconfig system snmp-setting snmp-system location "Port Harcourt IA"
+set deviceconfig setting config rematch yes
+set deviceconfig setting management hostname-type-in-syslog FQDN
+set deviceconfig high-availability interface ha1 ip-address 192.168.1.1
+set deviceconfig high-availability interface ha1 netmask 255.255.255.0
+set deviceconfig high-availability interface ha1-backup port ha1-b
+set deviceconfig high-availability interface ha1-backup ip-address 192.168.2.1
+set deviceconfig high-availability interface ha1-backup netmask 255.255.255.0
+set deviceconfig high-availability interface ha2
+set deviceconfig high-availability interface ha2-backup
+set deviceconfig high-availability interface ha3
+set deviceconfig high-availability group group-id 1
+set deviceconfig high-availability group description "PHC HA "
+set deviceconfig high-availability group peer-ip 192.168.1.2
+set deviceconfig high-availability group peer-ip-backup 192.168.2.2
+set deviceconfig high-availability group election-option device-priority 90
+set deviceconfig high-availability group election-option preemptive yes
+set deviceconfig high-availability group election-option timers recommended
+set deviceconfig high-availability group monitoring link-monitoring link-group Main interface [ ethernet1/15 ethernet1/16 ethernet1/17 ethernet1/18 ]
+set deviceconfig high-availability group monitoring link-monitoring failure-condition any
+set deviceconfig high-availability group mode active-passive passive-link-state auto
+set deviceconfig high-availability enabled yes
+
+set network interface ethernet ethernet1/17 layer3 ndp-proxy enabled no
+set network interface ethernet ethernet1/17 layer3 sdwan-link-settings upstream-nat enable no
+set network interface ethernet ethernet1/17 layer3 sdwan-link-settings upstream-nat static-ip
+set network interface ethernet ethernet1/17 layer3 sdwan-link-settings enable no
+set network interface ethernet ethernet1/17 layer3 sdwan-link-settings ipv6-enable no
+set network interface ethernet ethernet1/17 layer3 ip 102.90.33.172/29
+set network interface ethernet ethernet1/17 layer3 ip 102.90.33.174/32
+set network interface ethernet ethernet1/17 layer3 ip 102.90.33.173/32
+set network interface ethernet ethernet1/17 layer3 interface-management-profile "Allow ping"
+set network interface ethernet ethernet1/17 layer3 lldp enable no
+set network interface ethernet ethernet1/16 layer3 ndp-proxy enabled no
+set network interface ethernet ethernet1/16 layer3 sdwan-link-settings upstream-nat enable no
+set network interface ethernet ethernet1/16 layer3 sdwan-link-settings upstream-nat static-ip
+set network interface ethernet ethernet1/16 layer3 sdwan-link-settings enable no
+set network interface ethernet ethernet1/16 layer3 sdwan-link-settings ipv6-enable no
+set network interface ethernet ethernet1/16 layer3 ip 10.34.154.150/28
+set network interface ethernet ethernet1/16 layer3 lldp enable no
+set network interface ethernet ethernet1/16 layer3 interface-management-profile "Allow ping"
+set network interface ethernet ethernet1/15 layer3 ndp-proxy enabled no
+set network interface ethernet ethernet1/15 layer3 sdwan-link-settings upstream-nat enable no
+set network interface ethernet ethernet1/15 layer3 sdwan-link-settings upstream-nat static-ip
+set network interface ethernet ethernet1/15 layer3 sdwan-link-settings enable no
+set network interface ethernet ethernet1/15 layer3 sdwan-link-settings ipv6-enable no
+set network interface ethernet ethernet1/15 layer3 lldp enable no
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.10 sdwan-link-settings upstream-nat enable no
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.10 sdwan-link-settings upstream-nat static-ip
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.10 sdwan-link-settings enable no
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.10 sdwan-link-settings ipv6-enable no
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.10 ndp-proxy enabled no
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.10 adjust-tcp-mss enable no
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.10 ip 10.34.154.129/28
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.10 tag 10
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.10 interface-management-profile "Allow ping"
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.110 sdwan-link-settings upstream-nat enable no
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.110 sdwan-link-settings upstream-nat static-ip
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.110 sdwan-link-settings enable no
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.110 sdwan-link-settings ipv6-enable no
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.110 ndp-proxy enabled no
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.110 adjust-tcp-mss enable no
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.110 ip 10.34.152.193/26
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.110 tag 110
+set network interface ethernet ethernet1/15 layer3 units ethernet1/15.110 interface-management-profile "Allow ping"
+set network interface ethernet ethernet1/18 layer3 ndp-proxy enabled no
+set network interface ethernet ethernet1/18 layer3 sdwan-link-settings upstream-nat enable no
+set network interface ethernet ethernet1/18 layer3 sdwan-link-settings upstream-nat static-ip
+set network interface ethernet ethernet1/18 layer3 sdwan-link-settings enable no
+set network interface ethernet ethernet1/18 layer3 sdwan-link-settings ipv6-enable no
+set network interface ethernet ethernet1/18 layer3 ip 10.34.154.162/28
+set network interface ethernet ethernet1/18 layer3 interface-management-profile "Allow ping"
+set network interface ethernet ethernet1/18 layer3 lldp enable no
+set network interface ethernet ethernet1/18 link-state auto
+set network interface ethernet ethernet1/19 layer3 ndp-proxy enabled no
+set network interface ethernet ethernet1/19 layer3 sdwan-link-settings upstream-nat enable no
+set network interface ethernet ethernet1/19 layer3 sdwan-link-settings upstream-nat static-ip
+set network interface ethernet ethernet1/19 layer3 sdwan-link-settings enable no
+set network interface ethernet ethernet1/19 layer3 sdwan-link-settings ipv6-enable no
+set network interface ethernet ethernet1/19 layer3 ip 154.113.211.196/28
+set network interface ethernet ethernet1/19 layer3 ip 154.113.211.197/32
+set network interface ethernet ethernet1/19 layer3 ip 154.113.211.198/32
+set network interface ethernet ethernet1/19 layer3 interface-management-profile "Allow ping"
+set network interface ethernet ethernet1/19 layer3 lldp enable no
+set network interface ethernet ethernet1/20 layer3 ndp-proxy enabled no
+set network interface ethernet ethernet1/20 layer3 sdwan-link-settings upstream-nat enable no
+set network interface ethernet ethernet1/20 layer3 sdwan-link-settings upstream-nat static-ip
+set network interface ethernet ethernet1/20 layer3 sdwan-link-settings enable no
+set network interface ethernet ethernet1/20 layer3 sdwan-link-settings ipv6-enable no
+set network interface ethernet ethernet1/20 layer3 ip 10.34.152.97/29
+set network interface ethernet ethernet1/20 layer3 interface-management-profile "Allow ping"
+set network interface ethernet ethernet1/20 layer3 lldp enable no
+set network interface loopback units loopback.1 adjust-tcp-mss enable no
+set network interface loopback units loopback.1 ip 10.1.1.1
+set network interface loopback units loopback.1 interface-management-profile "Allow ping"
+set network interface loopback units loopback.1 comment "Loopback interface used for the web Proxy"
+set network interface loopback units loopback.101 adjust-tcp-mss enable no
+set network interface loopback units loopback.101 ip 192.168.255.101/32
+set network interface loopback units loopback.101 interface-management-profile "Allow ping"
+set network interface loopback units loopback.101 comment "BGP Loopback Prim"
+set network interface loopback units loopback.201 adjust-tcp-mss enable no
+set network interface loopback units loopback.201 interface-management-profile "Allow ping"
+set network interface loopback units loopback.201 ip 192.168.255.201/32
+set network interface loopback units loopback.201 comment "BGP Loopback Sec"
+set network interface vlan units
+set network interface tunnel units tunnel.1 comment "Tunnel to Azure Prim"
+set network interface tunnel units tunnel.100 comment "Tunnel Jeroen"
+set network interface tunnel units tunnel.101 comment "Tunnel Michael"
+set network interface tunnel units tunnel.2 comment "Tunnel to SAP RISE"
+set network interface tunnel units tunnel.3 comment Shell_TPA_Tunnel
+set network interface tunnel units tunnel.102 comment "Tunnel Brian"
+set network interface tunnel units tunnel.103 comment "Tunnel Jon"
+set network interface tunnel units tunnel.104 comment "Tunnel to Azure Sec"
+set network interface tunnel units tunnel.4 comment "Tunnel to SWAM14"
+set network interface tunnel units tunnel.99
+set network interface tunnel units tunnel.105 comment "Tunnel to C16"
+set network interface tunnel units tunnel.106 comment "Tunnel to Justin"
+set network vlan
+set network virtual-wire
+set network profiles monitor-profile default interval 3
+set network profiles monitor-profile default threshold 5
+set network profiles monitor-profile default action wait-recover
+set network profiles interface-management-profile "Allow ping" ping yes
+set network profiles interface-management-profile "Allow Management" https yes
+set network profiles interface-management-profile "Allow Management" ssh yes
+set network profiles interface-management-profile "Allow Management" ping yes
+
+set network ike crypto-profiles ike-crypto-profiles default encryption [ aes-128-cbc 3des ]
+set network ike crypto-profiles ike-crypto-profiles default hash sha1
+set network ike crypto-profiles ike-crypto-profiles default dh-group group2
+set network ike crypto-profiles ike-crypto-profiles default lifetime hours 8
+set network ike crypto-profiles ike-crypto-profiles Swapkit_IKE_Crypto hash sha512
+set network ike crypto-profiles ike-crypto-profiles Swapkit_IKE_Crypto dh-group group20
+set network ike crypto-profiles ike-crypto-profiles Swapkit_IKE_Crypto encryption aes-256-cbc
+set network ike crypto-profiles ike-crypto-profiles Swapkit_IKE_Crypto lifetime hours 8
+set network ike crypto-profiles ike-crypto-profiles IKE_Crypto_Profile_RISE hash sha1
+set network ike crypto-profiles ike-crypto-profiles IKE_Crypto_Profile_RISE dh-group group2
+set network ike crypto-profiles ike-crypto-profiles IKE_Crypto_Profile_RISE encryption aes-256-cbc
+set network ike crypto-profiles ike-crypto-profiles IKE_Crypto_Profile_RISE lifetime seconds 3600
+set network ike crypto-profiles ike-crypto-profiles SHELL_TPA hash sha512
+set network ike crypto-profiles ike-crypto-profiles SHELL_TPA dh-group group20
+set network ike crypto-profiles ike-crypto-profiles SHELL_TPA encryption aes-256-cbc
+set network ike crypto-profiles ike-crypto-profiles SHELL_TPA lifetime hours 24
+set network ike crypto-profiles ipsec-crypto-profiles Swapkit_IPSec_Crypto esp authentication sha512
+set network ike crypto-profiles ipsec-crypto-profiles Swapkit_IPSec_Crypto esp encryption aes-256-cbc
+set network ike crypto-profiles ipsec-crypto-profiles Swapkit_IPSec_Crypto lifetime hours 1
+set network ike crypto-profiles ipsec-crypto-profiles Swapkit_IPSec_Crypto dh-group group20
+set network ike crypto-profiles ipsec-crypto-profiles IPSec_Crypto_Profile_RISE esp authentication none
+set network ike crypto-profiles ipsec-crypto-profiles IPSec_Crypto_Profile_RISE esp encryption aes-256-gcm
+set network ike crypto-profiles ipsec-crypto-profiles IPSec_Crypto_Profile_RISE lifetime seconds 3600
+set network ike crypto-profiles ipsec-crypto-profiles IPSec_Crypto_Profile_RISE dh-group no-pfs
+set network ike crypto-profiles ipsec-crypto-profiles SHELL_TPA_IPSEC esp authentication sha512
+set network ike crypto-profiles ipsec-crypto-profiles SHELL_TPA_IPSEC esp encryption aes-256-cbc
+set network ike crypto-profiles ipsec-crypto-profiles SHELL_TPA_IPSEC lifetime hours 1
+set network ike crypto-profiles ipsec-crypto-profiles SHELL_TPA_IPSEC dh-group group20
+set network ike crypto-profiles global-protect-app-crypto-profiles default encryption aes-128-cbc
+set network ike crypto-profiles global-protect-app-crypto-profiles default authentication sha1
+
+set network ike gateway IPSec_Gateway_Azure_Prim authentication pre-shared-key key -AQ==d6iN1LbFRtVqTcSvNYpi8t1WixM=Y0icHhUSk1KaqJ2XgP5f4fBJSCg5OpWzdC6eHaYY0nnL7TKh7Tk9MNt8LuRZy5Kjfp6nl8ryQOOtWpy5Hqw3SZ8kLFC80qJo4RO9iJgRYAA=
+set network ike gateway IPSec_Gateway_Azure_Prim protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_Azure_Prim protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_Azure_Prim protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_Azure_Prim protocol ikev2 pq-kem enable no
+set network ike gateway IPSec_Gateway_Azure_Prim protocol ikev2 pq-kem block-vulnerable-cipher no
+set network ike gateway IPSec_Gateway_Azure_Prim protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPSec_Gateway_Azure_Prim protocol version ikev2
+set network ike gateway IPSec_Gateway_Azure_Prim local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_Azure_Prim local-address interface ethernet1/17
+set network ike gateway IPSec_Gateway_Azure_Prim protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_Azure_Prim protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_Azure_Prim peer-address ip 4.221.154.32
+set network ike gateway IPSec_Gateway_Azure_Prim local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_Azure_Prim local-id type ipaddr
+set network ike gateway IPSec_Gateway_Azure_Prim peer-id id 4.221.154.32
+set network ike gateway IPSec_Gateway_Azure_Prim peer-id type ipaddr
+set network ike gateway IPSec_Gateway_Jeroen authentication pre-shared-key key -AQ==s3dP6rsAkyP+cZ/0pmaAMtF/6Xw=xZSROuZgXlj1MMxhLxHsyQMNAJczJZ57l/CjsiE2MY5DTeXiDbRgjRdX2iTFk0mG
+set network ike gateway IPSec_Gateway_Jeroen protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_Jeroen protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_Jeroen protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_Jeroen protocol ikev2 pq-kem enable no
+set network ike gateway IPSec_Gateway_Jeroen protocol ikev2 pq-kem block-vulnerable-cipher no
+set network ike gateway IPSec_Gateway_Jeroen protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPSec_Gateway_Jeroen protocol version ikev2
+set network ike gateway IPSec_Gateway_Jeroen local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_Jeroen local-address interface ethernet1/17
+set network ike gateway IPSec_Gateway_Jeroen protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_Jeroen protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_Jeroen peer-address ip 188.91.60.190
+set network ike gateway IPSec_Gateway_Jeroen local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_Jeroen local-id type ipaddr
+set network ike gateway IPSec_Gateway_Jeroen peer-id id 188.91.60.190
+set network ike gateway IPSec_Gateway_Jeroen peer-id type ipaddr
+set network ike gateway IPSec_Gateway_Michael authentication pre-shared-key key -AQ==+/cwaPlVJ4Mo+6ZI+gbp16nOmuM=zfS2gFlkX6ZASOlewOfyv4wcvhL/NRI9tnKAG7+UlKAlaG+6gQj2t2YkE/Fa5oXx
+set network ike gateway IPSec_Gateway_Michael protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_Michael protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_Michael protocol ikev2 pq-kem enable no
+set network ike gateway IPSec_Gateway_Michael protocol ikev2 pq-kem block-vulnerable-cipher no
+set network ike gateway IPSec_Gateway_Michael protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPSec_Gateway_Michael protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_Michael protocol version ikev2
+set network ike gateway IPSec_Gateway_Michael protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_Michael protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_Michael local-address interface ethernet1/17
+set network ike gateway IPSec_Gateway_Michael local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_Michael peer-address ip 45.89.86.234
+set network ike gateway IPSec_Gateway_Michael local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_Michael local-id type ipaddr
+set network ike gateway IPSec_Gateway_Michael peer-id id 45.89.86.234
+set network ike gateway IPSec_Gateway_Michael peer-id type ipaddr
+set network ike gateway IPSec_Gateway_SAP_RISE authentication pre-shared-key key -AQ==Mpc4AeM7szFpe5nVEh/6zguJmgE=eEC83kO+n6EJbtTBvGpQsjvMhlA3B/6xu7+pG7VGXv8=
+set network ike gateway IPSec_Gateway_SAP_RISE protocol ikev2 pq-ppk enabled no
+set network ike gateway IPSec_Gateway_SAP_RISE protocol ikev2 pq-ppk negotiation-mode preferred
+set network ike gateway IPSec_Gateway_SAP_RISE protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_SAP_RISE protocol ikev2 ike-crypto-profile IKE_Crypto_Profile_RISE
+set network ike gateway IPSec_Gateway_SAP_RISE protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_SAP_RISE protocol version ikev2
+set network ike gateway IPSec_Gateway_SAP_RISE local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_SAP_RISE local-address interface ethernet1/17
+set network ike gateway IPSec_Gateway_SAP_RISE protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_SAP_RISE protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_SAP_RISE protocol-common passive-mode no
+set network ike gateway IPSec_Gateway_SAP_RISE peer-address ip 57.153.124.232
+set network ike gateway IPSec_Gateway_SAP_RISE local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_SAP_RISE local-id type ipaddr
+set network ike gateway IPSec_Gateway_SAP_RISE peer-id id 57.153.124.232
+set network ike gateway IPSec_Gateway_SAP_RISE peer-id type ipaddr
+set network ike gateway IPSec_Gateway_Brian authentication pre-shared-key key -AQ==yPQLEH/KMdsGRyc9KUqdTSCMxHU=PKAewtEn4wUOPt/6xAriYPqZKTbf1yHwRmPGJ5WO1g/V3BH9CSiImGfHd2rlzkqy
+set network ike gateway IPSec_Gateway_Brian protocol ikev2 pq-kem enable no
+set network ike gateway IPSec_Gateway_Brian protocol ikev2 pq-kem block-vulnerable-cipher yes
+set network ike gateway IPSec_Gateway_Brian protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPSec_Gateway_Brian protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_Brian protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_Brian protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_Brian protocol version ikev2
+set network ike gateway IPSec_Gateway_Brian local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_Brian local-address interface ethernet1/17
+set network ike gateway IPSec_Gateway_Brian protocol-common nat-traversal enable yes
+set network ike gateway IPSec_Gateway_Brian protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_Brian protocol-common passive-mode no
+set network ike gateway IPSec_Gateway_Brian peer-address fqdn brianduran.synology.me
+set network ike gateway IPSec_Gateway_Brian local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_Brian local-id type ipaddr
+set network ike gateway IPSec_Gateway_Brian peer-id id 181.117.11.137
+set network ike gateway IPSec_Gateway_Brian peer-id type ipaddr
+set network ike gateway IPSec_Gateway_Jon authentication pre-shared-key key -AQ==L3QHAk58yxygRJ+kFWY/nJi4/uE=laySWsRatlyDEQ2HI7wNKY0PapS5D8ZfzOP8EH+R68s55QrOJTRvDuLZKe05A/mV
+set network ike gateway IPSec_Gateway_Jon protocol ikev2 pq-kem enable no
+set network ike gateway IPSec_Gateway_Jon protocol ikev2 pq-kem block-vulnerable-cipher yes
+set network ike gateway IPSec_Gateway_Jon protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPSec_Gateway_Jon protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_Jon protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_Jon protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_Jon protocol version ikev2
+set network ike gateway IPSec_Gateway_Jon local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_Jon local-address interface ethernet1/17
+set network ike gateway IPSec_Gateway_Jon protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_Jon protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_Jon protocol-common passive-mode no
+set network ike gateway IPSec_Gateway_Jon peer-address fqdn tredgold.ddns.net
+set network ike gateway IPSec_Gateway_Jon local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_Jon local-id type ipaddr
+set network ike gateway IPSec_Gateway_Jon peer-id id 188.30.38.141
+set network ike gateway IPSec_Gateway_Jon peer-id type ipaddr
+set network ike gateway IPsec_Gateway_Azure_Sec authentication pre-shared-key key -AQ==f71Yp1as1gGRM2kBDRqP715o9o8=FaJPvR0st41r8hjcJXmYn18NtR8E8GRMBMX8NjgZVrWm8zJKcYHZSWaxHN6SnrzJ
+set network ike gateway IPsec_Gateway_Azure_Sec protocol ikev2 pq-kem enable no
+set network ike gateway IPsec_Gateway_Azure_Sec protocol ikev2 pq-kem block-vulnerable-cipher yes
+set network ike gateway IPsec_Gateway_Azure_Sec protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPsec_Gateway_Azure_Sec protocol ikev2 dpd enable yes
+set network ike gateway IPsec_Gateway_Azure_Sec protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPsec_Gateway_Azure_Sec protocol ikev2 pq-ppk enabled no
+set network ike gateway IPsec_Gateway_Azure_Sec protocol ikev2 pq-ppk negotiation-mode preferred
+set network ike gateway IPsec_Gateway_Azure_Sec protocol ikev1 dpd enable yes
+set network ike gateway IPsec_Gateway_Azure_Sec protocol version ikev2
+set network ike gateway IPsec_Gateway_Azure_Sec local-address ip 154.113.211.196/28
+set network ike gateway IPsec_Gateway_Azure_Sec local-address interface ethernet1/19
+set network ike gateway IPsec_Gateway_Azure_Sec protocol-common nat-traversal enable no
+set network ike gateway IPsec_Gateway_Azure_Sec protocol-common fragmentation enable no
+set network ike gateway IPsec_Gateway_Azure_Sec peer-address ip 4.221.157.116
+set network ike gateway IPsec_Gateway_Azure_Sec local-id id 154.113.211.196
+set network ike gateway IPsec_Gateway_Azure_Sec local-id type ipaddr
+set network ike gateway IPsec_Gateway_Azure_Sec peer-id id 4.221.157.116
+set network ike gateway IPsec_Gateway_Azure_Sec peer-id type ipaddr
+set network ike gateway IPSec_Gateway_SWAM14 authentication pre-shared-key key -AQ==f71Yp1as1gGRM2kBDRqP715o9o8=FaJPvR0st41r8hjcJXmYn18NtR8E8GRMBMX8NjgZVrWm8zJKcYHZSWaxHN6SnrzJ
+set network ike gateway IPSec_Gateway_SWAM14 protocol ikev2 pq-kem enable no
+set network ike gateway IPSec_Gateway_SWAM14 protocol ikev2 pq-kem block-vulnerable-cipher yes
+set network ike gateway IPSec_Gateway_SWAM14 protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPSec_Gateway_SWAM14 protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_SWAM14 protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_SWAM14 protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_SWAM14 protocol version ikev2
+set network ike gateway IPSec_Gateway_SWAM14 local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_SWAM14 local-address interface ethernet1/17
+set network ike gateway IPSec_Gateway_SWAM14 protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_SWAM14 protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_SWAM14 peer-address ip 13.81.43.84
+set network ike gateway IPSec_Gateway_SWAM14 local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_SWAM14 local-id type ipaddr
+set network ike gateway IPSec_Gateway_SWAM14 peer-id id 13.81.43.84
+set network ike gateway IPSec_Gateway_SWAM14 peer-id type ipaddr
+set network ike gateway IPSec_Gateway_C16 authentication pre-shared-key key -AQ==WRIOAixnn/D3a7h6EckgRRA46B8=/FSBMD3AJt8tar27ygmJO6nFp1KOBszme1YMTLmZEEEgvSpONcLhLzOj9NIjDSBnWPobqEsy2H6MMxWMrOjbMNoc8tI/6Aot18T+80/6mTQ=
+set network ike gateway IPSec_Gateway_C16 protocol ikev2 pq-ppk enabled no
+set network ike gateway IPSec_Gateway_C16 protocol ikev2 pq-ppk negotiation-mode preferred
+set network ike gateway IPSec_Gateway_C16 protocol ikev2 pq-kem enable no
+set network ike gateway IPSec_Gateway_C16 protocol ikev2 pq-kem block-vulnerable-cipher yes
+set network ike gateway IPSec_Gateway_C16 protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPSec_Gateway_C16 protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_C16 protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_C16 protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_C16 protocol version ikev2
+set network ike gateway IPSec_Gateway_C16 local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_C16 local-address interface ethernet1/17
+set network ike gateway IPSec_Gateway_C16 protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_C16 protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_C16 protocol-common passive-mode yes
+set network ike gateway IPSec_Gateway_C16 peer-address dynamic
+set network ike gateway IPSec_Gateway_C16 local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_C16 local-id type ipaddr
+set network ike gateway IPSec_Gateway_C16 peer-id id jeroen.schellart@shell.com
+set network ike gateway IPSec_Gateway_C16 peer-id type ufqdn
+set network ike gateway IPSec_Gateway_Justin authentication pre-shared-key key -AQ==iGjoe03zJJkZj3uPrsp/mmFJdqo=LeUOT6q8UD27Ix3ZAWePFEbmdlIaACx4MxLM45mHqlkqIFBGPpkzt/CE7DWEOcIN
+set network ike gateway IPSec_Gateway_Justin protocol ikev2 pq-ppk enabled no
+set network ike gateway IPSec_Gateway_Justin protocol ikev2 pq-ppk negotiation-mode preferred
+set network ike gateway IPSec_Gateway_Justin protocol ikev2 pq-kem enable no
+set network ike gateway IPSec_Gateway_Justin protocol ikev2 pq-kem block-vulnerable-cipher yes
+set network ike gateway IPSec_Gateway_Justin protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPSec_Gateway_Justin protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_Justin protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_Justin protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_Justin protocol version ikev2
+set network ike gateway IPSec_Gateway_Justin local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_Justin local-address interface ethernet1/17
+set network ike gateway IPSec_Gateway_Justin protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_Justin protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_Justin peer-address ip 84.84.100.160
+set network ike gateway IPSec_Gateway_Justin local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_Justin local-id type ipaddr
+set network ike gateway IPSec_Gateway_Justin peer-id id 84.84.100.160
+set network ike gateway IPSec_Gateway_Justin peer-id type ipaddr
+
+
+set network qos profile default class-bandwidth-type mbps class class1 priority real-time
+set network qos profile default class-bandwidth-type mbps class class2 priority high
+set network qos profile default class-bandwidth-type mbps class class3 priority high
+set network qos profile default class-bandwidth-type mbps class class4 priority medium
+set network qos profile default class-bandwidth-type mbps class class5 priority medium
+set network qos profile default class-bandwidth-type mbps class class6 priority low
+set network qos profile default class-bandwidth-type mbps class class7 priority low
+set network qos profile default class-bandwidth-type mbps class class8 priority low
+
+
+set network virtual-router default protocol bgp enable yes
+set network virtual-router default protocol bgp dampening-profile default cutoff 1.25
+set network virtual-router default protocol bgp dampening-profile default reuse 0.5
+set network virtual-router default protocol bgp dampening-profile default max-hold-time 900
+set network virtual-router default protocol bgp dampening-profile default decay-half-life-reachable 300
+set network virtual-router default protocol bgp dampening-profile default decay-half-life-unreachable 900
+set network virtual-router default protocol bgp dampening-profile default enable yes
+set network virtual-router default protocol bgp routing-options graceful-restart enable yes
+set network virtual-router default protocol bgp router-id 192.168.255.101
+set network virtual-router default protocol bgp local-as 65101
+set network virtual-router default protocol bgp redist-rules redist-static address-family-identifier ipv4
+set network virtual-router default protocol bgp redist-rules redist-static enable yes
+set network virtual-router default protocol bgp redist-rules redist-static set-origin incomplete
+set network virtual-router default protocol bgp redist-rules redist-connected address-family-identifier ipv4
+set network virtual-router default protocol bgp redist-rules redist-connected enable yes
+set network virtual-router default protocol bgp redist-rules redist-connected set-origin incomplete
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" type ebgp remove-private-as no
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" type ebgp import-nexthop original
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" type ebgp export-nexthop resolve
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" peer-address ip 192.168.255.102
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options incoming-bgp-connection remote-port 0
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options incoming-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options outgoing-bgp-connection local-port 0
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options outgoing-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options multihop 0
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options keep-alive-interval 30
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options open-delay-time 0
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options hold-time 90
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options idle-hold-time 15
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options min-route-adv-interval 30
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" subsequent-address-family-identifier unicast yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" subsequent-address-family-identifier multicast no
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" local-address ip 192.168.255.101/32
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" local-address interface loopback.101
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" bfd profile Inherit-vr-global-setting
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" max-prefixes 5000
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" enable yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" peer-as 65102
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" enable-mp-bgp no
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" address-family-identifier ipv4
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" enable-sender-side-loop-detection yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" reflector-client non-client
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" peering-type unspecified
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" aggregated-confed-as-path yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" soft-reset-with-stored-info no
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" enable yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" type ebgp remove-private-as no
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" type ebgp import-nexthop original
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" type ebgp export-nexthop resolve
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" peer-address ip 192.168.255.202
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options incoming-bgp-connection remote-port 0
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options incoming-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options outgoing-bgp-connection local-port 0
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options outgoing-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options multihop 0
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options keep-alive-interval 30
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options open-delay-time 0
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options hold-time 90
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options idle-hold-time 15
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options min-route-adv-interval 30
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" subsequent-address-family-identifier unicast yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" subsequent-address-family-identifier multicast no
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" local-address ip 192.168.255.201/32
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" local-address interface loopback.201
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" bfd profile Inherit-vr-global-setting
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" max-prefixes 5000
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" enable yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" peer-as 65102
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" enable-mp-bgp no
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" address-family-identifier ipv4
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" enable-sender-side-loop-detection yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" reflector-client non-client
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" peering-type unspecified
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" aggregated-confed-as-path yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" soft-reset-with-stored-info no
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" enable yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" type ebgp remove-private-as no
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" type ebgp import-nexthop original
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" type ebgp export-nexthop resolve
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" peer-address ip 192.168.255.103
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options incoming-bgp-connection remote-port 0
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options incoming-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options outgoing-bgp-connection local-port 0
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options outgoing-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options multihop 0
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options keep-alive-interval 30
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options open-delay-time 0
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options hold-time 90
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options idle-hold-time 15
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options min-route-adv-interval 30
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" subsequent-address-family-identifier unicast yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" subsequent-address-family-identifier multicast no
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" local-address ip 192.168.255.101/32
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" local-address interface loopback.101
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" bfd profile Inherit-vr-global-setting
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" max-prefixes 5000
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" enable yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" peer-as 65103
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" enable-mp-bgp no
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" address-family-identifier ipv4
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" enable-sender-side-loop-detection yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" reflector-client non-client
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" peering-type unspecified
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" aggregated-confed-as-path yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" soft-reset-with-stored-info no
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" enable yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" type ebgp remove-private-as no
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" type ebgp import-nexthop original
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" type ebgp export-nexthop resolve
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" peer-address ip 192.168.255.103
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options incoming-bgp-connection remote-port 0
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options incoming-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options outgoing-bgp-connection local-port 0
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options outgoing-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options multihop 0
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options keep-alive-interval 30
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options open-delay-time 0
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options hold-time 90
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options idle-hold-time 15
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options min-route-adv-interval 30
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" subsequent-address-family-identifier unicast yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" subsequent-address-family-identifier multicast no
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" local-address ip 192.168.255.201/32
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" local-address interface loopback.201
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" bfd profile Inherit-vr-global-setting
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" max-prefixes 5000
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" enable yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" peer-as 65103
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" enable-mp-bgp no
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" address-family-identifier ipv4
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" enable-sender-side-loop-detection yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" reflector-client non-client
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" peering-type unspecified
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" aggregated-confed-as-path yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" soft-reset-with-stored-info no
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" enable yes
+set network virtual-router default protocol bgp install-route yes
+set network virtual-router default protocol bgp policy export rules "Prepend Sec" action allow update as-path prepend 2
+set network virtual-router default protocol bgp policy export rules "Prepend Sec" action allow update community none
+set network virtual-router default protocol bgp policy export rules "Prepend Sec" action allow update extended-community none
+set network virtual-router default protocol bgp policy export rules "Prepend Sec" match route-table unicast
+set network virtual-router default protocol bgp policy export rules "Prepend Sec" used-by [ "Azure BGP Router Sec" "C16 BGP Router Sec" ]
+set network virtual-router default protocol bgp policy export rules "Prepend Sec" enable yes
+set network virtual-router default protocol rip enable no
+set network virtual-router default protocol ospf enable no
+set network virtual-router default protocol ospfv3 enable no
+set network virtual-router default protocol redist-profile redist-connected filter type connect
+set network virtual-router default protocol redist-profile redist-connected filter interface [ ethernet1/15.10 ethernet1/15.110 ]
+set network virtual-router default protocol redist-profile redist-connected priority 1
+set network virtual-router default protocol redist-profile redist-connected action redist
+set network virtual-router default protocol redist-profile redist-static filter type static
+set network virtual-router default protocol redist-profile redist-static filter interface [ ethernet1/16 ethernet1/18 tunnel.4 tunnel.100 tunnel.101 tunnel.102 tunnel.103 tunnel.105 ]
+set network virtual-router default protocol redist-profile redist-static priority 1
+set network virtual-router default protocol redist-profile redist-static action redist
+set network virtual-router default interface [ ethernet1/15 ethernet1/15.10 ethernet1/15.110 ethernet1/16 ethernet1/17 ethernet1/18 ethernet1/19 ethernet1/20 loopback.1 loopback.101 loopback.201 tunnel.1 tunnel.2 tunnel.3 tunnel.4 tunnel.99 tunnel.100 tunnel.101 tunnel.102 tunnel.103 tunnel.104 tunnel.105 tunnel.106 ]
+set network virtual-router default ecmp algorithm ip-modulo
+set network virtual-router default routing-table ip static-route Default path-monitor monitor-destinations Primary_Internet_Google_Test enable yes
+set network virtual-router default routing-table ip static-route Default path-monitor monitor-destinations Primary_Internet_Google_Test source 102.90.33.172/29
+set network virtual-router default routing-table ip static-route Default path-monitor monitor-destinations Primary_Internet_Google_Test destination 8.8.8.8
+set network virtual-router default routing-table ip static-route Default path-monitor monitor-destinations Primary_Internet_Google_Test interval 3
+set network virtual-router default routing-table ip static-route Default path-monitor monitor-destinations Primary_Internet_Google_Test count 5
+set network virtual-router default routing-table ip static-route Default path-monitor enable yes
+set network virtual-router default routing-table ip static-route Default path-monitor failure-condition any
+set network virtual-router default routing-table ip static-route Default path-monitor hold-time 2
+set network virtual-router default routing-table ip static-route Default nexthop ip-address 102.90.33.169
+set network virtual-router default routing-table ip static-route Default bfd profile None
+set network virtual-router default routing-table ip static-route Default interface ethernet1/17
+set network virtual-router default routing-table ip static-route Default metric 10
+set network virtual-router default routing-table ip static-route Default destination 0.0.0.0/0
+set network virtual-router default routing-table ip static-route Default route-table unicast
+set network virtual-router default routing-table ip static-route Jeroen bfd profile None
+set network virtual-router default routing-table ip static-route Jeroen interface tunnel.100
+set network virtual-router default routing-table ip static-route Jeroen metric 10
+set network virtual-router default routing-table ip static-route Jeroen destination 192.168.211.0/24
+set network virtual-router default routing-table ip static-route Jeroen route-table unicast
+set network virtual-router default routing-table ip static-route Michael_50 bfd profile None
+set network virtual-router default routing-table ip static-route Michael_50 interface tunnel.101
+set network virtual-router default routing-table ip static-route Michael_50 metric 10
+set network virtual-router default routing-table ip static-route Michael_50 destination 192.168.50.0/24
+set network virtual-router default routing-table ip static-route Michael_50 route-table unicast
+set network virtual-router default routing-table ip static-route Michael_120 bfd profile None
+set network virtual-router default routing-table ip static-route Michael_120 interface tunnel.101
+set network virtual-router default routing-table ip static-route Michael_120 metric 10
+set network virtual-router default routing-table ip static-route Michael_120 destination 192.168.120.0/24
+set network virtual-router default routing-table ip static-route Michael_120 route-table unicast
+set network virtual-router default routing-table ip static-route Flexpod_10.34.153.0_24 nexthop ip-address 10.34.154.161
+set network virtual-router default routing-table ip static-route Flexpod_10.34.153.0_24 bfd profile None
+set network virtual-router default routing-table ip static-route Flexpod_10.34.153.0_24 metric 10
+set network virtual-router default routing-table ip static-route Flexpod_10.34.153.0_24 destination 10.34.153.0/24
+set network virtual-router default routing-table ip static-route Flexpod_10.34.153.0_24 route-table unicast
+set network virtual-router default routing-table ip static-route Flexpod_10.34.155.0_24 nexthop ip-address 10.34.154.161
+set network virtual-router default routing-table ip static-route Flexpod_10.34.155.0_24 bfd profile None
+set network virtual-router default routing-table ip static-route Flexpod_10.34.155.0_24 metric 10
+set network virtual-router default routing-table ip static-route Flexpod_10.34.155.0_24 destination 10.34.155.0/24
+set network virtual-router default routing-table ip static-route Flexpod_10.34.155.0_24 route-table unicast
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.192_26 nexthop ip-address 10.34.154.161
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.192_26 bfd profile None
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.192_26 metric 10
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.192_26 destination 10.34.154.192/26
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.192_26 route-table unicast
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.0_25 nexthop ip-address 10.34.154.161
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.0_25 bfd profile None
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.0_25 metric 10
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.0_25 destination 10.34.154.0/25
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.0_25 route-table unicast
+set network virtual-router default routing-table ip static-route PCD nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route PCD bfd profile None
+set network virtual-router default routing-table ip static-route PCD metric 10
+set network virtual-router default routing-table ip static-route PCD destination 161.158.35.32/28
+set network virtual-router default routing-table ip static-route PCD route-table unicast
+set network virtual-router default routing-table ip static-route L47 nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route L47 bfd profile None
+set network virtual-router default routing-table ip static-route L47 metric 10
+set network virtual-router default routing-table ip static-route L47 destination sapal47a.africa-me.shell.com
+set network virtual-router default routing-table ip static-route L47 route-table unicast
+set network virtual-router default routing-table ip static-route Default-Backup nexthop ip-address 154.113.211.193
+set network virtual-router default routing-table ip static-route Default-Backup bfd profile None
+set network virtual-router default routing-table ip static-route Default-Backup interface ethernet1/19
+set network virtual-router default routing-table ip static-route Default-Backup metric 200
+set network virtual-router default routing-table ip static-route Default-Backup destination 0.0.0.0/0
+set network virtual-router default routing-table ip static-route Default-Backup route-table unicast
+set network virtual-router default routing-table ip static-route RISE_Primary_DC bfd profile None
+set network virtual-router default routing-table ip static-route RISE_Primary_DC interface tunnel.2
+set network virtual-router default routing-table ip static-route RISE_Primary_DC metric 10
+set network virtual-router default routing-table ip static-route RISE_Primary_DC destination 10.34.160.0/23
+set network virtual-router default routing-table ip static-route RISE_Primary_DC route-table unicast
+set network virtual-router default routing-table ip static-route SPDC_161.158.0.0_16 nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route SPDC_161.158.0.0_16 bfd profile None
+set network virtual-router default routing-table ip static-route SPDC_161.158.0.0_16 metric 10
+set network virtual-router default routing-table ip static-route SPDC_161.158.0.0_16 destination 161.158.0.0/16
+set network virtual-router default routing-table ip static-route SPDC_161.158.0.0_16 route-table unicast
+set network virtual-router default routing-table ip static-route "SOLAR-INSIGHT_NAT RANGE" nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route "SOLAR-INSIGHT_NAT RANGE" bfd profile None
+set network virtual-router default routing-table ip static-route "SOLAR-INSIGHT_NAT RANGE" metric 10
+set network virtual-router default routing-table ip static-route "SOLAR-INSIGHT_NAT RANGE" destination 10.34.152.80/29
+set network virtual-router default routing-table ip static-route "SOLAR-INSIGHT_NAT RANGE" route-table unicast
+set network virtual-router default routing-table ip static-route "Shell SAP P94" nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route "Shell SAP P94" bfd profile None
+set network virtual-router default routing-table ip static-route "Shell SAP P94" metric 10
+set network virtual-router default routing-table ip static-route "Shell SAP P94" destination 193.189.5.134/32
+set network virtual-router default routing-table ip static-route "Shell SAP P94" route-table unicast
+set network virtual-router default routing-table ip static-route Aruba_WIFI nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route Aruba_WIFI bfd profile None
+set network virtual-router default routing-table ip static-route Aruba_WIFI metric 10
+set network virtual-router default routing-table ip static-route Aruba_WIFI destination 10.34.98.0/23
+set network virtual-router default routing-table ip static-route Aruba_WIFI route-table unicast
+set network virtual-router default routing-table ip static-route OpenSpirit nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route OpenSpirit bfd profile None
+set network virtual-router default routing-table ip static-route OpenSpirit metric 10
+set network virtual-router default routing-table ip static-route OpenSpirit destination 10.37.200.76/32
+set network virtual-router default routing-table ip static-route OpenSpirit route-table unicast
+set network virtual-router default routing-table ip static-route Brian_1 bfd profile None
+set network virtual-router default routing-table ip static-route Brian_1 interface tunnel.102
+set network virtual-router default routing-table ip static-route Brian_1 metric 10
+set network virtual-router default routing-table ip static-route Brian_1 destination 192.168.0.0/23
+set network virtual-router default routing-table ip static-route Brian_1 route-table unicast
+set network virtual-router default routing-table ip static-route "Route Jon_110" bfd profile None
+set network virtual-router default routing-table ip static-route "Route Jon_110" interface tunnel.103
+set network virtual-router default routing-table ip static-route "Route Jon_110" metric 10
+set network virtual-router default routing-table ip static-route "Route Jon_110" destination 192.168.110.0/24
+set network virtual-router default routing-table ip static-route "Route Jon_110" route-table unicast
+set network virtual-router default routing-table ip static-route "Azure Secondary IPsec Peer" nexthop ip-address 154.113.211.193
+set network virtual-router default routing-table ip static-route "Azure Secondary IPsec Peer" bfd profile None
+set network virtual-router default routing-table ip static-route "Azure Secondary IPsec Peer" metric 10
+set network virtual-router default routing-table ip static-route "Azure Secondary IPsec Peer" destination 4.221.157.116/32
+set network virtual-router default routing-table ip static-route "Azure Secondary IPsec Peer" route-table unicast
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Prim" bfd profile None
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Prim" interface tunnel.1
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Prim" metric 10
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Prim" destination 192.168.255.102/32
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Prim" route-table unicast
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Sec" bfd profile None
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Sec" interface tunnel.104
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Sec" metric 10
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Sec" destination 192.168.255.202/32
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Sec" route-table unicast
+set network virtual-router default routing-table ip static-route SwAM14 bfd profile None
+set network virtual-router default routing-table ip static-route SwAM14 interface tunnel.4
+set network virtual-router default routing-table ip static-route SwAM14 metric 10
+set network virtual-router default routing-table ip static-route SwAM14 destination 10.34.144.0/22
+set network virtual-router default routing-table ip static-route SwAM14 route-table unicast
+set network virtual-router default routing-table ip static-route "Route Jon_109" bfd profile None
+set network virtual-router default routing-table ip static-route "Route Jon_109" interface tunnel.103
+set network virtual-router default routing-table ip static-route "Route Jon_109" metric 10
+set network virtual-router default routing-table ip static-route "Route Jon_109" destination 192.168.109.0/24
+set network virtual-router default routing-table ip static-route "Route Jon_109" route-table unicast
+set network virtual-router default routing-table ip static-route SHELL_TRUST4_193.189.13.0_24 nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route SHELL_TRUST4_193.189.13.0_24 bfd profile None
+set network virtual-router default routing-table ip static-route SHELL_TRUST4_193.189.13.0_24 metric 10
+set network virtual-router default routing-table ip static-route SHELL_TRUST4_193.189.13.0_24 destination 193.189.13.0/24
+set network virtual-router default routing-table ip static-route SHELL_TRUST4_193.189.13.0_24 route-table unicast
+set network virtual-router default routing-table ip static-route SHELL_TRUST1_145.26.0.0_16 nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route SHELL_TRUST1_145.26.0.0_16 bfd profile None
+set network virtual-router default routing-table ip static-route SHELL_TRUST1_145.26.0.0_16 metric 10
+set network virtual-router default routing-table ip static-route SHELL_TRUST1_145.26.0.0_16 destination 145.26.0.0/16
+set network virtual-router default routing-table ip static-route SHELL_TRUST1_145.26.0.0_16 route-table unicast
+set network virtual-router default routing-table ip static-route SHELL_TRUST2_144.199.0.0_16 nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route SHELL_TRUST2_144.199.0.0_16 bfd profile None
+set network virtual-router default routing-table ip static-route SHELL_TRUST2_144.199.0.0_16 metric 10
+set network virtual-router default routing-table ip static-route SHELL_TRUST2_144.199.0.0_16 destination 144.199.0.0/16
+set network virtual-router default routing-table ip static-route SHELL_TRUST2_144.199.0.0_16 route-table unicast
+set network virtual-router default routing-table ip static-route SHELL_TRUST3_161.237.0.0_16 nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route SHELL_TRUST3_161.237.0.0_16 bfd profile None
+set network virtual-router default routing-table ip static-route SHELL_TRUST3_161.237.0.0_16 metric 10
+set network virtual-router default routing-table ip static-route SHELL_TRUST3_161.237.0.0_16 destination 161.237.0.0/16
+set network virtual-router default routing-table ip static-route SHELL_TRUST3_161.237.0.0_16 route-table unicast
+set network virtual-router default routing-table ip static-route dns-anycast-1.shell.com nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route dns-anycast-1.shell.com bfd profile None
+set network virtual-router default routing-table ip static-route dns-anycast-1.shell.com metric 10
+set network virtual-router default routing-table ip static-route dns-anycast-1.shell.com destination 134.162.23.1/32
+set network virtual-router default routing-table ip static-route dns-anycast-1.shell.com route-table unicast
+set network virtual-router default routing-table ip static-route dns-anycast-2.shell.com nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route dns-anycast-2.shell.com bfd profile None
+set network virtual-router default routing-table ip static-route dns-anycast-2.shell.com metric 10
+set network virtual-router default routing-table ip static-route dns-anycast-2.shell.com destination 134.162.23.2/32
+set network virtual-router default routing-table ip static-route dns-anycast-2.shell.com route-table unicast
+set network virtual-router default routing-table ip static-route Justin bfd profile None
+set network virtual-router default routing-table ip static-route Justin interface tunnel.106
+set network virtual-router default routing-table ip static-route Justin metric 10
+set network virtual-router default routing-table ip static-route Justin destination 192.168.70.0/24
+set network virtual-router default routing-table ip static-route Justin route-table unicast
+set network virtual-router default routing-table ip static-route "Loopback C16" bfd profile None
+set network virtual-router default routing-table ip static-route "Loopback C16" interface tunnel.105
+set network virtual-router default routing-table ip static-route "Loopback C16" metric 10
+set network virtual-router default routing-table ip static-route "Loopback C16" destination 192.168.255.103/32
+set network virtual-router default routing-table ip static-route "Loopback C16" route-table unicast
+set network virtual-router default routing-table ip static-route "Justin AP" bfd profile None
+set network virtual-router default routing-table ip static-route "Justin AP" interface tunnel.106
+set network virtual-router default routing-table ip static-route "Justin AP" metric 10
+set network virtual-router default routing-table ip static-route "Justin AP" destination 192.168.0.9/32
+set network virtual-router default routing-table ip static-route "Justin AP" route-table unicast
+
+
+set network tunnel ipsec IPSec_Tunnel_Azure_Prim auto-key ike-gateway IPSec_Gateway_Azure_Prim
+set network tunnel ipsec IPSec_Tunnel_Azure_Prim auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_Azure_Prim tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_Azure_Prim tunnel-interface tunnel.1
+set network tunnel ipsec IPSec_Tunnel_Jeroen auto-key ike-gateway IPSec_Gateway_Jeroen
+set network tunnel ipsec IPSec_Tunnel_Jeroen auto-key proxy-id Jeroen protocol any
+set network tunnel ipsec IPSec_Tunnel_Jeroen auto-key proxy-id Jeroen local 10.34.152.0/22
+set network tunnel ipsec IPSec_Tunnel_Jeroen auto-key proxy-id Jeroen remote 192.168.211.0/24
+set network tunnel ipsec IPSec_Tunnel_Jeroen auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_Jeroen tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_Jeroen tunnel-interface tunnel.100
+set network tunnel ipsec IPSec_Tunnel_Michael auto-key ike-gateway IPSec_Gateway_Michael
+set network tunnel ipsec IPSec_Tunnel_Michael auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_Michael auto-key proxy-id Michael_50 protocol any
+set network tunnel ipsec IPSec_Tunnel_Michael auto-key proxy-id Michael_50 local 10.34.152.0/22
+set network tunnel ipsec IPSec_Tunnel_Michael auto-key proxy-id Michael_50 remote 192.168.50.0/24
+set network tunnel ipsec IPSec_Tunnel_Michael auto-key proxy-id Michael_120 protocol any
+set network tunnel ipsec IPSec_Tunnel_Michael auto-key proxy-id Michael_120 local 10.34.152.0/22
+set network tunnel ipsec IPSec_Tunnel_Michael auto-key proxy-id Michael_120 remote 192.168.120.0/24
+set network tunnel ipsec IPSec_Tunnel_Michael tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_Michael tunnel-interface tunnel.101
+set network tunnel ipsec IPSec_Tunnel_RISE auto-key ike-gateway IPSec_Gateway_SAP_RISE
+set network tunnel ipsec IPSec_Tunnel_RISE auto-key proxy-id RISE protocol any
+set network tunnel ipsec IPSec_Tunnel_RISE auto-key proxy-id RISE local 10.34.152.0/22
+set network tunnel ipsec IPSec_Tunnel_RISE auto-key proxy-id RISE remote 10.34.160.0/23
+set network tunnel ipsec IPSec_Tunnel_RISE auto-key ipsec-crypto-profile IPSec_Crypto_Profile_RISE
+set network tunnel ipsec IPSec_Tunnel_RISE tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_RISE tunnel-interface tunnel.2
+set network tunnel ipsec IPSec_Tunnel_Brian auto-key ike-gateway IPSec_Gateway_Brian
+set network tunnel ipsec IPSec_Tunnel_Brian auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_Brian auto-key proxy-id Brian protocol any
+set network tunnel ipsec IPSec_Tunnel_Brian auto-key proxy-id Brian local 10.34.152.0/22
+set network tunnel ipsec IPSec_Tunnel_Brian auto-key proxy-id Brian remote 192.168.0.0/23
+set network tunnel ipsec IPSec_Tunnel_Brian tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_Brian tunnel-interface tunnel.102
+set network tunnel ipsec IPSec_Tunnel_Jon auto-key ike-gateway IPSec_Gateway_Jon
+set network tunnel ipsec IPSec_Tunnel_Jon auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_Jon tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_Jon tunnel-interface tunnel.103
+set network tunnel ipsec IPSec_Tunnel_Azure_Sec auto-key ike-gateway IPsec_Gateway_Azure_Sec
+set network tunnel ipsec IPSec_Tunnel_Azure_Sec auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_Azure_Sec tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_Azure_Sec tunnel-interface tunnel.104
+set network tunnel ipsec IPSec_Tunnel_SWAM14 auto-key ike-gateway IPSec_Gateway_SWAM14
+set network tunnel ipsec IPSec_Tunnel_SWAM14 auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_SWAM14 tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_SWAM14 tunnel-interface tunnel.4
+set network tunnel ipsec IPSec_Tunnel_C16 auto-key ike-gateway IPSec_Gateway_C16
+set network tunnel ipsec IPSec_Tunnel_C16 auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_C16 tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_C16 tunnel-interface tunnel.105
+set network tunnel ipsec IPSec_Tunnel_Justin auto-key ike-gateway IPSec_Gateway_Justin
+set network tunnel ipsec IPSec_Tunnel_Justin auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_Justin tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_Justin tunnel-interface tunnel.106
+
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" local-address ip ipv4 102.90.33.172/29
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" local-address interface ethernet1/17
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" local-address ip-address-family ipv4
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" client exclude-video-traffic applications
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" client exclude-video-traffic enabled no
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" client dns-server primary 10.34.152.200
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" client dns-server secondary 10.34.152.202
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" client dns-suffix spin-ng.local
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" ipsec third-party-client enable no
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" ip-pool 10.152.120.0/21
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" tunnel-interface tunnel.99
+set network tunnel global-protect-site-to-site
+
+set network dns-proxy dns-web-proxy cache max-ttl enabled no
+set network dns-proxy dns-web-proxy cache enabled yes
+set network dns-proxy dns-web-proxy default primary 10.34.152.200
+set network dns-proxy dns-web-proxy default secondary 10.34.152.36
+set network dns-proxy dns-web-proxy tcp-queries enabled no
+set network dns-proxy dns-web-proxy interface loopback.1
+
+set network secure-web-gateway enablement none
+set network secure-web-gateway explicit-web-gateway proxy-ip ipv4 10.34.154.129/28
+set network secure-web-gateway explicit-web-gateway interface ethernet1/15.10
+set network secure-web-gateway explicit-web-gateway upstream-interface loopback.1
+set network secure-web-gateway explicit-web-gateway dns-proxy dns-web-proxy
+set network secure-web-gateway explicit-web-gateway authentication-profile web-proxy-kerberos-auth
+set network secure-web-gateway explicit-web-gateway authentication-method none
+
+set shared botnet configuration http dynamic-dns enabled yes
+set shared botnet configuration http dynamic-dns threshold 5
+set shared botnet configuration http malware-sites enabled yes
+set shared botnet configuration http malware-sites threshold 5
+set shared botnet configuration http recent-domains enabled yes
+set shared botnet configuration http recent-domains threshold 5
+set shared botnet configuration http ip-domains enabled yes
+set shared botnet configuration http ip-domains threshold 10
+set shared botnet configuration http executables-from-unknown-sites enabled yes
+set shared botnet configuration http executables-from-unknown-sites threshold 5
+set shared botnet configuration other-applications irc yes
+set shared botnet configuration unknown-applications unknown-tcp destinations-per-hour 10
+set shared botnet configuration unknown-applications unknown-tcp sessions-per-hour 10
+set shared botnet configuration unknown-applications unknown-tcp session-length maximum-bytes 100
+set shared botnet configuration unknown-applications unknown-tcp session-length minimum-bytes 50
+set shared botnet configuration unknown-applications unknown-udp destinations-per-hour 10
+set shared botnet configuration unknown-applications unknown-udp sessions-per-hour 10
+set shared botnet configuration unknown-applications unknown-udp session-length maximum-bytes 100
+set shared botnet configuration unknown-applications unknown-udp session-length minimum-bytes 50
+set shared botnet report topn 100
+set shared botnet report scheduled yes
+
+set shared server-profile kerberos kerberos-ad server phcia-s-10001 host 10.34.152.200
+set shared server-profile kerberos kerberos-ad server phcia-s-10001 port 88
+set shared server-profile radius SWAF235_RADIUS_SERVER protocol PAP
+set shared server-profile radius SWAF235_RADIUS_SERVER server PHC-S-08017 secret -AQ==CsEYmILJgC2QULyxWzi5DLX2BZY=XArZKYpaMNSYsJ0iLuvNdGiYHu016SXiyyMX9q0adyZP4nFqAjuIDDXtvGnfWsFiS/K2uYdZb+Y1tVkKybnIjQXbAcPoymqfhN3m1K6HdhE=
+set shared server-profile radius SWAF235_RADIUS_SERVER server PHC-S-08017 port 1812
+set shared server-profile radius SWAF235_RADIUS_SERVER server PHC-S-08017 ip-address 10.34.155.27
+
+set shared authentication-profile web-proxy-kerberos-auth method kerberos server-profile kerberos-ad
+set shared authentication-profile web-proxy-kerberos-auth method kerberos realm SPIN-NG.LOCAL
+set shared authentication-profile web-proxy-kerberos-auth multi-factor-auth mfa-enable no
+set shared authentication-profile web-proxy-kerberos-auth allow-list all
+set shared authentication-profile web-proxy-kerberos-auth single-sign-on service-principal HTTP/proxy.spin-ng.local
+set shared authentication-profile web-proxy-kerberos-auth single-sign-on kerberos-keytab -AQ==es2K9pCmx5WwHKY37SEiGqEdERg=Md58lYaQPhTgrBqwIt0YjSEatSiDI6HcZjxVELkkGKm+vv9kSyAb/HoxjZX2AWVw1tqFcU/u3EgMdVsBUFNb+fBc3rGOrie1zBQgd+PbKSO30g5Pye+aw6l3GOyu8z/8oc1SsCZRoYSyeUDIyLnpibFF5uW0Vd8sk1JySkuHcMbEtGuGjRot58CpMqzkrien
+set shared authentication-profile web-proxy-kerberos-auth user-domain spin-ng
+set shared authentication-profile SWAF235_RADIUS_AUTHPROFILE method radius server-profile SWAF235_RADIUS_SERVER
+set shared authentication-profile SWAF235_RADIUS_AUTHPROFILE multi-factor-auth mfa-enable no
+set shared authentication-profile SWAF235_RADIUS_AUTHPROFILE allow-list all
+set shared authentication-profile SWAF235_RADIUS_AUTHPROFILE user-domain spin-ng
+
+set shared certificate "SPIN-NG Root CA" subject-hash 0c8a5660
+set shared certificate "SPIN-NG Root CA" issuer-hash 0c8a5660
+set shared certificate "SPIN-NG Root CA" not-valid-before "Jun 14 13:41:25 2024 GMT"
+set shared certificate "SPIN-NG Root CA" issuer "DC = local, DC = spin-ng, CN = spin-ng-SWAF235CA01-CA"
+set shared certificate "SPIN-NG Root CA" not-valid-after "Jun 14 13:51:24 2029 GMT"
+set shared certificate "SPIN-NG Root CA" common-name spin-ng-SWAF235CA01-CA
+set shared certificate "SPIN-NG Root CA" expiry-epoch 1876139484
+set shared certificate "SPIN-NG Root CA" ca yes
+set shared certificate "SPIN-NG Root CA" subject "DC = local, DC = spin-ng, CN = spin-ng-SWAF235CA01-CA"
+set shared certificate "SPIN-NG Root CA" public-key "-----BEGIN CERTIFICATE-----
+MIIDfTCCAmWgAwIBAgIQTtAZbYtWf6dN+kb8sKqDJzANBgkqhkiG9w0BAQsFADBR
+MRUwEwYKCZImiZPyLGQBGRYFbG9jYWwxFzAVBgoJkiaJk/IsZAEZFgdzcGluLW5n
+MR8wHQYDVQQDExZzcGluLW5nLVNXQUYyMzVDQTAxLUNBMB4XDTI0MDYxNDEzNDEy
+NVoXDTI5MDYxNDEzNTEyNFowUTEVMBMGCgmSJomT8ixkARkWBWxvY2FsMRcwFQYK
+CZImiZPyLGQBGRYHc3Bpbi1uZzEfMB0GA1UEAxMWc3Bpbi1uZy1TV0FGMjM1Q0Ew
+MS1DQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM80oPht13/DHU4X
+cwPT6WHzQnPlt2PhCY2ptmoNVBxZ5/3vpy4TQ3VmlfpOc0TpWFCxsLMYWfe1EgdM
+jE3r8/pnB8e1asAVe9GxnrUj9jVaGydoNSNS2Ts9lzckHHmYw8xrez2uqYUCKv/L
+9E1w7yBkEH1UFIaLZwzrXuVQiryxxxfahrixV1F9Z+Rkah3Lvw4H+JvbR3kk/p3q
+f0ITZt8IXgMhGYxubeYC8UscDfbtULvvKQX4l2hbdQX+yFYmmmaS42Tfpnt7wY/o
+axMCkCT4lu2qdJhWyzkGwFd7qS27tXt4eeHyCobh0nO84qccglrSbAsuM0YJVCpC
+l7mG7BUCAwEAAaNRME8wCwYDVR0PBAQDAgGGMA8GA1UdEwEB/wQFMAMBAf8wHQYD
+VR0OBBYEFNCl0xQZRt2LlaGsshSAMTQXgIL2MBAGCSsGAQQBgjcVAQQDAgEAMA0G
+CSqGSIb3DQEBCwUAA4IBAQAHd1xflNlklkB5qkfrmdlOvUGHxrJIidpJtkp4wEc1
+ZzVCgCkPRQi4b1a8hxme8LyjPHXjxMQqiuuzcwONUuUl5DuaUHh/mRqmNf797TY/
+AxANnO/cOz1Q15gRfRjAvaTDAyfqIByub9ClZ5tPQmATRcA+QJtgtgaVfhNbEXGx
+k1Z67NbxZIAdEIStElKW9c75YTFsB/itHS/kT7JtqYecRgZnDTAaU4IQLDHk+wFe
+JwNI9cybU81eo3efrIcsdVXo/wTIlleU9x5DkxsAMBKaBtP/P4pqK0GNBQyfqzJA
+HhbHbfFes+IFjHEvPzgW6uQYfC5dwCi4COItzU+bvMTm
+-----END CERTIFICATE-----
+
+"
+set shared certificate "SPIN-NG Root CA" algorithm RSA
+set shared certificate "SPIN-NG Root CA" private-key -AQ==i1NvhZBWl/Xp6Cj34XD/W3L6vQE=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
+set shared certificate "SPIN-NG PA Root CA" subject-hash 767349b6
+set shared certificate "SPIN-NG PA Root CA" issuer-hash 767349b6
+set shared certificate "SPIN-NG PA Root CA" not-valid-before "Jul  8 09:13:20 2024 GMT"
+set shared certificate "SPIN-NG PA Root CA" issuer "C = NG, ST = Rivers, L = Port Harcourt, O = SPDC, OU = IT, OU = IT, CN = ngphciafw110.spin-ng.local"
+set shared certificate "SPIN-NG PA Root CA" not-valid-after "Jul  8 09:13:20 2025 GMT"
+set shared certificate "SPIN-NG PA Root CA" common-name ngphciafw110.spin-ng.local
+set shared certificate "SPIN-NG PA Root CA" expiry-epoch 1751966000
+set shared certificate "SPIN-NG PA Root CA" ca yes
+set shared certificate "SPIN-NG PA Root CA" subject "C = NG, ST = Rivers, L = Port Harcourt, O = SPDC, OU = IT, OU = IT, CN = ngphciafw110.spin-ng.local"
+set shared certificate "SPIN-NG PA Root CA" public-key "-----BEGIN CERTIFICATE-----
+MIIEBDCCAuygAwIBAgIUO8HXfy5CQcGdsbXb4mEteY2FBFEwDQYJKoZIhvcNAQEL
+BQAwgYQxCzAJBgNVBAYTAk5HMQ8wDQYDVQQIDAZSaXZlcnMxFjAUBgNVBAcMDVBv
+cnQgSGFyY291cnQxDTALBgNVBAoMBFNQREMxCzAJBgNVBAsMAklUMQswCQYDVQQL
+DAJJVDEjMCEGA1UEAwwabmdwaGNpYWZ3MTEwLnNwaW4tbmcubG9jYWwwHhcNMjQw
+NzA4MDkxMzIwWhcNMjUwNzA4MDkxMzIwWjCBhDELMAkGA1UEBhMCTkcxDzANBgNV
+BAgMBlJpdmVyczEWMBQGA1UEBwwNUG9ydCBIYXJjb3VydDENMAsGA1UECgwEU1BE
+QzELMAkGA1UECwwCSVQxCzAJBgNVBAsMAklUMSMwIQYDVQQDDBpuZ3BoY2lhZncx
+MTAuc3Bpbi1uZy5sb2NhbDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+AMlYPyYFNNdNI8BUF6WNE+eMGp5lsY327SilLC8ajFUOlc/2sv0jutDyl3LbxBJd
+4tdirudEqKgOcmul1r8hVU/svYRQ02oQXRuIJJ7cYurLqIrdRoJ5OIqP/2D9wmaH
+OVWdKedn0hYYibj7y68QGyDrmcVA0YZAioF0we1saYrHMOH1PHY80jBW963Hy3kA
+GLTo/8caGPKi14ur4n2IBV13rqUk0/NooC4uK3+AnTvDp7sqtpEa62x+taYOdog9
+LIDfiFsVe1PBDcyimWwuUdQ5KIayHPJF/7th5SWVUThwchAjpzuoiBmfnS65/ETL
+X54iXTElBYzANzfKJxofZC0CAwEAAaNsMGowDAYDVR0TBAUwAwEB/zALBgNVHQ8E
+BAMCAgQwTQYDVR0RBEYwRIIabmdwaGNpYWZ3MTEwLnNwaW4tbmcubG9jYWyCGm5n
+cGhjaWFmdzExMS5zcGluLW5nLmxvY2FshwQKIpqXhwQKIpqYMA0GCSqGSIb3DQEB
+CwUAA4IBAQBjxqVGiHGfaRZYrCkfRKCUeH+ecOX1lvihvwfxT4gya5IfijT6OcFV
+/PSlsRLtVjJJtlh6qOF9hYJ2Z21+4XNzjvvIr/c7UYYAT1iHH2wrMV/Q1xNpOf/D
+IHPe7d1RtQX9KwuO0zwxpfW8dGGTPAZUu7/p/tKUUpN8CpkQ1unapxHBeBJUkGx2
+Fbkrc9Xwn0jNlMyYh5zfA1hzV+b2jcJIKp8JBIaZSw/JEVadFth+4UYCmxXwS90i
+qq6Tf9XE0r8CHsLlInLEAX60u9LTzU+JgSxBnx+/Z+p348BqIpKr+VbreEnR3k1Z
+hRdAaoQI6SW4KMSTRLNFXWxo4gQSnZvT
+-----END CERTIFICATE-----
+"
+set shared certificate "SPIN-NG PA Root CA" algorithm RSA
+set shared certificate "SPIN-NG PA Root CA" private-key -AQ==1lH2H10uy2QZNOJyfRO1QQW84mA=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
+set shared certificate "spnigeria.com Wildcard" subject-hash fc7ffbad
+set shared certificate "spnigeria.com Wildcard" issuer-hash 9c8cbefb
+set shared certificate "spnigeria.com Wildcard" not-valid-before "Jun  7 13:55:05 2024 GMT"
+set shared certificate "spnigeria.com Wildcard" issuer 'C = US, ST = Arizona, L = Scottsdale, O = "GoDaddy.com, Inc.", OU = http://certs.godaddy.com/repository/, CN = Go Daddy Secure Certificate Authority - G2'
+set shared certificate "spnigeria.com Wildcard" not-valid-after "Jun  7 13:55:05 2025 GMT"
+set shared certificate "spnigeria.com Wildcard" common-name *.spnigeria.com
+set shared certificate "spnigeria.com Wildcard" expiry-epoch 1749304505
+set shared certificate "spnigeria.com Wildcard" ca no
+set shared certificate "spnigeria.com Wildcard" subject "CN = *.spnigeria.com"
+set shared certificate "spnigeria.com Wildcard" public-key "-----BEGIN CERTIFICATE-----
+MIIGlTCCBX2gAwIBAgIJAPwDs/Yz4r/YMA0GCSqGSIb3DQEBCwUAMIG0MQswCQYD
+VQQGEwJVUzEQMA4GA1UECBMHQXJpem9uYTETMBEGA1UEBxMKU2NvdHRzZGFsZTEa
+MBgGA1UEChMRR29EYWRkeS5jb20sIEluYy4xLTArBgNVBAsTJGh0dHA6Ly9jZXJ0
+cy5nb2RhZGR5LmNvbS9yZXBvc2l0b3J5LzEzMDEGA1UEAxMqR28gRGFkZHkgU2Vj
+dXJlIENlcnRpZmljYXRlIEF1dGhvcml0eSAtIEcyMB4XDTI0MDYwNzEzNTUwNVoX
+DTI1MDYwNzEzNTUwNVowGjEYMBYGA1UEAwwPKi5zcG5pZ2VyaWEuY29tMIIBIjAN
+BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqwKtvMNNLQmG2vvq1Is8doXf1w/7
+UpjUpTKB2nDZMmnJDkYUmepaNOGjcdY+xkIsvt8hOm9VDYhOB/4Tr2Ct+SNU6/P6
+XyXppZlYoCUqMn0Vhj7+CSO8CqOCOUHU5INirg4nMlsv+p9vAYIaE7ttVOmsWp7u
+6SbJtc7AUEHa8n7XEtXTz885dO3Kw71PC9zb54NettzM0xNQACDDXfyuiDP72SKy
+DGM2eCtCzk0mtDb4BzRGhYS9Cgao0daZLMNjLtmabwrVLLdnWqrzbpczliN65INl
+Pak5tZSsV2tIczWOmiymtApxEGcbV6gX7XUqkmeffx5a+RNTM7JkyMHFeQIDAQAB
+o4IDQTCCAz0wDAYDVR0TAQH/BAIwADAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYB
+BQUHAwIwDgYDVR0PAQH/BAQDAgWgMDkGA1UdHwQyMDAwLqAsoCqGKGh0dHA6Ly9j
+cmwuZ29kYWRkeS5jb20vZ2RpZzJzMS0yMjU1My5jcmwwXQYDVR0gBFYwVDBIBgtg
+hkgBhv1tAQcXATA5MDcGCCsGAQUFBwIBFitodHRwOi8vY2VydGlmaWNhdGVzLmdv
+ZGFkZHkuY29tL3JlcG9zaXRvcnkvMAgGBmeBDAECATB2BggrBgEFBQcBAQRqMGgw
+JAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmdvZGFkZHkuY29tLzBABggrBgEFBQcw
+AoY0aHR0cDovL2NlcnRpZmljYXRlcy5nb2RhZGR5LmNvbS9yZXBvc2l0b3J5L2dk
+aWcyLmNydDAfBgNVHSMEGDAWgBRAwr0njsw0gzCiM9f7bLPwtCyAzjApBgNVHREE
+IjAggg8qLnNwbmlnZXJpYS5jb22CDXNwbmlnZXJpYS5jb20wHQYDVR0OBBYEFFeH
+OekXHVXBLzjBaqSxefKhQz3nMIIBfwYKKwYBBAHWeQIEAgSCAW8EggFrAWkAdgBO
+daMnXJoQwzhbbNTfP1LrHfDgjhuNacCx+mSxYpo53wAAAY/y+0tUAAAEAwBHMEUC
+IECO+UGEGkIBj4H/M7J3aYv0EIYeKTu+14VE2HyqQqPyAiEAgnrrvq3GlTJKIQyD
+XWq7A3HHDgtXCvztfSsrGVhFHtEAdwB9WR4S4XgqexxhZ3xe/fjQh1wUoE6VnrkD
+L9kOjC55uAAAAY/y+0v0AAAEAwBIMEYCIQCw89lejImt2ZgAW2PCpty4643cJUKu
+vdofQkwyM1MjEgIhAOHOfg05PZlnwKjR2WLKxlj8lu4ZJr9pTvWAO+B9SQQ4AHYA
+zPsPaoVxCWX+lZtTzumyfCLphVwNl422qX5UwP5MDbAAAAGP8vtMeAAABAMARzBF
+AiEAx0+Dlc+OXeln+P1AMcS3hXeafaapsC8wH5GmWFQFMpcCIAvZB6xK8tnigCay
+IA7gTEgbZdIln5BLBfcEYECMFgcOMA0GCSqGSIb3DQEBCwUAA4IBAQB5/LC5QG7X
+AhwcWT5k0MLAm9jX8OjPeOc7odv3f0g6KU0rF2T/uEOaL1ZlQ99kqCCqmhNsLL6W
+d2e5zg+OYAWCQYBRHSqWvLLtqT4znuf/daRwRYlqEcROZRtv4TrUp79ExX9lzaUI
+heDXlXidcK4MOrmwnwUbyepOPxDjOFyuY8y2EFezbvXsNGZYtkwcekmqvu9aD7qk
+g7Qhh6ZnWVEpGXOxo5RR7VSbTrsnnyWscAT4YUedlslluJFcG1/08mDq1E0dgLN6
+F5D3aHvM1He01D3PmZRCV0J+WWm1ghbeVCAcvzM3P6tPxUKVLObTNZzfd2X9sPIq
+bvGnisASDSyw
+-----END CERTIFICATE-----
+"
+set shared certificate "spnigeria.com Wildcard" algorithm RSA
+set shared certificate "spnigeria.com Wildcard" private-key -AQ==Al2S3x/rO2I1COvM0c6gySa91iE=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
+set shared certificate ngphciafw110 subject-hash b2d12821
+set shared certificate ngphciafw110 issuer-hash 0c8a5660
+set shared certificate ngphciafw110 not-valid-before "Aug 19 13:56:29 2024 GMT"
+set shared certificate ngphciafw110 issuer "DC = local, DC = spin-ng, CN = spin-ng-SWAF235CA01-CA"
+set shared certificate ngphciafw110 not-valid-after "Aug 19 13:56:29 2025 GMT"
+set shared certificate ngphciafw110 common-name "ngphciafw110.spin-ng.local, emailAddress = infra_support@swaf235.onmicrosoft.com"
+set shared certificate ngphciafw110 expiry-epoch 1755611789
+set shared certificate ngphciafw110 ca no
+set shared certificate ngphciafw110 subject "C = NG, ST = Rivers, L = Port Harcourt, O = IT, OU = Infra, CN = ngphciafw110.spin-ng.local, emailAddress = infra_support@swaf235.onmicrosoft.com"
+set shared certificate ngphciafw110 public-key "-----BEGIN CERTIFICATE-----
+MIIFOTCCBCGgAwIBAgIFAPJlG4kwDQYJKoZIhvcNAQELBQAwUTEVMBMGCgmSJomT
+8ixkARkWBWxvY2FsMRcwFQYKCZImiZPyLGQBGRYHc3Bpbi1uZzEfMB0GA1UEAxMW
+c3Bpbi1uZy1TV0FGMjM1Q0EwMS1DQTAeFw0yNDA4MTkxMzU2MjlaFw0yNTA4MTkx
+MzU2MjlaMIGuMQswCQYDVQQGEwJORzEPMA0GA1UECAwGUml2ZXJzMRYwFAYDVQQH
+DA1Qb3J0IEhhcmNvdXJ0MQswCQYDVQQKDAJJVDEOMAwGA1UECwwFSW5mcmExIzAh
+BgNVBAMMGm5ncGhjaWFmdzExMC5zcGluLW5nLmxvY2FsMTQwMgYJKoZIhvcNAQkB
+FiVpbmZyYV9zdXBwb3J0QHN3YWYyMzUub25taWNyb3NvZnQuY29tMIICIjANBgkq
+hkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzt6amuvcNI387EQ9F2s3rnBCUr7LJpRp
+P7/aceMGrxRPG4ZgBZDoXdvWQDTecA5kQ6H37uYs5Y9PALKWXmIG2ugfYQYdieUE
+b0/IA/ow1/d7O9xyFmLxLSu0LEs3Pq17DI3/EqPIWWTWLhmyCgGGaNXzaaR9GufU
+djIgAXxqzamxQ6VeFyTLulL5AkJcqe/he39ArzSRuf8QA+4uqB+pnBAHf1YPUaHf
+o5SPLVzew3JsCgcUCcxg4SkRx1e9NN+cLe2Mli8f4Jt5gYy80jWshcZ+vJqZ/zv3
++K+9z/N6p/dZUjs9GNGnSD2BIqF0g8RQpApK3C2nFbe9O8fZ1j+5oK6EM0t4GmeV
+Q8BdB4OsLl6SR4pDhV8/pyMBYqYwFs05yC6mEHO61O1eISHPC9FIa5gLa7CKEJ2J
+Bz871dv4p3TgiZMWoMVJoXqKWYEykH1H021jLKaoSM5aHFnTL/iIUdy8/Y0zZDG0
+q+0TozqWLruvQDdys2+POQ3JsSVfvYGp4wSdRYPNiVBCT+z15vnnyCBF3JuFPhR+
+yeKPm71ymHYh8Yz1BhEHB2kZfcF0EtYJr90UvfKRyd4ITuDxLmTAfiX54f14M5JL
+Q6bZC5Cedlbs74wjalAnCsJsMolSHlXP/+4htmcj9plwnqVIX/o30lnLDeWGPGiR
+PBBBjsFVba8CAwEAAaOBuTCBtjAJBgNVHRMEAjAAMAsGA1UdDwQEAwIDuDAnBgNV
+HSUEIDAeBggrBgEFBQcDAQYIKwYBBQUHAwIGCCsGAQUFBwMFMB8GA1UdIwQYMBaA
+FNCl0xQZRt2LlaGsshSAMTQXgIL2MB0GA1UdDgQWBBSKpTxJ6HFSArMRg6vJ5cio
+qjPjszAzBgNVHREELDAqggxuZ3BoY2lhZncxMTCCGm5ncGhjaWFmdzExMC5zcGlu
+LW5nLmxvY2FsMA0GCSqGSIb3DQEBCwUAA4IBAQAIwKP7fqxh+LiL/0TOasFqLgaE
+FRVkxG1mLAzyBugATlj/rXUdZkhyc3XSMnTrj7O6LLGj6GqQ32MxomZNHAlByh0i
+rprmRG8w5Nc+kBl2ulzx7/+63vjSZqyK0quWGbx2DToHXo6QuNXTnU1oXaIKpA0D
+kpN4muUBOnOjRGL5E7jU2TqxSEk54jiK1heOpMD3xNONAp3jiK6KPFg9ePiOF7AH
+stnjCwVhJkox/lrGrfNJa5ABXljXIg9WWV4yysYCtcBGzeRh7U0c8hubsD9G1zeS
+VnB+18JdnLGS709mr6miOQfU4/2byK7HBUNIJDWtAAcfS0YvX+rct59mdwzc
+-----END CERTIFICATE-----
+"
+set shared certificate ngphciafw110 algorithm RSA
+set shared certificate ngphciafw110 private-key -AQ==+o/eodUqFZmnyOZu1DlDObzdZs4=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
+
+set shared ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA protocol-settings min-version tls1-2
+set shared ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA protocol-settings max-version tls1-3
+set shared ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA protocol-settings keyxchg-algo-rsa yes
+set shared ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA protocol-settings keyxchg-algo-dhe yes
+set shared ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA protocol-settings keyxchg-algo-ecdhe yes
+set shared ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA protocol-settings enc-algo-aes-128-cbc yes
+set shared ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA protocol-settings enc-algo-aes-128-gcm yes
+set shared ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA protocol-settings enc-algo-aes-chacha20-poly1305 yes
+set shared ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA protocol-settings enc-algo-aes-256-cbc yes
+set shared ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA protocol-settings enc-algo-aes-256-gcm yes
+set shared ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA protocol-settings auth-algo-sha1 yes
+set shared ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA protocol-settings auth-algo-sha256 yes
+set shared ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA protocol-settings auth-algo-sha384 yes
+set shared ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA certificate "spnigeria.com Wildcard"
+set shared ssl-tls-service-profile ngphciafw110 protocol-settings min-version tls1-2
+set shared ssl-tls-service-profile ngphciafw110 protocol-settings max-version tls1-3
+set shared ssl-tls-service-profile ngphciafw110 protocol-settings keyxchg-algo-rsa yes
+set shared ssl-tls-service-profile ngphciafw110 protocol-settings keyxchg-algo-dhe yes
+set shared ssl-tls-service-profile ngphciafw110 protocol-settings keyxchg-algo-ecdhe yes
+set shared ssl-tls-service-profile ngphciafw110 protocol-settings enc-algo-aes-128-cbc yes
+set shared ssl-tls-service-profile ngphciafw110 protocol-settings enc-algo-aes-128-gcm yes
+set shared ssl-tls-service-profile ngphciafw110 protocol-settings enc-algo-aes-chacha20-poly1305 yes
+set shared ssl-tls-service-profile ngphciafw110 protocol-settings enc-algo-aes-256-cbc yes
+set shared ssl-tls-service-profile ngphciafw110 protocol-settings enc-algo-aes-256-gcm yes
+set shared ssl-tls-service-profile ngphciafw110 protocol-settings auth-algo-sha1 yes
+set shared ssl-tls-service-profile ngphciafw110 protocol-settings auth-algo-sha256 yes
+set shared ssl-tls-service-profile ngphciafw110 protocol-settings auth-algo-sha384 yes
+set shared ssl-tls-service-profile ngphciafw110 certificate ngphciafw110
+set shared certificate-profile GP_Trusted_Root_CA username-field subject common-name
+set shared certificate-profile GP_Trusted_Root_CA CA "SPIN-NG Root CA"
+set shared ssl-decrypt trusted-root-CA "SPIN-NG Root CA"
+
+
+set zone Public network layer3 [ ethernet1/17 ethernet1/19 ]
+set zone Public enable-user-identification yes
+set zone SPDC network layer3 ethernet1/16
+set zone "Swapkit Management" network layer3
+set zone Private network layer3 [ ethernet1/15.10 ethernet1/15.110 ethernet1/18 loopback.101 loopback.201 tunnel.1 tunnel.104 tunnel.105 ]
+set zone Private enable-user-identification yes
+set zone Management network layer3 [ tunnel.100 tunnel.101 tunnel.102 tunnel.103 tunnel.4 tunnel.106 ]
+set zone Proxy network layer3 loopback.1
+set zone SAP_RISE network layer3 tunnel.2
+set zone Voice network layer3 ethernet1/20
+set zone Shell_SAP network layer3 tunnel.3
+set zone GPC network layer3 tunnel.99
+set zone GPC enable-user-identification yes
+set service-group
+set service tcp-8080 protocol tcp port 8080
+set service tcp-8080 protocol tcp override no
+set service TCP5450 protocol tcp port 5450
+set service TCP5450 protocol tcp override no
+set service TCP5450 description PI
+set service TCP8510 protocol tcp port 8510
+set service TCP8510 protocol tcp override no
+set service TCP8510 description "SAP port"
+set service TCP-2222 protocol tcp port 2222
+set service TCP-2222 protocol tcp override no
+set service TCP-2223 protocol tcp port 2223
+set service TCP-2223 protocol tcp override no
+set service TCP-2223 description "Trax destination port"
+set service SAP-RISE_44380 protocol tcp port 44380
+set service SAP-RISE_44380 protocol tcp override no
+set service SIP_5061_TCP protocol tcp port 5061
+set service SIP_5061_TCP protocol tcp override no
+set service ThinFinity protocol tcp port 8443
+set service ThinFinity protocol tcp override no
+set service AutoMate protocol tcp port 5051
+set service AutoMate protocol tcp override no
+set schedule
+
+set rulebase security rules "Allow IPSEC" to Public
+set rulebase security rules "Allow IPSEC" from Public
+set rulebase security rules "Allow IPSEC" source any
+set rulebase security rules "Allow IPSEC" destination any
+set rulebase security rules "Allow IPSEC" source-user any
+set rulebase security rules "Allow IPSEC" category any
+set rulebase security rules "Allow IPSEC" application [ ike ipsec ]
+set rulebase security rules "Allow IPSEC" service application-default
+set rulebase security rules "Allow IPSEC" source-hip any
+set rulebase security rules "Allow IPSEC" destination-hip any
+set rulebase security rules "Allow IPSEC" action allow
+set rulebase security rules "Allow IPSEC" log-start no
+set rulebase security rules "Allow IPSEC" log-end yes
+set rulebase security rules "Alllow PA Management to Internet" to Public
+set rulebase security rules "Alllow PA Management to Internet" from SPDC
+set rulebase security rules "Alllow PA Management to Internet" source [ 10.34.154.151 10.34.154.152 ]
+set rulebase security rules "Alllow PA Management to Internet" destination any
+set rulebase security rules "Alllow PA Management to Internet" source-user any
+set rulebase security rules "Alllow PA Management to Internet" category any
+set rulebase security rules "Alllow PA Management to Internet" application any
+set rulebase security rules "Alllow PA Management to Internet" service application-default
+set rulebase security rules "Alllow PA Management to Internet" source-hip any
+set rulebase security rules "Alllow PA Management to Internet" destination-hip any
+set rulebase security rules "Alllow PA Management to Internet" action allow
+set rulebase security rules "Allow Access to GPC Portal" to Public
+set rulebase security rules "Allow Access to GPC Portal" from Public
+set rulebase security rules "Allow Access to GPC Portal" source any
+set rulebase security rules "Allow Access to GPC Portal" destination 102.90.33.172
+set rulebase security rules "Allow Access to GPC Portal" source-user any
+set rulebase security rules "Allow Access to GPC Portal" category any
+set rulebase security rules "Allow Access to GPC Portal" application [ panos-global-protect ping ssl traceroute web-browsing ]
+set rulebase security rules "Allow Access to GPC Portal" service application-default
+set rulebase security rules "Allow Access to GPC Portal" source-hip any
+set rulebase security rules "Allow Access to GPC Portal" destination-hip any
+set rulebase security rules "Allow Access to GPC Portal" action allow
+set rulebase security rules "Allow Access to GPC Portal" log-start no
+set rulebase security rules "Allow Access to GPC Portal" log-end yes
+set rulebase security rules "Allow Access to GPC Portal" rule-type universal
+set rulebase security rules "Allow access to sFTP sever" to Private
+set rulebase security rules "Allow access to sFTP sever" from Public
+set rulebase security rules "Allow access to sFTP sever" source sFTP_Public_Access
+set rulebase security rules "Allow access to sFTP sever" destination [ 102.90.33.172 154.113.211.196 ]
+set rulebase security rules "Allow access to sFTP sever" source-user any
+set rulebase security rules "Allow access to sFTP sever" category any
+set rulebase security rules "Allow access to sFTP sever" saas-user-list any
+set rulebase security rules "Allow access to sFTP sever" saas-tenant-list any
+set rulebase security rules "Allow access to sFTP sever" application ssh
+set rulebase security rules "Allow access to sFTP sever" service application-default
+set rulebase security rules "Allow access to sFTP sever" source-hip any
+set rulebase security rules "Allow access to sFTP sever" destination-hip any
+set rulebase security rules "Allow access to sFTP sever" action allow
+set rulebase security rules "Allow access to sFTP sever" log-start no
+set rulebase security rules "Allow access to sFTP sever" log-end yes
+set rulebase security rules "Allow all from SPDC" to Private
+set rulebase security rules "Allow all from SPDC" from SPDC
+set rulebase security rules "Allow all from SPDC" source any
+set rulebase security rules "Allow all from SPDC" destination any
+set rulebase security rules "Allow all from SPDC" source-user any
+set rulebase security rules "Allow all from SPDC" category any
+set rulebase security rules "Allow all from SPDC" application any
+set rulebase security rules "Allow all from SPDC" service any
+set rulebase security rules "Allow all from SPDC" source-hip any
+set rulebase security rules "Allow all from SPDC" destination-hip any
+set rulebase security rules "Allow all from SPDC" action allow
+set rulebase security rules "Allow all from SPDC" rule-type universal
+set rulebase security rules "Allow all from SPDC" saas-user-list any
+set rulebase security rules "Allow all from SPDC" saas-tenant-list any
+set rulebase security rules "Allow all from SPDC" log-start no
+set rulebase security rules "Allow all from SPDC" log-end yes
+set rulebase security rules "Allow all to SPDC" to SPDC
+set rulebase security rules "Allow all to SPDC" from [ GPC Private ]
+set rulebase security rules "Allow all to SPDC" source any
+set rulebase security rules "Allow all to SPDC" destination any
+set rulebase security rules "Allow all to SPDC" source-user any
+set rulebase security rules "Allow all to SPDC" category any
+set rulebase security rules "Allow all to SPDC" saas-user-list any
+set rulebase security rules "Allow all to SPDC" saas-tenant-list any
+set rulebase security rules "Allow all to SPDC" application any
+set rulebase security rules "Allow all to SPDC" service any
+set rulebase security rules "Allow all to SPDC" source-hip any
+set rulebase security rules "Allow all to SPDC" destination-hip any
+set rulebase security rules "Allow all to SPDC" action allow
+set rulebase security rules "Allow all to SPDC" log-start no
+set rulebase security rules "Allow all to SPDC" log-end yes
+set rulebase security rules "Allow all from Management" to any
+set rulebase security rules "Allow all from Management" from Management
+set rulebase security rules "Allow all from Management" source any
+set rulebase security rules "Allow all from Management" destination any
+set rulebase security rules "Allow all from Management" source-user any
+set rulebase security rules "Allow all from Management" category any
+set rulebase security rules "Allow all from Management" application any
+set rulebase security rules "Allow all from Management" service application-default
+set rulebase security rules "Allow all from Management" source-hip any
+set rulebase security rules "Allow all from Management" destination-hip any
+set rulebase security rules "Allow all from Management" action allow
+set rulebase security rules "Allow Private - Private" to Private
+set rulebase security rules "Allow Private - Private" from Private
+set rulebase security rules "Allow Private - Private" source any
+set rulebase security rules "Allow Private - Private" destination any
+set rulebase security rules "Allow Private - Private" source-user any
+set rulebase security rules "Allow Private - Private" category any
+set rulebase security rules "Allow Private - Private" application any
+set rulebase security rules "Allow Private - Private" service any
+set rulebase security rules "Allow Private - Private" source-hip any
+set rulebase security rules "Allow Private - Private" destination-hip any
+set rulebase security rules "Allow Private - Private" action allow
+set rulebase security rules "Allow Private - Private" log-start no
+set rulebase security rules "Allow Private - Private" log-end yes
+set rulebase security rules "Allow local servers to internet" to Public
+set rulebase security rules "Allow local servers to internet" from Private
+set rulebase security rules "Allow local servers to internet" source any
+set rulebase security rules "Allow local servers to internet" destination any
+set rulebase security rules "Allow local servers to internet" source-user any
+set rulebase security rules "Allow local servers to internet" category any
+set rulebase security rules "Allow local servers to internet" application any
+set rulebase security rules "Allow local servers to internet" service application-default
+set rulebase security rules "Allow local servers to internet" source-hip any
+set rulebase security rules "Allow local servers to internet" destination-hip any
+set rulebase security rules "Allow local servers to internet" action allow
+set rulebase security rules "Allow GPC Clients to Any" to any
+set rulebase security rules "Allow GPC Clients to Any" from GPC
+set rulebase security rules "Allow GPC Clients to Any" source any
+set rulebase security rules "Allow GPC Clients to Any" destination any
+set rulebase security rules "Allow GPC Clients to Any" source-user any
+set rulebase security rules "Allow GPC Clients to Any" category any
+set rulebase security rules "Allow GPC Clients to Any" application any
+set rulebase security rules "Allow GPC Clients to Any" service any
+set rulebase security rules "Allow GPC Clients to Any" source-hip any
+set rulebase security rules "Allow GPC Clients to Any" destination-hip any
+set rulebase security rules "Allow GPC Clients to Any" action allow
+set rulebase security rules "Allow GPC Clients to Any" log-start no
+set rulebase security rules "Allow GPC Clients to Any" log-end yes
+set rulebase security rules "Allow GPC Clients to Any" saas-user-list any
+set rulebase security rules "Allow GPC Clients to Any" saas-tenant-list any
+set rulebase security rules "AutoMate to PHC-S-08069" to Private
+set rulebase security rules "AutoMate to PHC-S-08069" from Public
+set rulebase security rules "AutoMate to PHC-S-08069" source [ 3.71.192.76 18.184.95.161 35.156.223.222 ]
+set rulebase security rules "AutoMate to PHC-S-08069" destination 10.34.155.79
+set rulebase security rules "AutoMate to PHC-S-08069" source-user any
+set rulebase security rules "AutoMate to PHC-S-08069" category any
+set rulebase security rules "AutoMate to PHC-S-08069" application AutoMate
+set rulebase security rules "AutoMate to PHC-S-08069" service AutoMate
+set rulebase security rules "AutoMate to PHC-S-08069" source-hip any
+set rulebase security rules "AutoMate to PHC-S-08069" destination-hip any
+set rulebase security rules "AutoMate to PHC-S-08069" action allow
+set rulebase security rules "AutoMate to PHC-S-08069" log-start no
+set rulebase security rules "AutoMate to PHC-S-08069" log-end yes
+set rulebase security rules "AutoMate to PHC-S-08069-1" to Public
+set rulebase security rules "AutoMate to PHC-S-08069-1" from Public
+set rulebase security rules "AutoMate to PHC-S-08069-1" source [ 3.71.192.76 18.184.95.161 35.156.223.222 ]
+set rulebase security rules "AutoMate to PHC-S-08069-1" destination [ PHC-S-08069_PRI_INET PHC-S-08069_SECI_INET ]
+set rulebase security rules "AutoMate to PHC-S-08069-1" source-user any
+set rulebase security rules "AutoMate to PHC-S-08069-1" category any
+set rulebase security rules "AutoMate to PHC-S-08069-1" application AutoMate
+set rulebase security rules "AutoMate to PHC-S-08069-1" service AutoMate
+set rulebase security rules "AutoMate to PHC-S-08069-1" source-hip any
+set rulebase security rules "AutoMate to PHC-S-08069-1" destination-hip any
+set rulebase security rules "AutoMate to PHC-S-08069-1" action allow
+set rulebase security rules "AutoMate to PHC-S-08069-1" log-start no
+set rulebase security rules "AutoMate to PHC-S-08069-1" log-end yes
+set rulebase security rules "Allow Trax sources to SFTP to TRAX" to Public
+set rulebase security rules "Allow Trax sources to SFTP to TRAX" from Private
+set rulebase security rules "Allow Trax sources to SFTP to TRAX" source TRAX_SOURCES
+set rulebase security rules "Allow Trax sources to SFTP to TRAX" destination [ spdcn-sftp-ta.fiscloudservices.com spdcn-sftp.fiscloudservices.com ]
+set rulebase security rules "Allow Trax sources to SFTP to TRAX" source-user any
+set rulebase security rules "Allow Trax sources to SFTP to TRAX" category any
+set rulebase security rules "Allow Trax sources to SFTP to TRAX" application any
+set rulebase security rules "Allow Trax sources to SFTP to TRAX" service [ TCP-2222 TCP-2223 ]
+set rulebase security rules "Allow Trax sources to SFTP to TRAX" source-hip any
+set rulebase security rules "Allow Trax sources to SFTP to TRAX" destination-hip any
+set rulebase security rules "Allow Trax sources to SFTP to TRAX" action allow
+set rulebase security rules "Allow SAP traffic to RISE" to SAP_RISE
+set rulebase security rules "Allow SAP traffic to RISE" from Private
+set rulebase security rules "Allow SAP traffic to RISE" source [ A10.spin-ng.local d10.spin-ng.local p10.spin-ng.local "SMTP Server" ]
+set rulebase security rules "Allow SAP traffic to RISE" destination any
+set rulebase security rules "Allow SAP traffic to RISE" source-user any
+set rulebase security rules "Allow SAP traffic to RISE" category any
+set rulebase security rules "Allow SAP traffic to RISE" application [ ping sap smtp ssh ssl ]
+set rulebase security rules "Allow SAP traffic to RISE" service any
+set rulebase security rules "Allow SAP traffic to RISE" source-hip any
+set rulebase security rules "Allow SAP traffic to RISE" destination-hip any
+set rulebase security rules "Allow SAP traffic to RISE" action allow
+set rulebase security rules "Allow Shell traffic to RISE-1" to SAP_RISE
+set rulebase security rules "Allow Shell traffic to RISE-1" from [ Private SPDC ]
+set rulebase security rules "Allow Shell traffic to RISE-1" source any
+set rulebase security rules "Allow Shell traffic to RISE-1" destination any
+set rulebase security rules "Allow Shell traffic to RISE-1" source-user any
+set rulebase security rules "Allow Shell traffic to RISE-1" category any
+set rulebase security rules "Allow Shell traffic to RISE-1" application [ ping sap ssh ssl ]
+set rulebase security rules "Allow Shell traffic to RISE-1" service any
+set rulebase security rules "Allow Shell traffic to RISE-1" source-hip any
+set rulebase security rules "Allow Shell traffic to RISE-1" destination-hip any
+set rulebase security rules "Allow Shell traffic to RISE-1" action allow
+set rulebase security rules "Allow Shell traffic to RISE-1" saas-user-list any
+set rulebase security rules "Allow Shell traffic to RISE-1" saas-tenant-list any
+set rulebase security rules "Allow Shell traffic to RISE-1" log-start no
+set rulebase security rules "Allow Shell traffic to RISE-1" log-end yes
+set rulebase security rules "SPDC to Voice for management" to Voice
+set rulebase security rules "SPDC to Voice for management" from SPDC
+set rulebase security rules "SPDC to Voice for management" source any
+set rulebase security rules "SPDC to Voice for management" destination [ HOST_10.34.152.98 HOST_10.34.152.99 ]
+set rulebase security rules "SPDC to Voice for management" source-user any
+set rulebase security rules "SPDC to Voice for management" category any
+set rulebase security rules "SPDC to Voice for management" application [ ping ssh telnet ]
+set rulebase security rules "SPDC to Voice for management" service application-default
+set rulebase security rules "SPDC to Voice for management" source-hip any
+set rulebase security rules "SPDC to Voice for management" destination-hip any
+set rulebase security rules "SPDC to Voice for management" action allow
+set rulebase security rules "Allow from SAP_RISE to SAP servers" to Private
+set rulebase security rules "Allow from SAP_RISE to SAP servers" from SAP_RISE
+set rulebase security rules "Allow from SAP_RISE to SAP servers" source any
+set rulebase security rules "Allow from SAP_RISE to SAP servers" destination [ A10.spin-ng.local d10.spin-ng.local p10.spin-ng.local ]
+set rulebase security rules "Allow from SAP_RISE to SAP servers" source-user any
+set rulebase security rules "Allow from SAP_RISE to SAP servers" category any
+set rulebase security rules "Allow from SAP_RISE to SAP servers" application sap
+set rulebase security rules "Allow from SAP_RISE to SAP servers" service application-default
+set rulebase security rules "Allow from SAP_RISE to SAP servers" source-hip any
+set rulebase security rules "Allow from SAP_RISE to SAP servers" destination-hip any
+set rulebase security rules "Allow from SAP_RISE to SAP servers" action allow
+set rulebase security rules "Allow from SAP_RISE to SAP servers" rule-type universal
+set rulebase security rules "Allow from SAP_RISE to SAP servers" log-start no
+set rulebase security rules "Allow from SAP_RISE to SAP servers" log-end yes
+set rulebase security rules "Allow SAP_RISE to SMTP server" to Private
+set rulebase security rules "Allow SAP_RISE to SMTP server" from SAP_RISE
+set rulebase security rules "Allow SAP_RISE to SMTP server" source any
+set rulebase security rules "Allow SAP_RISE to SMTP server" destination "SMTP Server"
+set rulebase security rules "Allow SAP_RISE to SMTP server" source-user any
+set rulebase security rules "Allow SAP_RISE to SMTP server" category any
+set rulebase security rules "Allow SAP_RISE to SMTP server" application [ ping smtp ssh traceroute ]
+set rulebase security rules "Allow SAP_RISE to SMTP server" service any
+set rulebase security rules "Allow SAP_RISE to SMTP server" source-hip any
+set rulebase security rules "Allow SAP_RISE to SMTP server" destination-hip any
+set rulebase security rules "Allow SAP_RISE to SMTP server" action allow
+set rulebase security rules "Allow SAP_RISE DNS servers to Swapkit DNS servers" to [ Private SPDC ]
+set rulebase security rules "Allow SAP_RISE DNS servers to Swapkit DNS servers" from SAP_RISE
+set rulebase security rules "Allow SAP_RISE DNS servers to Swapkit DNS servers" source "SAP DNS Servers"
+set rulebase security rules "Allow SAP_RISE DNS servers to Swapkit DNS servers" destination [ swaf235dc01.spin-ng.local PHCIA-S-10001.spin-ng.local ]
+set rulebase security rules "Allow SAP_RISE DNS servers to Swapkit DNS servers" source-user any
+set rulebase security rules "Allow SAP_RISE DNS servers to Swapkit DNS servers" category any
+set rulebase security rules "Allow SAP_RISE DNS servers to Swapkit DNS servers" application dns
+set rulebase security rules "Allow SAP_RISE DNS servers to Swapkit DNS servers" service application-default
+set rulebase security rules "Allow SAP_RISE DNS servers to Swapkit DNS servers" source-hip any
+set rulebase security rules "Allow SAP_RISE DNS servers to Swapkit DNS servers" destination-hip any
+set rulebase security rules "Allow SAP_RISE DNS servers to Swapkit DNS servers" action allow
+set rulebase security rules "Allow SAP_RISE DNS servers to Swapkit DNS servers" log-start no
+set rulebase security rules "Allow SAP_RISE DNS servers to Swapkit DNS servers" log-end yes
+set rulebase security rules "VOICE_SIP TRUNKS_OUT" to Public
+set rulebase security rules "VOICE_SIP TRUNKS_OUT" from Voice
+set rulebase security rules "VOICE_SIP TRUNKS_OUT" source [ NGPHCIAUX001 NGPHCIAUX002 ]
+set rulebase security rules "VOICE_SIP TRUNKS_OUT" destination [ TEAMS_1_13.107.64.0_18 TEAMS_2_52.112.0.0_14 TEAMS_3_52.122.0.0_15 ]
+set rulebase security rules "VOICE_SIP TRUNKS_OUT" source-user any
+set rulebase security rules "VOICE_SIP TRUNKS_OUT" category any
+set rulebase security rules "VOICE_SIP TRUNKS_OUT" application [ avaya-phone-ping ping rtcp rtp sip stun ]
+set rulebase security rules "VOICE_SIP TRUNKS_OUT" service any
+set rulebase security rules "VOICE_SIP TRUNKS_OUT" source-hip any
+set rulebase security rules "VOICE_SIP TRUNKS_OUT" destination-hip any
+set rulebase security rules "VOICE_SIP TRUNKS_OUT" action allow
+set rulebase security rules "VOICE_SIP TRUNKS_IN" to Voice
+set rulebase security rules "VOICE_SIP TRUNKS_IN" from Public
+set rulebase security rules "VOICE_SIP TRUNKS_IN" source [ TEAMS_1_13.107.64.0_18 TEAMS_2_52.112.0.0_14 TEAMS_3_52.122.0.0_15 ]
+set rulebase security rules "VOICE_SIP TRUNKS_IN" destination any
+set rulebase security rules "VOICE_SIP TRUNKS_IN" source-user any
+set rulebase security rules "VOICE_SIP TRUNKS_IN" category any
+set rulebase security rules "VOICE_SIP TRUNKS_IN" application [ avaya-phone-ping ping rtcp rtp sip stun ]
+set rulebase security rules "VOICE_SIP TRUNKS_IN" service any
+set rulebase security rules "VOICE_SIP TRUNKS_IN" source-hip any
+set rulebase security rules "VOICE_SIP TRUNKS_IN" destination-hip any
+set rulebase security rules "VOICE_SIP TRUNKS_IN" action allow
+set rulebase security rules "Allow Ping to Public interface from Public" to Public
+set rulebase security rules "Allow Ping to Public interface from Public" from Public
+set rulebase security rules "Allow Ping to Public interface from Public" source any
+set rulebase security rules "Allow Ping to Public interface from Public" destination any
+set rulebase security rules "Allow Ping to Public interface from Public" source-user any
+set rulebase security rules "Allow Ping to Public interface from Public" category any
+set rulebase security rules "Allow Ping to Public interface from Public" application ping
+set rulebase security rules "Allow Ping to Public interface from Public" service application-default
+set rulebase security rules "Allow Ping to Public interface from Public" source-hip any
+set rulebase security rules "Allow Ping to Public interface from Public" destination-hip any
+set rulebase security rules "Allow Ping to Public interface from Public" action allow
+set rulebase security rules "Deny Public-Public" to Public
+set rulebase security rules "Deny Public-Public" from Public
+set rulebase security rules "Deny Public-Public" source any
+set rulebase security rules "Deny Public-Public" destination any
+set rulebase security rules "Deny Public-Public" source-user any
+set rulebase security rules "Deny Public-Public" category any
+set rulebase security rules "Deny Public-Public" application any
+set rulebase security rules "Deny Public-Public" service any
+set rulebase security rules "Deny Public-Public" source-hip any
+set rulebase security rules "Deny Public-Public" destination-hip any
+set rulebase security rules "Deny Public-Public" action drop
+set rulebase security rules "Deny Public-Public" rule-type universal
+
+set rulebase default-security-rules rules intrazone-default action allow
+set rulebase default-security-rules rules intrazone-default log-start no
+set rulebase default-security-rules rules intrazone-default log-end yes
+set rulebase default-security-rules rules interzone-default action deny
+set rulebase default-security-rules rules interzone-default log-start no
+set rulebase default-security-rules rules interzone-default log-end yes
+
+set rulebase nat rules "Swapkit NAT Primary Internet Connection" source-translation dynamic-ip-and-port interface-address ip 102.90.33.172/29
+set rulebase nat rules "Swapkit NAT Primary Internet Connection" source-translation dynamic-ip-and-port interface-address interface ethernet1/17
+set rulebase nat rules "Swapkit NAT Primary Internet Connection" to Public
+set rulebase nat rules "Swapkit NAT Primary Internet Connection" from [ GPC Private ]
+set rulebase nat rules "Swapkit NAT Primary Internet Connection" source any
+set rulebase nat rules "Swapkit NAT Primary Internet Connection" destination any
+set rulebase nat rules "Swapkit NAT Primary Internet Connection" service any
+set rulebase nat rules "Swapkit NAT Primary Internet Connection" to-interface ethernet1/17
+set rulebase nat rules "Swapkit NAT Secondary Internet Connection" source-translation dynamic-ip-and-port interface-address ip 154.113.211.196/28
+set rulebase nat rules "Swapkit NAT Secondary Internet Connection" source-translation dynamic-ip-and-port interface-address interface ethernet1/19
+set rulebase nat rules "Swapkit NAT Secondary Internet Connection" to Public
+set rulebase nat rules "Swapkit NAT Secondary Internet Connection" from [ GPC Private ]
+set rulebase nat rules "Swapkit NAT Secondary Internet Connection" source any
+set rulebase nat rules "Swapkit NAT Secondary Internet Connection" destination any
+set rulebase nat rules "Swapkit NAT Secondary Internet Connection" service any
+set rulebase nat rules "Swapkit NAT Secondary Internet Connection" to-interface ethernet1/19
+set rulebase nat rules "Allow managament to Internet" source-translation dynamic-ip-and-port interface-address ip 102.90.33.172/29
+set rulebase nat rules "Allow managament to Internet" source-translation dynamic-ip-and-port interface-address interface ethernet1/17
+set rulebase nat rules "Allow managament to Internet" to Public
+set rulebase nat rules "Allow managament to Internet" from SPDC
+set rulebase nat rules "Allow managament to Internet" source [ 10.34.154.151 10.34.154.152 ]
+set rulebase nat rules "Allow managament to Internet" destination any
+set rulebase nat rules "Allow managament to Internet" service any
+set rulebase nat rules "Allow managament to Internet" to-interface ethernet1/17
+set rulebase nat rules "Overload to Cisco Wireless Controller" source-translation persistent-dynamic-ip-and-port interface-address interface ethernet1/15.10
+set rulebase nat rules "Overload to Cisco Wireless Controller" source-translation persistent-dynamic-ip-and-port interface-address ip 10.34.154.129/28
+set rulebase nat rules "Overload to Cisco Wireless Controller" to Private
+set rulebase nat rules "Overload to Cisco Wireless Controller" from SPDC
+set rulebase nat rules "Overload to Cisco Wireless Controller" source any
+set rulebase nat rules "Overload to Cisco Wireless Controller" destination [ 10.34.154.135/32 10.34.154.136/32 ]
+set rulebase nat rules "Overload to Cisco Wireless Controller" service any
+set rulebase nat rules "Overload management to Shell" source-translation dynamic-ip-and-port interface-address ip 10.34.154.150/28
+set rulebase nat rules "Overload management to Shell" source-translation dynamic-ip-and-port interface-address interface ethernet1/16
+set rulebase nat rules "Overload management to Shell" to SPDC
+set rulebase nat rules "Overload management to Shell" from Management
+set rulebase nat rules "Overload management to Shell" source any
+set rulebase nat rules "Overload management to Shell" destination any
+set rulebase nat rules "Overload management to Shell" service any
+set rulebase nat rules "Overload management to Shell" to-interface ethernet1/16
+set rulebase nat rules "NAT for sFTP access from Prim Public" destination-translation translated-address PHC-S-08045.spin-ng.local
+set rulebase nat rules "NAT for sFTP access from Prim Public" to Public
+set rulebase nat rules "NAT for sFTP access from Prim Public" from Public
+set rulebase nat rules "NAT for sFTP access from Prim Public" source iHAWK_Public_IP
+set rulebase nat rules "NAT for sFTP access from Prim Public" destination 102.90.33.172
+set rulebase nat rules "NAT for sFTP access from Prim Public" service any
+set rulebase nat rules "NAT for sFTP access from Prim Public" to-interface ethernet1/17
+set rulebase nat rules "NAT for sFTP access from Sec Public" destination-translation translated-address PHC-S-08045.spin-ng.local
+set rulebase nat rules "NAT for sFTP access from Sec Public" to Public
+set rulebase nat rules "NAT for sFTP access from Sec Public" from Public
+set rulebase nat rules "NAT for sFTP access from Sec Public" source iHAWK_Public_IP
+set rulebase nat rules "NAT for sFTP access from Sec Public" destination 154.113.211.196
+set rulebase nat rules "NAT for sFTP access from Sec Public" service any
+set rulebase nat rules "NAT for sFTP access from Sec Public" to-interface ethernet1/19
+set rulebase nat rules "NAT proxy to internet" source-translation dynamic-ip-and-port interface-address ip 102.90.33.172/29
+set rulebase nat rules "NAT proxy to internet" source-translation dynamic-ip-and-port interface-address interface ethernet1/17
+set rulebase nat rules "NAT proxy to internet" to Public
+set rulebase nat rules "NAT proxy to internet" from Proxy
+set rulebase nat rules "NAT proxy to internet" source any
+set rulebase nat rules "NAT proxy to internet" destination any
+set rulebase nat rules "NAT proxy to internet" service any
+set rulebase nat rules "NAT proxy to internet" disabled yes
+set rulebase nat rules "AutoMate Web Service access to PHC-S-08069" to Public
+set rulebase nat rules "AutoMate Web Service access to PHC-S-08069" from Public
+set rulebase nat rules "AutoMate Web Service access to PHC-S-08069" source [ 3.71.192.76 18.184.95.161 35.156.223.222 ]
+set rulebase nat rules "AutoMate Web Service access to PHC-S-08069" destination PHC-S-08069_PRI_INET
+set rulebase nat rules "AutoMate Web Service access to PHC-S-08069" service AutoMate
+set rulebase nat rules "AutoMate Web Service access to PHC-S-08069" to-interface ethernet1/17
+set rulebase nat rules "AutoMate Web Service access to PHC-S-08069" destination-translation translated-address 10.34.155.79
+set rulebase nat rules "AutoMate Web Service access to PHC-S-08069_2" to Public
+set rulebase nat rules "AutoMate Web Service access to PHC-S-08069_2" from Public
+set rulebase nat rules "AutoMate Web Service access to PHC-S-08069_2" source [ 3.71.192.76 18.184.95.161 35.156.223.222 ]
+set rulebase nat rules "AutoMate Web Service access to PHC-S-08069_2" destination PHC-S-08069_SECI_INET
+set rulebase nat rules "AutoMate Web Service access to PHC-S-08069_2" service AutoMate
+set rulebase nat rules "AutoMate Web Service access to PHC-S-08069_2" to-interface ethernet1/19
+set rulebase nat rules "AutoMate Web Service access to PHC-S-08069_2" destination-translation translated-address 10.34.155.79
+set rulebase nat rules "TRAX SOURCES" source-translation dynamic-ip-and-port interface-address ip 102.90.33.172/29
+set rulebase nat rules "TRAX SOURCES" source-translation dynamic-ip-and-port interface-address interface ethernet1/17
+set rulebase nat rules "TRAX SOURCES" to Public
+set rulebase nat rules "TRAX SOURCES" from Private
+set rulebase nat rules "TRAX SOURCES" source TRAX_SOURCES
+set rulebase nat rules "TRAX SOURCES" destination any
+set rulebase nat rules "TRAX SOURCES" service any
+set rulebase nat rules "TRAX SOURCES" to-interface ethernet1/17
+set rulebase nat rules "TRAX SOURCES" disabled yes
+set rulebase nat rules SOLAR_INSIGHT_MNGT_SOKU destination-translation translated-address HOST_161.158.154.154
+set rulebase nat rules SOLAR_INSIGHT_MNGT_SOKU to SPDC
+set rulebase nat rules SOLAR_INSIGHT_MNGT_SOKU from Private
+set rulebase nat rules SOLAR_INSIGHT_MNGT_SOKU source HOST_91.212.234.251
+set rulebase nat rules SOLAR_INSIGHT_MNGT_SOKU destination HOST_10.34.152.80
+set rulebase nat rules SOLAR_INSIGHT_MNGT_SOKU service any
+set rulebase nat rules SOLAR_INSIGHT_MNGT_SEA_EEAGLE destination-translation translated-address HOST_161.158.6.194
+set rulebase nat rules SOLAR_INSIGHT_MNGT_SEA_EEAGLE to SPDC
+set rulebase nat rules SOLAR_INSIGHT_MNGT_SEA_EEAGLE from Private
+set rulebase nat rules SOLAR_INSIGHT_MNGT_SEA_EEAGLE source HOST_91.212.234.251
+set rulebase nat rules SOLAR_INSIGHT_MNGT_SEA_EEAGLE destination HOST_10.34.152.81
+set rulebase nat rules SOLAR_INSIGHT_MNGT_SEA_EEAGLE service any
+set rulebase nat rules SOLAR_INSIGHT_MNGT_FORCADOS destination-translation translated-address HOST_161.158.156.202
+set rulebase nat rules SOLAR_INSIGHT_MNGT_FORCADOS to SPDC
+set rulebase nat rules SOLAR_INSIGHT_MNGT_FORCADOS from Private
+set rulebase nat rules SOLAR_INSIGHT_MNGT_FORCADOS source HOST_91.212.234.251
+set rulebase nat rules SOLAR_INSIGHT_MNGT_FORCADOS destination HOST_10.34.152.82
+set rulebase nat rules SOLAR_INSIGHT_MNGT_FORCADOS service any
+set rulebase nat rules SOLAR_INSIGHT_MNGT_OTUMARA destination-translation translated-address HOST_161.158.156.194
+set rulebase nat rules SOLAR_INSIGHT_MNGT_OTUMARA to SPDC
+set rulebase nat rules SOLAR_INSIGHT_MNGT_OTUMARA from Private
+set rulebase nat rules SOLAR_INSIGHT_MNGT_OTUMARA source HOST_91.212.234.251
+set rulebase nat rules SOLAR_INSIGHT_MNGT_OTUMARA destination HOST_10.34.152.83
+set rulebase nat rules SOLAR_INSIGHT_MNGT_OTUMARA service any
+set rulebase nat rules SOLAR_INSIGHT_MNGT_TUNU destination-translation translated-address HOST_161.158.156.210
+set rulebase nat rules SOLAR_INSIGHT_MNGT_TUNU to SPDC
+set rulebase nat rules SOLAR_INSIGHT_MNGT_TUNU from Private
+set rulebase nat rules SOLAR_INSIGHT_MNGT_TUNU source HOST_91.212.234.251
+set rulebase nat rules SOLAR_INSIGHT_MNGT_TUNU destination HOST_10.34.152.84
+set rulebase nat rules SOLAR_INSIGHT_MNGT_TUNU service any
+set rulebase nat rules SOLAR_INSIGHT_MNGT_IA destination-translation translated-address HOST_161.158.130.2
+set rulebase nat rules SOLAR_INSIGHT_MNGT_IA to SPDC
+set rulebase nat rules SOLAR_INSIGHT_MNGT_IA from Private
+set rulebase nat rules SOLAR_INSIGHT_MNGT_IA source HOST_91.212.234.251
+set rulebase nat rules SOLAR_INSIGHT_MNGT_IA destination HOST_10.34.152.85
+set rulebase nat rules SOLAR_INSIGHT_MNGT_IA service any
+set rulebase nat rules SOLAR_INSIGHT_GRE_SOKU destination-translation translated-address HOST_161.158.154.154
+set rulebase nat rules SOLAR_INSIGHT_GRE_SOKU to SPDC
+set rulebase nat rules SOLAR_INSIGHT_GRE_SOKU from Private
+set rulebase nat rules SOLAR_INSIGHT_GRE_SOKU source HOST_91.212.234.53
+set rulebase nat rules SOLAR_INSIGHT_GRE_SOKU destination HOST_10.34.152.80
+set rulebase nat rules SOLAR_INSIGHT_GRE_SOKU service any
+set rulebase nat rules SOLAR_INSIGHT_GRE_SEA_EAGLE destination-translation translated-address HOST_161.158.6.194
+set rulebase nat rules SOLAR_INSIGHT_GRE_SEA_EAGLE to SPDC
+set rulebase nat rules SOLAR_INSIGHT_GRE_SEA_EAGLE from Private
+set rulebase nat rules SOLAR_INSIGHT_GRE_SEA_EAGLE source HOST_91.212.234.53
+set rulebase nat rules SOLAR_INSIGHT_GRE_SEA_EAGLE destination HOST_10.34.152.81
+set rulebase nat rules SOLAR_INSIGHT_GRE_SEA_EAGLE service any
+set rulebase nat rules SOLAR_INSIGHT_GRE_FORCADOS destination-translation translated-address HOST_161.158.156.202
+set rulebase nat rules SOLAR_INSIGHT_GRE_FORCADOS to SPDC
+set rulebase nat rules SOLAR_INSIGHT_GRE_FORCADOS from Private
+set rulebase nat rules SOLAR_INSIGHT_GRE_FORCADOS source HOST_91.212.234.53
+set rulebase nat rules SOLAR_INSIGHT_GRE_FORCADOS destination HOST_10.34.152.82
+set rulebase nat rules SOLAR_INSIGHT_GRE_FORCADOS service any
+set rulebase nat rules SOLAR_INSIGHT_GRE_OTUMARA destination-translation translated-address HOST_161.158.156.194
+set rulebase nat rules SOLAR_INSIGHT_GRE_OTUMARA to SPDC
+set rulebase nat rules SOLAR_INSIGHT_GRE_OTUMARA from Private
+set rulebase nat rules SOLAR_INSIGHT_GRE_OTUMARA source HOST_91.212.234.53
+set rulebase nat rules SOLAR_INSIGHT_GRE_OTUMARA destination HOST_10.34.152.83
+set rulebase nat rules SOLAR_INSIGHT_GRE_OTUMARA service any
+set rulebase nat rules SOLAR_INSIGHT_GRE_TUNU destination-translation translated-address HOST_161.158.156.210
+set rulebase nat rules SOLAR_INSIGHT_GRE_TUNU to SPDC
+set rulebase nat rules SOLAR_INSIGHT_GRE_TUNU from Private
+set rulebase nat rules SOLAR_INSIGHT_GRE_TUNU source HOST_91.212.234.53
+set rulebase nat rules SOLAR_INSIGHT_GRE_TUNU destination HOST_10.34.152.84
+set rulebase nat rules SOLAR_INSIGHT_GRE_TUNU service any
+set rulebase nat rules SOLAR_INSIGHT_GRE_IA destination-translation translated-address HOST_161.158.130.2
+set rulebase nat rules SOLAR_INSIGHT_GRE_IA to SPDC
+set rulebase nat rules SOLAR_INSIGHT_GRE_IA from Private
+set rulebase nat rules SOLAR_INSIGHT_GRE_IA source HOST_91.212.234.53
+set rulebase nat rules SOLAR_INSIGHT_GRE_IA destination HOST_10.34.152.85
+set rulebase nat rules SOLAR_INSIGHT_GRE_IA service any
+set rulebase nat rules NGPHCIASBC001-A.spnigeria.com source-translation static-ip translated-address 102.90.33.173
+set rulebase nat rules NGPHCIASBC001-A.spnigeria.com source-translation static-ip bi-directional yes
+set rulebase nat rules NGPHCIASBC001-A.spnigeria.com to Public
+set rulebase nat rules NGPHCIASBC001-A.spnigeria.com from Voice
+set rulebase nat rules NGPHCIASBC001-A.spnigeria.com source NGPHCIAUX001
+set rulebase nat rules NGPHCIASBC001-A.spnigeria.com destination [ TEAMS_1_13.107.64.0_18 TEAMS_2_52.112.0.0_14 TEAMS_3_52.122.0.0_15 ]
+set rulebase nat rules NGPHCIASBC001-A.spnigeria.com service any
+set rulebase nat rules NGPHCIASBC001-A.spnigeria.com to-interface ethernet1/17
+set rulebase nat rules "NGPHCIASBC001-A Inbound SIP" to Voice
+set rulebase nat rules "NGPHCIASBC001-A Inbound SIP" from Public
+set rulebase nat rules "NGPHCIASBC001-A Inbound SIP" source [ TEAMS_1_13.107.64.0_18 TEAMS_2_52.112.0.0_14 TEAMS_3_52.122.0.0_15 ]
+set rulebase nat rules "NGPHCIASBC001-A Inbound SIP" destination NGPHCIAUX001
+set rulebase nat rules "NGPHCIASBC001-A Inbound SIP" service any
+set rulebase nat rules "NGPHCIASBC001-A Inbound SIP" to-interface ethernet1/17
+set rulebase nat rules "NGPHCIASBC001-A Inbound SIP" destination-translation translated-address 10.34.152.101
+set rulebase nat rules NGPHCIASBC002-A.spnigeria.com source-translation static-ip translated-address 102.90.33.174
+set rulebase nat rules NGPHCIASBC002-A.spnigeria.com source-translation static-ip bi-directional yes
+set rulebase nat rules NGPHCIASBC002-A.spnigeria.com to Public
+set rulebase nat rules NGPHCIASBC002-A.spnigeria.com from Voice
+set rulebase nat rules NGPHCIASBC002-A.spnigeria.com source NGPHCIAUX002
+set rulebase nat rules NGPHCIASBC002-A.spnigeria.com destination [ TEAMS_1_13.107.64.0_18 TEAMS_2_52.112.0.0_14 TEAMS_3_52.122.0.0_15 ]
+set rulebase nat rules NGPHCIASBC002-A.spnigeria.com service any
+set rulebase nat rules NGPHCIASBC002-A.spnigeria.com to-interface ethernet1/17
+set rulebase nat rules "NGPHCIASBC002-A Inbound SIP" to Voice
+set rulebase nat rules "NGPHCIASBC002-A Inbound SIP" from Public
+set rulebase nat rules "NGPHCIASBC002-A Inbound SIP" source [ TEAMS_1_13.107.64.0_18 TEAMS_2_52.112.0.0_14 TEAMS_3_52.122.0.0_15 ]
+set rulebase nat rules "NGPHCIASBC002-A Inbound SIP" destination NGPHCIAUX002
+set rulebase nat rules "NGPHCIASBC002-A Inbound SIP" service any
+set rulebase nat rules "NGPHCIASBC002-A Inbound SIP" to-interface ethernet1/17
+set rulebase nat rules "NGPHCIASBC002-A Inbound SIP" destination-translation translated-address 10.34.152.102
+set rulebase nat rules NGPHCIASBC001-S.spnigeria.com source-translation static-ip translated-address 154.113.211.197
+set rulebase nat rules NGPHCIASBC001-S.spnigeria.com source-translation static-ip bi-directional yes
+set rulebase nat rules NGPHCIASBC001-S.spnigeria.com to Public
+set rulebase nat rules NGPHCIASBC001-S.spnigeria.com from Voice
+set rulebase nat rules NGPHCIASBC001-S.spnigeria.com source NGPHCIAUX001
+set rulebase nat rules NGPHCIASBC001-S.spnigeria.com destination [ TEAMS_1_13.107.64.0_18 TEAMS_2_52.112.0.0_14 TEAMS_3_52.122.0.0_15 ]
+set rulebase nat rules NGPHCIASBC001-S.spnigeria.com service any
+set rulebase nat rules NGPHCIASBC001-S.spnigeria.com to-interface ethernet1/19
+set rulebase nat rules NGPHCIASBC002-S.spnigeria.com source-translation static-ip translated-address 154.113.211.198
+set rulebase nat rules NGPHCIASBC002-S.spnigeria.com source-translation static-ip bi-directional yes
+set rulebase nat rules NGPHCIASBC002-S.spnigeria.com to Public
+set rulebase nat rules NGPHCIASBC002-S.spnigeria.com from Voice
+set rulebase nat rules NGPHCIASBC002-S.spnigeria.com source NGPHCIAUX002
+set rulebase nat rules NGPHCIASBC002-S.spnigeria.com destination [ TEAMS_1_13.107.64.0_18 TEAMS_2_52.112.0.0_14 TEAMS_3_52.122.0.0_15 ]
+set rulebase nat rules NGPHCIASBC002-S.spnigeria.com service any
+set rulebase nat rules NGPHCIASBC002-S.spnigeria.com to-interface ethernet1/19
+set rulebase application-override rules "Cisco UCS KVM" from [ Management SPDC Private ]
+set rulebase application-override rules "Cisco UCS KVM" to Private
+set rulebase application-override rules "Cisco UCS KVM" source any
+set rulebase application-override rules "Cisco UCS KVM" destination any
+set rulebase application-override rules "Cisco UCS KVM" port 2068
+set rulebase application-override rules "Cisco UCS KVM" protocol tcp
+set rulebase application-override rules "Cisco UCS KVM" description "Authentication port when connecting from Cisco UCS manager to server Management port"
+set rulebase application-override rules "Cisco UCS KVM" application Cisco_KVM
+set rulebase application-override rules "Cisco UCS KVM" disabled no
+set rulebase application-override rules SAP_3347 from Private
+set rulebase application-override rules SAP_3347 to SPDC
+set rulebase application-override rules SAP_3347 source p10.spin-ng.local
+set rulebase application-override rules SAP_3347 destination sapal47a.africa-me.shell.com
+set rulebase application-override rules SAP_3347 port 3347
+set rulebase application-override rules SAP_3347 protocol tcp
+set rulebase application-override rules SAP_3347 application sap
+set rulebase application-override rules SAP-RISE from [ Private SPDC ]
+set rulebase application-override rules SAP-RISE to SAP_RISE
+set rulebase application-override rules SAP-RISE source any
+set rulebase application-override rules SAP-RISE destination any
+set rulebase application-override rules SAP-RISE port 44380
+set rulebase application-override rules SAP-RISE protocol tcp
+set rulebase application-override rules SAP-RISE application sap
+set rulebase application-override rules SIP_5061-5062-5063 from [ Public Voice ]
+set rulebase application-override rules SIP_5061-5062-5063 to [ Public Voice ]
+set rulebase application-override rules SIP_5061-5062-5063 source any
+set rulebase application-override rules SIP_5061-5062-5063 destination any
+set rulebase application-override rules SIP_5061-5062-5063 port 5061-5063
+set rulebase application-override rules SIP_5061-5062-5063 protocol tcp
+set rulebase application-override rules SIP_5061-5062-5063 application sip
+set rulebase application-override rules STUN_3479-3481 from [ Public Voice ]
+set rulebase application-override rules STUN_3479-3481 to [ Public Voice ]
+set rulebase application-override rules STUN_3479-3481 source any
+set rulebase application-override rules STUN_3479-3481 destination any
+set rulebase application-override rules STUN_3479-3481 port 3479-3481
+set rulebase application-override rules STUN_3479-3481 protocol tcp
+set rulebase application-override rules STUN_3479-3481 application stun
+set rulebase application-override rules Flexnet_2081 from SPDC
+set rulebase application-override rules Flexnet_2081 to Private
+set rulebase application-override rules Flexnet_2081 source any
+set rulebase application-override rules Flexnet_2081 destination any
+set rulebase application-override rules Flexnet_2081 port 2081
+set rulebase application-override rules Flexnet_2081 protocol tcp
+set rulebase application-override rules Flexnet_2081 application flexnet-publisher
+set rulebase application-override rules SIPMAP_6818 from Private
+set rulebase application-override rules SIPMAP_6818 to SPDC
+set rulebase application-override rules SIPMAP_6818 source any
+set rulebase application-override rules SIPMAP_6818 destination any
+set rulebase application-override rules SIPMAP_6818 port 6818
+set rulebase application-override rules SIPMAP_6818 protocol tcp
+set rulebase application-override rules SIPMAP_6818 application SIPMAP
+set rulebase application-override rules ThinFininty from Private
+set rulebase application-override rules ThinFininty to SPDC
+set rulebase application-override rules ThinFininty source any
+set rulebase application-override rules ThinFininty destination 161.158.35.44/32
+set rulebase application-override rules ThinFininty port 8443
+set rulebase application-override rules ThinFininty protocol tcp
+set rulebase application-override rules ThinFininty application ssl
+set rulebase application-override rules AutoMate from Public
+set rulebase application-override rules AutoMate to Private
+set rulebase application-override rules AutoMate source [ 3.71.192.76 18.184.95.161 35.156.223.222 ]
+set rulebase application-override rules AutoMate destination 10.34.155.79
+set rulebase application-override rules AutoMate port 5051
+set rulebase application-override rules AutoMate protocol tcp
+set rulebase application-override rules AutoMate application AutoMate
+
+set import network interface [ tunnel.2 ethernet1/20 ethernet1/17 ethernet1/19 tunnel.3 tunnel.102 tunnel.103 tunnel.104 loopback.101 loopback.201 tunnel.1 tunnel.4 tunnel.99 tunnel.105 tunnel.106 loopback.1 ]
+set global-protect global-protect-gateway "GPC Extternal Gateway" roles default login-lifetime days 30
+set global-protect global-protect-gateway "GPC Extternal Gateway" roles default inactivity-logout 180
+set global-protect global-protect-gateway "GPC Extternal Gateway" roles default lifetime-notify-prior 30
+set global-protect global-protect-gateway "GPC Extternal Gateway" roles default lifetime-notify-message "Your GlobalProtect session will expire in 30 minutes. Please save your work before your session expires."
+set global-protect global-protect-gateway "GPC Extternal Gateway" roles default inactivity-notify-prior 30
+set global-protect global-protect-gateway "GPC Extternal Gateway" roles default inactivity-notify-message "Your GlobalProtect session will time out in 30 minutes. Please save your work before your session times out."
+set global-protect global-protect-gateway "GPC Extternal Gateway" roles default admin-logout-notify no
+set global-protect global-protect-gateway "GPC Extternal Gateway" roles default admin-logout-notify-message "Your administrator has logged you out."
+set global-protect global-protect-gateway "GPC Extternal Gateway" local-address interface ethernet1/17
+set global-protect global-protect-gateway "GPC Extternal Gateway" gp-gw-dhcp enable-dhcp no
+set global-protect global-protect-gateway "GPC Extternal Gateway" client-auth
+set global-protect global-protect-gateway "GPC Extternal Gateway" remote-user-tunnel-configs "GPC Client Config" authentication-override accept-cookie cookie-lifetime lifetime-in-hours 8
+set global-protect global-protect-gateway "GPC Extternal Gateway" remote-user-tunnel-configs "GPC Client Config" authentication-override cookie-encrypt-decrypt-cert "spnigeria.com Wildcard"
+set global-protect global-protect-gateway "GPC Extternal Gateway" remote-user-tunnel-configs "GPC Client Config" authentication-override generate-cookie yes
+set global-protect global-protect-gateway "GPC Extternal Gateway" remote-user-tunnel-configs "GPC Client Config" source-user any
+set global-protect global-protect-gateway "GPC Extternal Gateway" remote-user-tunnel-configs "GPC Client Config" os any
+set global-protect global-protect-gateway "GPC Extternal Gateway" remote-user-tunnel-configs "GPC Client Config" retrieve-framed-ip-address no
+set global-protect global-protect-gateway "GPC Extternal Gateway" remote-user-tunnel-configs "GPC Client Config" no-direct-access-to-local-network no
+set global-protect global-protect-gateway "GPC Extternal Gateway" ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA
+set global-protect global-protect-gateway "GPC Extternal Gateway" certificate-profile GP_Trusted_Root_CA
+set global-protect global-protect-gateway "GPC Extternal Gateway" tunnel-mode yes
+set global-protect global-protect-gateway "GPC Extternal Gateway" remote-user-tunnel tunnel.99
+set global-protect global-protect-gateway "GPC Internal Gateway" roles default login-lifetime days 30
+set global-protect global-protect-gateway "GPC Internal Gateway" roles default inactivity-logout 180
+set global-protect global-protect-gateway "GPC Internal Gateway" roles default lifetime-notify-prior 30
+set global-protect global-protect-gateway "GPC Internal Gateway" roles default lifetime-notify-message "Your GlobalProtect session will expire in 30 minutes. Please save your work before your session expires."
+set global-protect global-protect-gateway "GPC Internal Gateway" roles default inactivity-notify-prior 30
+set global-protect global-protect-gateway "GPC Internal Gateway" roles default inactivity-notify-message "Your GlobalProtect session will time out in 30 minutes. Please save your work before your session times out."
+set global-protect global-protect-gateway "GPC Internal Gateway" roles default admin-logout-notify no
+set global-protect global-protect-gateway "GPC Internal Gateway" roles default admin-logout-notify-message "Your administrator has logged you out."
+set global-protect global-protect-gateway "GPC Internal Gateway" local-address ip ipv4 10.34.154.129/28
+set global-protect global-protect-gateway "GPC Internal Gateway" local-address interface ethernet1/15.10
+set global-protect global-protect-gateway "GPC Internal Gateway" gp-gw-dhcp enable-dhcp no
+set global-protect global-protect-gateway "GPC Internal Gateway" client-auth
+set global-protect global-protect-gateway "GPC Internal Gateway" ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA
+set global-protect global-protect-gateway "GPC Internal Gateway" certificate-profile GP_Trusted_Root_CA
+set global-protect global-protect-gateway "GPC Internal Gateway" tunnel-mode no
+set global-protect global-protect-portal "GP Portal" portal-config local-address interface ethernet1/17
+set global-protect global-protect-portal "GP Portal" portal-config local-address ip ipv4 102.90.33.172/29
+set global-protect global-protect-portal "GP Portal" portal-config custom-login-page factory-default
+set global-protect global-protect-portal "GP Portal" portal-config custom-home-page factory-default
+set global-protect global-protect-portal "GP Portal" portal-config ssl-tls-service-profile GP_Portal_SSL_spnigeria.com_Root_CA
+set global-protect global-protect-portal "GP Portal" portal-config certificate-profile GP_Trusted_Root_CA
+set global-protect global-protect-portal "GP Portal" satellite-config client-certificate local
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" hip-collection max-wait-time 20
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" hip-collection collect-hip-data yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gateways internal list "GPC Internal Gateway" ip ipv4 10.34.154.129
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gateways external list "GPC Extenal Gateway" fqdn gpc.spnigeria.com
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gateways external list "GPC Extenal Gateway" priority-rule Any priority 1
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gateways external list "GPC Extenal Gateway" manual no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gateways external cutoff-time 5
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" authentication-override generate-cookie no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" source-user any
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" os any
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config connect-method value pre-logon
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config refresh-config-interval value 1
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config agent-user-override value disabled
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config uninstall value allowed
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config client-upgrade value transparent
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config enable-signout value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config allow-extend-session value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config use-sso value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config use-sso-pin value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config use-sso-macos value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config logout-remove-sso value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config krb-auth-fail-fallback value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config default-browser value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config retry-tunnel value 0
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config retry-timeout value 5
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config traffic-enforcement value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config enforce-globalprotect value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config captive-portal-exception-timeout value 0
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config traffic-blocking-notification-delay value 15
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config display-traffic-blocking-notification-msg value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config traffic-blocking-notification-msg value '<div style="font-family:'Helvetica Neue';"><h1 style="color:red;text-align:center; margin: 0; font-size: 30px;">Notice</h1><p style="margin: 0;font-size: 15px; line-height: 1.2em;">To access the network, you must first connect to GlobalProtect.</p></div>'
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config allow-traffic-blocking-notification-dismissal value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config display-captive-portal-detection-msg value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config captive-portal-detection-msg value '<div style="font-family:'Helvetica Neue';"><h1 style="color:red;text-align:center; margin: 0; font-size: 30px;">Captive Portal Detected</h1><p style="margin: 0; font-size: 15px; line-height: 1.2em;">GlobalProtect has temporarily permitted network access for you to connect to the Internet. Follow instructions from your internet provider.</p><p style="margin: 0; font-size: 15px; line-height: 1.2em;">If you let the connection time out, open GlobalProtect and click Connect to try again.</p></div>'
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config captive-portal-notification-delay value 5
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config certificate-store-lookup value user-and-machine
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config scep-certificate-renewal-period value 7
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config retain-connection-smartcard-removal value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config enable-advanced-view value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config enable-do-not-display-this-welcome-page-again value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config user-accept-terms-before-creating-tunnel value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config rediscover-network value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config resubmit-host-info value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config intelligent-portal value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config can-change-portal value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config can-continue-if-portal-cert-invalid value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config show-agent-icon value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config user-switch-tunnel-rename-timeout value 0
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config pre-logon-tunnel-rename-timeout value -1
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config preserve-tunnel-upon-user-logoff-timeout value 0
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config ipsec-failover-ssl value 1
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config display-tunnel-fallback-notification value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config ssl-only-selection value 0
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config tunnel-mtu value 1400
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config max-internal-gateway-connection-attempts value 0
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config adv-internal-host-detection value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config delays-internal-host-detection value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config portal-timeout value 5
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config connect-timeout value 5
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config receive-timeout value 30
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config split-tunnel-option value both
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config split-tunnel-option-mobile value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config advanced-st-public-key value Empty
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config enforce-dns value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config append-local-search-domain value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config flush-dns value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config agent-proxy-port value 9999
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config agent-proxy-mode value 1
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config proxy-multiple-autodetect value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config use-proxy value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config enable-hip-remediation value 0
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config hip-remediation-retry value 0
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config wsc-autodetect value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config mfa-enabled value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config mfa-listening-port value 4501
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config mfa-notification-msg value "You have attempted to access a protected resource that requires additional authentication. Proceed to authenticate at"
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config mfa-prompt-suppress-time value 0
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config ipv6-preferred value yes
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config measuring-egw-tcp-connection value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config log-gateway value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config cdl-log value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config dem-notification value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config dem-agent value not-install
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config dem-agent-action value no-action
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config quarantine-add-message value "Your security policy has restricted access to the network from this device. If the issue persists, contact your administrator."
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config quarantine-remove-message value "Your security policy has restored access to the network from this device. If you still cannot access the network, contact your administrator."
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config init-panel value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" gp-app-config config user-input-on-top value no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" agent-ui max-agent-user-overrides 0
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" agent-ui agent-user-override-timeout 0
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" internal-host-detection ip-address 10.34.152.200
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" internal-host-detection hostname phcia-s-10001.spin-ng.local
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" save-user-credentials 1
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" portal-2fa no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" manual-only-gateway-2fa no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" internal-gateway-2fa no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" auto-discovery-external-gateway-2fa no
+set global-protect global-protect-portal "GP Portal" client-config configs "GPC Agent Config Windows" mdm-enrollment-port 443
+
+set application-group
+set application Cisco_KVM default port tcp/2068
+set application Cisco_KVM subcategory remote-access
+set application Cisco_KVM category networking
+set application Cisco_KVM technology browser-based
+set application Cisco_KVM description "Authentication port for Cisco UCS KVM connection"
+set application Cisco_KVM risk 1
+set application SSS_SIPMAP default port [ tcp/8000 tcp/9090 ]
+set application SSS_SIPMAP subcategory infrastructure
+set application SSS_SIPMAP category networking
+set application SSS_SIPMAP technology client-server
+set application SSS_SIPMAP risk 1
+set application TCP_6818 default port tcp/6818
+set application TCP_6818 subcategory infrastructure
+set application TCP_6818 category networking
+set application TCP_6818 technology client-server
+set application TCP_6818 description "Needed for the SIPMAP solution"
+set application TCP_6818 risk 1
+set application SIPMAP default port tcp/6818
+set application SIPMAP subcategory infrastructure
+set application SIPMAP category networking
+set application SIPMAP technology client-server
+set application SIPMAP risk 1
+set application ThinFinity default port tcp/8443
+set application ThinFinity subcategory it-infrastructure
+set application ThinFinity category networking
+set application ThinFinity technology browser-based
+set application ThinFinity risk 1
+set application AutoMate default port tcp/5051
+set application AutoMate subcategory infrastructure
+set application AutoMate category networking
+set application AutoMate technology client-server
+set application AutoMate risk 1
+
+set address-group TRAX_SOURCES static [ HOST_10.34.154.66 HOST_10.34.154.67 HOST_10.34.155.132 HOST_10.34.155.133 HOST_10.34.155.134 HOST_10.34.155.135 HOST_10.34.155.136 HOST_10.34.155.137 HOST_10.34.155.138 PHCIA-S-10001.spin-ng.local ]
+set address-group TRAX_SOURCES description "ERP  sources which connects to TRAX"
+set address-group SOLAR_INSIGHT_SPDC_INTERNAL static [ HOST_161.158.6.194 HOST_161.158.130.2 HOST_161.158.154.154 HOST_161.158.156.194 HOST_161.158.156.202 HOST_161.158.156.210 ]
+set address-group SSS_SIPMAP_SWAPKIT static [ phc-n-v08124 phc-n-v08136 phc-n-v08147 phc-n-v08148 phc-n-v08149 ]
+set address-group SSS_SIPMAP_SPDC static [ mp005_161.58.149.2_Vlan601 mp005_161.158.120.2_Vlan_102 mp005_161.158.146.2_Vlan_101 mp005_161.158.247.2_Vlan_600 PHC-D-B00703 phc-n-b00806 phc-n-b00806-ilo phc-n-b00904 phc-n-b00904-ilo phc-n-b01010 phc-n-b01010-ilo phc-n-b01505 phc-n-b01511 phc-n-b01511-ilo phc-n-b30110 phc-n-b30110_ilo phc-n-b30113 phc-n-b30113-ilo phc-n-c00369 phc-n-c00460 phc-n-c00550 phc-n-c00623 ]
+set address-group "Sources SSS_SIPMAP SWAPKIT" static SSS_SIPMAP_SWAPKIT
+set address-group "ARUBA MD GROUP" static [ NGLAGNSCWC010 NGLAGNSCWC011 NGLAGWC010 NGLAGWC011 NGPHCIAWC300 NGPHCIAWC301 ]
+set address-group "SAP DNS Servers" static [ HOST_10.34.160.4 HOST_10.34.160.5 HOST_10.34.160.20 HOST_10.34.160.21 HOST_10.34.160.36 HOST_10.34.160.37 ]
+set address-group sFTP_Public_Access static iHAWK_Public_IP
+set address-group TRUST static [ AMSDC1-S-51064.shell.com AMSDC1-S-51080.europe.shell.com AMSDC1-S-51081.africa-me.shell.com CBJ-S-51036.asia-pac.shell.com HOUCY1-S-51023.americas.shell.com LAG-S-51005.africa-me.shell.com LAG-S-51006.africa-me.shell.com ]
+set address-group "DNS SHELL" static [ dns-anycast-1.shell.com dns-anycast-2.shell.com ]
+
+set address p10.spin-ng.local ip-netmask 10.34.155.132/32
+set address p10.spin-ng.local description P10
+set address sapal47a.africa-me.shell.com ip-netmask 193.189.5.203/32
+set address "Web Proxy" ip-netmask 10.1.1.1
+set address host_10.34.155.20 ip-netmask 10.34.155.20/32
+set address host_10.34.155.20 description "PI server swapkit"
+set address host_161.168.30.116 ip-netmask 161.168.30.116/32
+set address host_161.168.30.116 description "PI SERVER SHELL NETWORK"
+set address HOST_161.158.30.116 ip-netmask 161.158.30.116/32
+set address HOST_161.158.6.83 ip-netmask 161.158.6.83/32
+set address HOST_161.158.6.83 description "EA-PI-OPC  - 161.158.6.83"
+set address HOST_161.158.177.98 ip-netmask 161.158.177.98/32
+set address HOST_161.158.177.98 description "BTIP-PI - 161.158.177.98"
+set address HOST_161.158.56.140 ip-netmask 161.158.56.140/32
+set address HOST_161.158.56.140 description "Forcados_PI - 161.158.56.140"
+set address HOST_10.34.155.132 ip-netmask 10.34.155.132/32
+set address HOST_10.34.155.133 ip-netmask 10.34.155.133/32
+set address HOST_10.34.155.134 ip-netmask 10.34.155.134/32
+set address HOST_10.34.154.66 ip-netmask 10.34.154.66/32
+set address HOST_10.34.154.67 ip-netmask 10.34.154.67/32
+set address HOST_10.34.155.135 ip-netmask 10.34.155.135/32
+set address HOST_10.34.155.136 ip-netmask 10.34.155.136/32
+set address HOST_10.34.155.137 ip-netmask 10.34.155.137/32
+set address spdcn-sftp-ta.fiscloudservices.com fqdn spdcn-sftp-ta.fiscloudservices.com
+set address spdcn-sftp-ta.fiscloudservices.com description "TRAX destination"
+set address spdcn-sftp.fiscloudservices.com fqdn spdcn-sftp.fiscloudservices.com
+set address spdcn-sftp.fiscloudservices.com description "TRAX Destination"
+set address HOST_91.212.234.251 ip-netmask 91.212.234.251/32
+set address HOST_91.212.234.251 description "Solar INSIGHT_MGNT"
+set address HOST_91.212.234.53 ip-netmask 91.212.234.53/32
+set address HOST_91.212.234.53 description SOLAR_INSIGHT_GRE
+set address HOST_161.158.154.154 ip-netmask 161.158.154.154/32
+set address HOST_161.158.6.194 ip-netmask 161.158.6.194/32
+set address HOST_161.158.6.194 description "Sea Eagle"
+set address HOST_161.158.156.202 ip-netmask 161.158.156.202/32
+set address HOST_161.158.156.202 description Forcados
+set address HOST_161.158.156.194 ip-netmask 161.158.156.194/32
+set address HOST_161.158.156.194 description OTUMARA
+set address HOST_161.158.156.210 ip-netmask 161.158.156.210/32
+set address HOST_161.158.156.210 description TUNU
+set address HOST_161.158.130.2 ip-netmask 161.158.130.2/32
+set address HOST_161.158.130.2 description IA
+set address HOST_10.34.152.80 ip-netmask 10.34.152.80/32
+set address HOST_10.34.152.80 description "NAT IP SOKU"
+set address HOST_10.34.152.81 ip-netmask 10.34.152.81/32
+set address HOST_10.34.152.81 description "NAT IP SEA EAGLE"
+set address HOST_10.34.152.82 ip-netmask 10.34.152.82
+set address HOST_10.34.152.82 description "NAT IP FORCADOS"
+set address HOST_10.34.152.83 ip-netmask 10.34.152.83/32
+set address HOST_10.34.152.83 description "NAT IP OTUMARA"
+set address HOST_10.34.152.84 ip-netmask 10.34.152.84/32
+set address HOST_10.34.152.84 description "NAT IP TUNU"
+set address HOST_10.34.152.85 ip-netmask 10.34.152.85/32
+set address HOST_10.34.152.85 description "NAT IP IA"
+set address PHCIA-S-10001.spin-ng.local ip-netmask 10.34.152.200/32
+set address A10.spin-ng.local ip-netmask 10.34.155.138/32
+set address A10.spin-ng.local description A10
+set address d10.spin-ng.local ip-netmask 10.34.155.135/32
+set address d10.spin-ng.local description D10
+set address HOST_10.34.152.98 ip-netmask 10.34.152.98/32
+set address HOST_10.34.152.99 ip-netmask 10.34.152.99/32
+set address HOST_10.34.152.99 description "Switch 2 Voice"
+set address pg7 ip-netmask 10.34.161.162/32
+set address qg7 ip-netmask 10.34.161.158/32
+set address HOST_161.158.195.66 ip-netmask 161.158.195.66/32
+set address HOST_161.158.195.67 ip-netmask 161.158.195.67/32
+set address phc-n-v08124 ip-netmask 10.34.155.178/32
+set address phc-n-v08136 ip-netmask 10.34.155.180/32
+set address phc-n-v08147 ip-netmask 10.34.155.186/32
+set address phc-n-v08148 ip-netmask 10.34.155.187/32
+set address phc-n-v08149 ip-netmask 10.34.155.188/32
+set address phc-n-c00460 ip-netmask 161.158.149.111/32
+set address phc-n-c00550 ip-netmask 161.158.120.194/32
+set address phc-n-c00623 ip-netmask 161.158.146.75/32
+set address phc-n-c00369 ip-netmask 161.158.247.59/32
+set address phc-n-b01505 ip-netmask 161.158.229.165/32
+set address PHC-D-B00703 ip-netmask 161.158.207.134/32
+set address phc-n-s00145 ip-netmask 161.158.247.88/32
+set address phc-n-s00119 ip-netmask 161.158.253.50/32
+set address NGPHCIAUX001 ip-netmask 10.34.152.101/32
+set address NGPHCIAUX002 ip-netmask 10.34.152.102/32
+set address TEAMS_1_13.107.64.0_18 ip-netmask 13.107.64.0/18
+set address TEAMS_2_52.112.0.0_14 ip-netmask 52.112.0.0/14
+set address TEAMS_3_52.122.0.0_15 ip-netmask 52.122.0.0/15
+set address NAT_10.34.152.105 ip-netmask 10.34.152.105/32
+set address NAT_10.34.152.104 ip-netmask 10.34.152.104/32
+set address phc-n-s00066 ip-netmask 161.158.142.236
+set address HOST_193.189.5.134 ip-netmask 193.189.5.134/32
+set address ngphciamp008 ip-netmask 161.158.149.2
+set address HOST_10.34.154.151 ip-netmask 10.34.154.151
+set address "ARUBA MC" ip-netmask 10.34.154.6
+set address NGPHCIAWC300 ip-netmask 10.34.99.220/32
+set address NGPHCIAWC301 ip-netmask 10.34.99.221/32
+set address NGLAGWC010 ip-netmask 10.34.99.212/32
+set address NGLAGWC011 ip-netmask 10.34.99.213/32
+set address NGLAGNSCWC010 ip-netmask 10.34.99.204/32
+set address NGLAGNSCWC011 ip-netmask 10.34.99.205/32
+set address "SMTP Server" ip-netmask 10.34.155.165
+set address mp005_161.58.149.2_Vlan601 ip-netmask 161.58.149.2
+set address mp005_161.158.120.2_Vlan_102 ip-netmask 161.158.120.2
+set address mp005_161.158.146.2_Vlan_101 ip-netmask 161.158.146.2
+set address mp005_161.158.247.2_Vlan_600 ip-netmask 161.158.247.2
+set address phc-n-b30110 ip-netmask 161.158.229.159/32
+set address phc-n-b30113 ip-netmask 161.158.229.162/32
+set address phc-n-b30110_ilo ip-netmask 161.158.148.171
+set address phc-n-b30113-ilo ip-netmask 161.158.148.174
+set address HOST_10.34.155.82 ip-netmask 10.34.155.82
+set address HOST_10.34.155.184 ip-netmask 10.34.155.184/32
+set address HOST_10.34.155.185 ip-netmask 10.34.155.185/32
+set address HOST_10.34.160.20 ip-netmask 10.34.160.20
+set address HOST_10.34.160.20 description "SAP DNS 3"
+set address HOST_10.34.160.5 ip-netmask 10.34.160.5
+set address HOST_10.34.160.5 description "SAP DNS 2"
+set address HOST_10.34.160.4 ip-netmask 10.34.160.4
+set address HOST_10.34.160.4 description "SAP DNS 1"
+set address swaf235dc01.spin-ng.local ip-netmask 10.34.152.36/32
+set address HOST_10.34.155.178 ip-netmask 10.34.155.178/32
+set address HOST_161.158.229.131 ip-netmask 161.158.229.131/32
+set address HOST_10.34.160.21 ip-netmask 10.34.160.21
+set address HOST_10.34.160.21 description "SAP DNS 4"
+set address HOST_10.34.160.36 ip-netmask 10.34.160.36
+set address HOST_10.34.160.36 description "SAP DNS 5"
+set address HOST_10.34.160.37 ip-netmask 10.34.160.37
+set address HOST_10.34.160.37 description "SAP DNS 6"
+set address phc-n-b01010 ip-netmask 161.158.207.196
+set address phc-n-b00904 ip-netmask 161.158.207.167
+set address phc-n-b00806 ip-netmask 161.158.207.153
+set address phc-n-b01511 ip-netmask 161.158.229.168
+set address phc-n-b01010-ilo ip-netmask 161.158.147.206
+set address phc-n-b00904-ilo ip-netmask 161.158.147.173
+set address phc-n-b00806-ilo ip-netmask 161.158.147.157
+set address phc-n-b01511-ilo ip-netmask 161.158.148.141
+set address PHC-S-08069 ip-netmask 10.34.155.79
+set address phc-d-b01216.spin-ng.local ip-netmask 161.158.207.220/32
+set address phc-d-b01215.spin-ng.local ip-netmask 161.158.207.219/32
+set address phc-d-b01401.spin-ng.local ip-netmask 161.158.207.239/32
+set address phc-d-b01409.spin-ng.local ip-netmask 161.158.207.243/32
+set address phc-d-b01316.spin-ng.local ip-netmask 161.158.207.236/32
+set address phc-d-b00715.spin-ng.local ip-netmask 161.158.207.146/32
+set address phc-d-b00801.spin-ng.local ip-netmask 161.158.207.148/32
+set address Host_161.158.129.131 ip-netmask 161.158.129.131/32
+set address Host_161.158.129.132 ip-netmask 161.158.129.132/32
+set address Host_161.158.129.163 ip-netmask 161.158.129.163/32
+set address Host_161.158.129.164 ip-netmask 161.158.129.164/32
+set address PHC-S-08069_PRI_INET ip-netmask 102.90.33.171/32
+set address PHC-S-08069_SECI_INET ip-netmask 154.113.211.195/32
+set address iHAWK_Public_IP ip-netmask 18.168.80.31
+set address PHC-S-08045.spin-ng.local ip-netmask 10.34.155.55/32
+set address PHC-S-08045.spin-ng.local description "sFTP Server"
+set address LAG-S-51005.africa-me.shell.com ip-netmask 193.189.13.53/32
+set address LAG-S-51006.africa-me.shell.com ip-netmask 193.189.13.54/32
+set address AMSDC1-S-51064.shell.com ip-netmask 145.26.106.92/32
+set address CBJ-S-51036.asia-pac.shell.com ip-netmask 144.199.180.29/32
+set address AMSDC1-S-51081.africa-me.shell.com ip-netmask 145.26.36.100/32
+set address HOUCY1-S-51023.americas.shell.com ip-netmask 161.237.30.24/32
+set address AMSDC1-S-51080.europe.shell.com ip-netmask 145.26.107.149/32
+set address dns-anycast-1.shell.com ip-netmask 134.162.23.1/32
+set address dns-anycast-2.shell.com ip-netmask 134.162.23.2/32
+set address PHCIA-S-10003.spin-ng.local ip-netmask 10.34.152.202
+set address sapdp47.africa-me.shell.com ip-netmask 193.189.5.134/32
+set address "RADIUS Server" ip-netmask 10.34.155.27
+set address "TEST C16 FW" ip-netmask 10.34.152.113
+set address HOST_10.34.155.138 ip-netmask 10.34.155.138/32
+set address NET_10.34.152.154_24 ip-netmask 10.34.152.0/24
+
+
+set mgt-config users admin phash $5$obqeobvp$.MSHOnrmErBHioKThC8nOXMFIQch6Cyl2fAXi6Hc9O4
+set mgt-config users admin permissions role-based superuser yes
+set mgt-config password-complexity enabled yes
+set mgt-config password-complexity minimum-length 8

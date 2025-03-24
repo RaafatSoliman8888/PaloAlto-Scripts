@@ -1,0 +1,3 @@
+set network interface loopback units loopback.{loopback_interface_ID} adjust-tcp-mss enable {adjust_tcp_mss}
+set network interface loopback units loopback.{loopback_interface_ID} ip {ip_address}
+set network interface loopback units loopback.{loopback_interface_ID} interface-management-profile {interface_management_profile}

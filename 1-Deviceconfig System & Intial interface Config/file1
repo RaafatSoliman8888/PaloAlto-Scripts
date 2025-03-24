@@ -1,0 +1,53 @@
+set deviceconfig system ip-address 192.168.1.1
+set deviceconfig system netmask 255.255.255.0
+set deviceconfig system update-server updates.paloaltonetworks.com
+set deviceconfig system update-schedule threats recurring weekly action download-only
+set deviceconfig system timezone Europe/Amsterdam
+set deviceconfig system service disable-telnet yes
+set deviceconfig system service disable-http yes
+set deviceconfig system hostname TESTC16
+set deviceconfig system device-telemetry device-health-performance yes
+set deviceconfig system device-telemetry product-usage yes
+set deviceconfig system device-telemetry threat-prevention yes
+set deviceconfig system device-telemetry region Americas
+
+delete rulebase security rules rule1
+delete zone untrust
+delete zone trust
+delete network virtual-wire default-vwire
+delete network virtual-router default interface ethernet1/2
+delete network virtual-router default interface ethernet1/1
+delete network interface ethernet ethernet1/1
+delete network interface ethernet ethernet1/2
+
+set network interface ethernet ethernet1/1 layer3
+set network virtual-router default interface ethernet1/1
+set network interface ethernet ethernet1/1 layer3 ip 10.34.1.1/28
+
+set network interface ethernet ethernet1/2 layer3
+set network virtual-router default interface ethernet1/2
+set network interface ethernet ethernet1/2 layer3 ip 10.34.152.113/28
+
+
+set network profiles monitor-profile default interval 3
+set network profiles monitor-profile default threshold 5
+set network profiles monitor-profile default action wait-recover
+set network profiles interface-management-profile Ping ping yes
+set network profiles interface-management-profile "PING HTTPS SSH" http no
+set network profiles interface-management-profile "PING HTTPS SSH" https yes
+set network profiles interface-management-profile "PING HTTPS SSH" ssh yes
+set network profiles interface-management-profile "PING HTTPS SSH" ping yes
+
+set network interface ethernet ethernet1/1 layer3 ndp-proxy enabled no
+set network interface ethernet ethernet1/1 layer3 sdwan-link-settings upstream-nat enable no
+set network interface ethernet ethernet1/1 layer3 sdwan-link-settings upstream-nat static-ip
+set network interface ethernet ethernet1/1 layer3 sdwan-link-settings enable no
+set network interface ethernet ethernet1/1 layer3 interface-management-profile Ping
+set network interface ethernet ethernet1/1 layer3 lldp enable no
+
+set network interface ethernet ethernet1/2 layer3 ndp-proxy enabled no
+set network interface ethernet ethernet1/2 layer3 sdwan-link-settings upstream-nat enable no
+set network interface ethernet ethernet1/2 layer3 sdwan-link-settings upstream-nat static-ip
+set network interface ethernet ethernet1/2 layer3 sdwan-link-settings enable no
+set network interface ethernet ethernet1/2 layer3 interface-management-profile PING HTTPS SSH
+set network interface ethernet ethernet1/2 layer3 lldp enable no

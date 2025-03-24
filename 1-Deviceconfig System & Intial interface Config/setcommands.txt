@@ -1,0 +1,60 @@
+set deviceconfig system ip-address {device_ip}
+set deviceconfig system netmask {device_netmask}
+set deviceconfig system update-server updates.paloaltonetworks.com
+set deviceconfig system update-schedule threats recurring weekly action download-only
+set deviceconfig system timezone Europe/Amsterdam
+set deviceconfig system service disable-telnet yes
+set deviceconfig system service disable-http yes
+set deviceconfig system hostname {hostname}
+set deviceconfig system device-telemetry device-health-performance yes
+set deviceconfig system device-telemetry product-usage yes
+set deviceconfig system device-telemetry threat-prevention yes
+set deviceconfig system device-telemetry region Americas
+
+delete rulebase security rules rule1
+delete zone untrust
+delete zone trust
+delete network virtual-wire default-vwire
+delete network virtual-router default interface ethernet1/2
+delete network virtual-router default interface ethernet1/1
+delete network interface ethernet ethernet1/1
+delete network interface ethernet ethernet1/2
+
+set network interface ethernet {interface_ethernet1_1} layer3
+set network virtual-router default interface {interface_ethernet1_1}
+set network interface ethernet {interface_ethernet1_1} layer3 ip {ethernet1_1_ip}
+
+set network interface ethernet {interface_ethernet1_2} layer3
+set network virtual-router default interface {interface_ethernet1_2}
+set network interface ethernet {interface_ethernet1_2} layer3 ip {ethernet1_2_ip}
+
+
+set network profiles monitor-profile default interval 3
+set network profiles monitor-profile default threshold 5
+set network profiles monitor-profile default action wait-recover
+set network profiles interface-management-profile Ping ping yes
+set network profiles interface-management-profile "PING HTTPS SSH" http no
+set network profiles interface-management-profile "PING HTTPS SSH" https yes
+set network profiles interface-management-profile "PING HTTPS SSH" ssh yes
+set network profiles interface-management-profile "PING HTTPS SSH" ping yes
+
+set network interface ethernet {interface_ethernet1_1} layer3 ndp-proxy enabled no
+set network interface ethernet {interface_ethernet1_1} layer3 sdwan-link-settings upstream-nat enable no
+set network interface ethernet {interface_ethernet1_1} layer3 sdwan-link-settings upstream-nat static-ip
+set network interface ethernet {interface_ethernet1_1} layer3 sdwan-link-settings enable no
+set network interface ethernet {interface_ethernet1_1} layer3 interface-management-profile {interface_management_profile_ethernet1_1}
+set network interface ethernet {interface_ethernet1_1} layer3 lldp enable no
+
+set network interface ethernet {interface_ethernet1_2} layer3 ndp-proxy enabled no
+set network interface ethernet {interface_ethernet1_2} layer3 sdwan-link-settings upstream-nat enable no
+set network interface ethernet {interface_ethernet1_2} layer3 sdwan-link-settings upstream-nat static-ip
+set network interface ethernet {interface_ethernet1_2} layer3 sdwan-link-settings enable no
+set network interface ethernet {interface_ethernet1_2} layer3 interface-management-profile {interface_management_profile_ethernet1_2}
+set network interface ethernet {interface_ethernet1_2} layer3 lldp enable no
+
+set network interface loopback units {loopback_interface} adjust-tcp-mss enable no
+set network interface loopback units {loopback_interface} ip {loopback_ip}
+set network interface loopback units {loopback_interface} interface-management-profile {loopback_management_profile}
+
+set network interface tunnel units {tunnel_interface}
+

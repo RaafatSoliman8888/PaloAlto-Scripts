@@ -1,0 +1,60 @@
+
+set network virtual-router default protocol rip enable no
+set network virtual-router default protocol ospf enable no
+set network virtual-router default protocol ospfv3 enable no
+set network virtual-router default protocol redist-profile redist-connected filter type connect
+set network virtual-router default protocol redist-profile redist-connected filter interface {redist_interface}
+set network virtual-router default protocol redist-profile redist-connected priority 1
+set network virtual-router default protocol redist-profile redist-connected action redist
+set network virtual-router default interface {virtual_router_interfaces}
+set network virtual-router default ecmp algorithm ip-modulo
+
+set network virtual-router default routing-table ip static-route "{static_route_name_1}" bfd profile None
+set network virtual-router default routing-table ip static-route "{static_route_name_1}" interface {static_route_interface}
+set network virtual-router default routing-table ip static-route "{static_route_name_1}" metric 10
+set network virtual-router default routing-table ip static-route "{static_route_name_1}" destination {static_route_destination_1}
+set network virtual-router default routing-table ip static-route "{static_route_name_1}" route-table unicast
+
+set network virtual-router default routing-table ip static-route "{static_route_name_2}" bfd profile None
+set network virtual-router default routing-table ip static-route "{static_route_name_2}" interface {static_route_interface}
+set network virtual-router default routing-table ip static-route "{static_route_name_2}" metric 10
+set network virtual-router default routing-table ip static-route "{static_route_name_2}" destination {static_route_destination_2}
+set network virtual-router default routing-table ip static-route "{static_route_name_2}" route-table unicast
+
+set network virtual-router default routing-table ip static-route "{static_route_name_3}" bfd profile None
+set network virtual-router default routing-table ip static-route "{static_route_name_3}" interface {static_route_interface}
+set network virtual-router default routing-table ip static-route "{static_route_name_3}" metric 10
+set network virtual-router default routing-table ip static-route "{static_route_name_3}" destination {static_route_destination_3}
+set network virtual-router default routing-table ip static-route "{static_route_name_3}" route-table unicast
+
+
+
+
+
+set network virtual-router default protocol rip enable no
+set network virtual-router default protocol ospf enable no
+set network virtual-router default protocol ospfv3 enable no
+set network virtual-router default protocol redist-profile redist-connected filter type connect
+set network virtual-router default protocol redist-profile redist-connected filter interface {redist_interface}
+set network virtual-router default protocol redist-profile redist-connected priority 1
+set network virtual-router default protocol redist-profile redist-connected action redist
+set network virtual-router default interface {virtual_router_interfaces}
+set network virtual-router default ecmp algorithm ip-modulo
+
+set network virtual-router default routing-table ip static-route "{static_route_name_1}" bfd profile None
+set network virtual-router default routing-table ip static-route "{static_route_name_1}" interface {static_route_interface}
+set network virtual-router default routing-table ip static-route "{static_route_name_1}" metric 10
+set network virtual-router default routing-table ip static-route "{static_route_name_1}" destination {static_route_destination_1}
+set network virtual-router default routing-table ip static-route "{static_route_name_1}" route-table unicast
+
+set network virtual-router default routing-table ip static-route "{static_route_name_2}" bfd profile None
+set network virtual-router default routing-table ip static-route "{static_route_name_2}" interface {static_route_interface}
+set network virtual-router default routing-table ip static-route "{static_route_name_2}" metric 10
+set network virtual-router default routing-table ip static-route "{static_route_name_2}" destination {static_route_destination_2}
+set network virtual-router default routing-table ip static-route "{static_route_name_2}" route-table unicast
+
+set network virtual-router default routing-table ip static-route "{static_route_name_3}" bfd profile None
+set network virtual-router default routing-table ip static-route "{static_route_name_3}" interface {static_route_interface}
+set network virtual-router default routing-table ip static-route "{static_route_name_3}" metric 10
+set network virtual-router default routing-table ip static-route "{static_route_name_3}" destination {static_route_destination_3}
+set network virtual-router default routing-table ip static-route "{static_route_name_3}" route-table unicast

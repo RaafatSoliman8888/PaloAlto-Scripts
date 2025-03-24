@@ -1,0 +1,913 @@
+set address p10.spin-ng.local ip-netmask 10.34.155.132/32
+set address p10.spin-ng.local description P10
+set address sapal47a.africa-me.shell.com ip-netmask 193.189.5.203/32
+set address "Web Proxy" ip-netmask 10.1.1.1
+set address host_10.34.155.20 ip-netmask 10.34.155.20/32
+set address host_10.34.155.20 description "PI server swapkit"
+set address host_161.168.30.116 ip-netmask 161.168.30.116/32
+set address host_161.168.30.116 description "PI SERVER SHELL NETWORK"
+set address HOST_161.158.30.116 ip-netmask 161.158.30.116/32
+set address HOST_161.158.6.83 ip-netmask 161.158.6.83/32
+set address HOST_161.158.6.83 description "EA-PI-OPC  - 161.158.6.83"
+set address HOST_161.158.177.98 ip-netmask 161.158.177.98/32
+set address HOST_161.158.177.98 description "BTIP-PI - 161.158.177.98"
+set address HOST_161.158.56.140 ip-netmask 161.158.56.140/32
+set address HOST_161.158.56.140 description "Forcados_PI - 161.158.56.140"
+set address HOST_10.34.155.132 ip-netmask 10.34.155.132/32
+set address HOST_10.34.155.133 ip-netmask 10.34.155.133/32
+set address HOST_10.34.155.134 ip-netmask 10.34.155.134/32
+set address HOST_10.34.154.66 ip-netmask 10.34.154.66/32
+set address HOST_10.34.154.67 ip-netmask 10.34.154.67/32
+set address HOST_10.34.155.135 ip-netmask 10.34.155.135/32
+set address HOST_10.34.155.136 ip-netmask 10.34.155.136/32
+set address HOST_10.34.155.137 ip-netmask 10.34.155.137/32
+set address spdcn-sftp-ta.fiscloudservices.com fqdn spdcn-sftp-ta.fiscloudservices.com
+set address spdcn-sftp-ta.fiscloudservices.com description "TRAX destination"
+set address spdcn-sftp.fiscloudservices.com fqdn spdcn-sftp.fiscloudservices.com
+set address spdcn-sftp.fiscloudservices.com description "TRAX Destination"
+set address HOST_91.212.234.251 ip-netmask 91.212.234.251/32
+set address HOST_91.212.234.251 description "Solar INSIGHT_MGNT"
+set address HOST_91.212.234.53 ip-netmask 91.212.234.53/32
+set address HOST_91.212.234.53 description SOLAR_INSIGHT_GRE
+set address HOST_161.158.154.154 ip-netmask 161.158.154.154/32
+set address HOST_161.158.6.194 ip-netmask 161.158.6.194/32
+set address HOST_161.158.6.194 description "Sea Eagle"
+set address HOST_161.158.156.202 ip-netmask 161.158.156.202/32
+set address HOST_161.158.156.202 description Forcados
+set address HOST_161.158.156.194 ip-netmask 161.158.156.194/32
+set address HOST_161.158.156.194 description OTUMARA
+set address HOST_161.158.156.210 ip-netmask 161.158.156.210/32
+set address HOST_161.158.156.210 description TUNU
+set address HOST_161.158.130.2 ip-netmask 161.158.130.2/32
+set address HOST_161.158.130.2 description IA
+set address HOST_10.34.152.80 ip-netmask 10.34.152.80/32
+set address HOST_10.34.152.80 description "NAT IP SOKU"
+set address HOST_10.34.152.81 ip-netmask 10.34.152.81/32
+set address HOST_10.34.152.81 description "NAT IP SEA EAGLE"
+set address HOST_10.34.152.82 ip-netmask 10.34.152.82
+set address HOST_10.34.152.82 description "NAT IP FORCADOS"
+set address HOST_10.34.152.83 ip-netmask 10.34.152.83/32
+set address HOST_10.34.152.83 description "NAT IP OTUMARA"
+set address HOST_10.34.152.84 ip-netmask 10.34.152.84/32
+set address HOST_10.34.152.84 description "NAT IP TUNU"
+set address HOST_10.34.152.85 ip-netmask 10.34.152.85/32
+set address HOST_10.34.152.85 description "NAT IP IA"
+set address PHCIA-S-10001.spin-ng.local ip-netmask 10.34.152.200/32
+set address A10.spin-ng.local ip-netmask 10.34.155.138/32
+set address A10.spin-ng.local description A10
+set address d10.spin-ng.local ip-netmask 10.34.155.135/32
+set address d10.spin-ng.local description D10
+set address HOST_10.34.152.98 ip-netmask 10.34.152.98/32
+set address HOST_10.34.152.99 ip-netmask 10.34.152.99/32
+set address HOST_10.34.152.99 description "Switch 2 Voice"
+set address pg7 ip-netmask 10.34.161.162/32
+set address qg7 ip-netmask 10.34.161.158/32
+set address HOST_161.158.195.66 ip-netmask 161.158.195.66/32
+set address HOST_161.158.195.67 ip-netmask 161.158.195.67/32
+set address phc-n-v08124 ip-netmask 10.34.155.178/32
+set address phc-n-v08136 ip-netmask 10.34.155.180/32
+set address phc-n-v08147 ip-netmask 10.34.155.186/32
+set address phc-n-v08148 ip-netmask 10.34.155.187/32
+set address phc-n-v08149 ip-netmask 10.34.155.188/32
+set address phc-n-c00460 ip-netmask 161.158.149.111/32
+set address phc-n-c00550 ip-netmask 161.158.120.194/32
+set address phc-n-c00623 ip-netmask 161.158.146.75/32
+set address phc-n-c00369 ip-netmask 161.158.247.59/32
+set address phc-n-b01505 ip-netmask 161.158.229.165/32
+set address PHC-D-B00703 ip-netmask 161.158.207.134/32
+set address phc-n-s00145 ip-netmask 161.158.247.88/32
+set address phc-n-s00119 ip-netmask 161.158.253.50/32
+set address NGPHCIAUX001 ip-netmask 10.34.152.101/32
+set address NGPHCIAUX002 ip-netmask 10.34.152.102/32
+set address TEAMS_1_13.107.64.0_18 ip-netmask 13.107.64.0/18
+set address TEAMS_2_52.112.0.0_14 ip-netmask 52.112.0.0/14
+set address TEAMS_3_52.122.0.0_15 ip-netmask 52.122.0.0/15
+set address NAT_10.34.152.105 ip-netmask 10.34.152.105/32
+set address NAT_10.34.152.104 ip-netmask 10.34.152.104/32
+set address phc-n-s00066 ip-netmask 161.158.142.236
+set address HOST_193.189.5.134 ip-netmask 193.189.5.134/32
+set address ngphciamp008 ip-netmask 161.158.149.2
+set address HOST_192.168.1.1 ip-netmask 192.168.1.1
+set address "ARUBA MC" ip-netmask 10.34.154.6
+set address NGPHCIAWC300 ip-netmask 10.34.99.220/32
+set address NGPHCIAWC301 ip-netmask 10.34.99.221/32
+set address NGLAGWC010 ip-netmask 10.34.99.212/32
+set address NGLAGWC011 ip-netmask 10.34.99.213/32
+set address NGLAGNSCWC010 ip-netmask 10.34.99.204/32
+set address NGLAGNSCWC011 ip-netmask 10.34.99.205/32
+set address "SMTP Server" ip-netmask 10.34.155.165
+set address mp005_161.58.149.2_Vlan601 ip-netmask 161.58.149.2
+set address mp005_161.158.120.2_Vlan_102 ip-netmask 161.158.120.2
+set address mp005_161.158.146.2_Vlan_101 ip-netmask 161.158.146.2
+set address mp005_161.158.247.2_Vlan_600 ip-netmask 161.158.247.2
+set address phc-n-b30110 ip-netmask 161.158.229.159/32
+set address phc-n-b30113 ip-netmask 161.158.229.162/32
+set address phc-n-b30110_ilo ip-netmask 161.158.148.171
+set address phc-n-b30113-ilo ip-netmask 161.158.148.174
+set address HOST_10.34.155.82 ip-netmask 10.34.155.82
+set address HOST_10.34.155.184 ip-netmask 10.34.155.184/32
+set address HOST_10.34.155.185 ip-netmask 10.34.155.185/32
+set address HOST_10.34.160.20 ip-netmask 10.34.160.20
+set address HOST_10.34.160.20 description "SAP DNS 3"
+set address HOST_10.34.160.5 ip-netmask 10.34.160.5
+set address HOST_10.34.160.5 description "SAP DNS 2"
+set address HOST_10.34.160.4 ip-netmask 10.34.160.4
+set address HOST_10.34.160.4 description "SAP DNS 1"
+set address swaf235dc01.spin-ng.local ip-netmask 10.34.152.36/32
+set address HOST_10.34.155.178 ip-netmask 10.34.155.178/32
+set address HOST_161.158.229.131 ip-netmask 161.158.229.131/32
+set address HOST_10.34.160.21 ip-netmask 10.34.160.21
+set address HOST_10.34.160.21 description "SAP DNS 4"
+set address HOST_10.34.160.36 ip-netmask 10.34.160.36
+set address HOST_10.34.160.36 description "SAP DNS 5"
+set address HOST_10.34.160.37 ip-netmask 10.34.160.37
+set address HOST_10.34.160.37 description "SAP DNS 6"
+set address phc-n-b01010 ip-netmask 161.158.207.196
+set address phc-n-b00904 ip-netmask 161.158.207.167
+set address phc-n-b00806 ip-netmask 161.158.207.153
+set address phc-n-b01511 ip-netmask 161.158.229.168
+set address phc-n-b01010-ilo ip-netmask 161.158.147.206
+set address phc-n-b00904-ilo ip-netmask 161.158.147.173
+set address phc-n-b00806-ilo ip-netmask 161.158.147.157
+set address phc-n-b01511-ilo ip-netmask 161.158.148.141
+set address PHC-S-08069 ip-netmask 10.34.155.79
+set address phc-d-b01216.spin-ng.local ip-netmask 161.158.207.220/32
+set address phc-d-b01215.spin-ng.local ip-netmask 161.158.207.219/32
+set address phc-d-b01401.spin-ng.local ip-netmask 161.158.207.239/32
+set address phc-d-b01409.spin-ng.local ip-netmask 161.158.207.243/32
+set address phc-d-b01316.spin-ng.local ip-netmask 161.158.207.236/32
+set address phc-d-b00715.spin-ng.local ip-netmask 161.158.207.146/32
+set address phc-d-b00801.spin-ng.local ip-netmask 161.158.207.148/32
+set address Host_161.158.129.131 ip-netmask 161.158.129.131/32
+set address Host_161.158.129.132 ip-netmask 161.158.129.132/32
+set address Host_161.158.129.163 ip-netmask 161.158.129.163/32
+set address Host_161.158.129.164 ip-netmask 161.158.129.164/32
+set address PHC-S-08069_PRI_INET ip-netmask 102.90.33.171/32
+set address PHC-S-08069_SECI_INET ip-netmask 154.113.211.195/32
+set address iHAWK_Public_IP ip-netmask 18.168.80.31
+set address PHC-S-08045.spin-ng.local ip-netmask 10.34.155.55/32
+set address PHC-S-08045.spin-ng.local description "sFTP Server"
+set address LAG-S-51005.africa-me.shell.com ip-netmask 193.189.13.53/32
+set address LAG-S-51006.africa-me.shell.com ip-netmask 193.189.13.54/32
+set address AMSDC1-S-51064.shell.com ip-netmask 145.26.106.92/32
+set address CBJ-S-51036.asia-pac.shell.com ip-netmask 144.199.180.29/32
+set address AMSDC1-S-51081.africa-me.shell.com ip-netmask 145.26.36.100/32
+set address HOUCY1-S-51023.americas.shell.com ip-netmask 161.237.30.24/32
+set address AMSDC1-S-51080.europe.shell.com ip-netmask 145.26.107.149/32
+set address dns-anycast-1.shell.com ip-netmask 134.162.23.1/32
+set address dns-anycast-2.shell.com ip-netmask 134.162.23.2/32
+set address PHCIA-S-10003.spin-ng.local ip-netmask 10.34.152.202
+set address sapdp47.africa-me.shell.com ip-netmask 193.189.5.134/32
+set address "RADIUS Server" ip-netmask 10.34.155.27
+set address "TEST C16 FW" ip-netmask 10.34.152.113
+set address HOST_10.34.155.138 ip-netmask 10.34.155.138/32
+set address NET_10.34.152.154_24 ip-netmask 10.34.152.0/24
+
+
+
+
+set network profiles monitor-profile default interval 3
+set network profiles monitor-profile default threshold 5
+set network profiles monitor-profile default action wait-recover
+set network profiles interface-management-profile "Allow ping" ping yes
+set network profiles interface-management-profile "Allow Management" https yes
+set network profiles interface-management-profile "Allow Management" ssh yes
+set network profiles interface-management-profile "Allow Management" ping yes
+
+
+
+
+set network interface loopback units loopback.1 adjust-tcp-mss enable no
+set network interface loopback units loopback.1 ip 10.1.1.1
+set network interface loopback units loopback.1 interface-management-profile "Allow ping"
+set network interface loopback units loopback.1 comment "Loopback interface used for the web Proxy"
+set network interface loopback units loopback.101 adjust-tcp-mss enable no
+set network interface loopback units loopback.101 ip 192.168.255.101/32
+set network interface loopback units loopback.101 interface-management-profile "Allow ping"
+set network interface loopback units loopback.101 comment "BGP Loopback Prim"
+set network interface loopback units loopback.201 adjust-tcp-mss enable no
+set network interface loopback units loopback.201 interface-management-profile "Allow ping"
+set network interface loopback units loopback.201 ip 192.168.255.201/32
+set network interface loopback units loopback.201 comment "BGP Loopback Sec"
+
+set network interface tunnel units tunnel.1 comment "Tunnel to Azure Prim"
+set network interface tunnel units tunnel.100 comment "Tunnel Jeroen"
+set network interface tunnel units tunnel.101 comment "Tunnel Michael"
+set network interface tunnel units tunnel.2 comment "Tunnel to SAP RISE"
+set network interface tunnel units tunnel.3 comment Shell_TPA_Tunnel
+set network interface tunnel units tunnel.102 comment "Tunnel Brian"
+set network interface tunnel units tunnel.103 comment "Tunnel Jon"
+set network interface tunnel units tunnel.104 comment "Tunnel to Azure Sec"
+set network interface tunnel units tunnel.4 comment "Tunnel to SWAM14"
+set network interface tunnel units tunnel.99
+set network interface tunnel units tunnel.105 comment "Tunnel to C16"
+set network interface tunnel units tunnel.106 comment "Tunnel to Justin"
+
+
+
+
+set network virtual-router default interface loopback.1
+
+
+
+set shared server-profile radius SWAF235_RADIUS_SERVER protocol PAP
+set shared server-profile radius SWAF235_RADIUS_SERVER server PHC-S-08017 secret -AQ==CsEYmILJgC2QULyxWzi5DLX2BZY=XArZKYpaMNSYsJ0iLuvNdGiYHu016SXiyyMX9q0adyZP4nFqAjuIDDXtvGnfWsFiS/K2uYdZb+Y1tVkKybnIjQXbAcPoymqfhN3m1K6HdhE=
+set shared server-profile radius SWAF235_RADIUS_SERVER server PHC-S-08017 port 1812
+set shared server-profile radius SWAF235_RADIUS_SERVER server PHC-S-08017 ip-address 10.34.155.27
+
+set shared authentication-profile SWAF235_RADIUS_AUTHPROFILE method radius server-profile SWAF235_RADIUS_SERVER
+set shared authentication-profile SWAF235_RADIUS_AUTHPROFILE multi-factor-auth mfa-enable no
+set shared authentication-profile SWAF235_RADIUS_AUTHPROFILE allow-list all
+set shared authentication-profile SWAF235_RADIUS_AUTHPROFILE user-domain spin-ng
+
+set network dns-proxy dns-web-proxy cache max-ttl enabled no
+set network dns-proxy dns-web-proxy cache enabled yes
+set network dns-proxy dns-web-proxy default primary 10.34.152.200
+set network dns-proxy dns-web-proxy default secondary 10.34.152.36
+set network dns-proxy dns-web-proxy tcp-queries enabled no
+set network dns-proxy dns-web-proxy interface loopback.1
+
+
+
+
+
+set deviceconfig system authentication-profile SWAF235_RADIUS_AUTHPROFILE
+set deviceconfig system device-telemetry device-health-performance yes
+set deviceconfig system device-telemetry product-usage yes
+set deviceconfig system device-telemetry threat-prevention yes
+set deviceconfig system device-telemetry region Americas
+set deviceconfig system ip-address 10.34.154.151
+set deviceconfig system netmask 255.255.255.240
+set deviceconfig system update-server updates.paloaltonetworks.com
+set deviceconfig system update-schedule threats recurring sync-to-peer yes
+set deviceconfig system update-schedule threats recurring daily at 00:30
+set deviceconfig system update-schedule threats recurring daily action download-and-install
+set deviceconfig system update-schedule global-protect-clientless-vpn recurring weekly at 00:00
+set deviceconfig system update-schedule global-protect-clientless-vpn recurring weekly day-of-week sunday
+set deviceconfig system update-schedule global-protect-clientless-vpn recurring weekly action download-and-install
+set deviceconfig system update-schedule global-protect-datafile recurring daily at 01:00
+set deviceconfig system update-schedule global-protect-datafile recurring daily action download-and-install
+set deviceconfig system update-schedule wildfire recurring every-hour at 15
+set deviceconfig system update-schedule wildfire recurring every-hour action download-and-install
+set deviceconfig system update-schedule wildfire recurring every-hour sync-to-peer yes
+set deviceconfig system timezone Africa/Lagos
+set deviceconfig system service disable-telnet yes
+set deviceconfig system service disable-http yes
+set deviceconfig system service disable-snmp no
+set deviceconfig system hostname NGPHCIAFW110
+set deviceconfig system type static
+set deviceconfig system default-gateway 10.34.154.150
+set deviceconfig system dns-setting servers primary 10.34.152.200
+set deviceconfig system route service radius source address 10.34.154.162/28
+set deviceconfig system route service radius source interface ethernet1/5
+set deviceconfig system ntp-servers primary-ntp-server ntp-server-address africa.pool.ntp.org
+set deviceconfig system ntp-servers primary-ntp-server authentication-type none
+
+set deviceconfig system snmp-setting access-setting version v2c
+set deviceconfig system snmp-setting snmp-system location "Port Harcourt IA"
+set deviceconfig setting config rematch yes
+set deviceconfig setting management hostname-type-in-syslog FQDN
+
+
+
+
+ 
+set network virtual-router default routing-table ip static-route Default path-monitor monitor-destinations Primary_Internet_Google_Test enable yes source 102.90.33.172/29 destination 8.8.8.8 interval 3 count 5
+
+set network virtual-router default routing-table ip static-route Default path-monitor monitor-destinations Primary_Internet_Google_Test source 102.90.33.172/29
+set network virtual-router default routing-table ip static-route Default path-monitor monitor-destinations Primary_Internet_Google_Test destination 8.8.8.8
+set network virtual-router default routing-table ip static-route Default path-monitor monitor-destinations Primary_Internet_Google_Test interval 3
+set network virtual-router default routing-table ip static-route Default path-monitor monitor-destinations Primary_Internet_Google_Test count 5
+set network virtual-router default routing-table ip static-route Default path-monitor enable yes
+set network virtual-router default routing-table ip static-route Default path-monitor failure-condition any
+set network virtual-router default routing-table ip static-route Default path-monitor hold-time 2
+set network virtual-router default routing-table ip static-route Default nexthop ip-address 102.90.33.169
+set network virtual-router default routing-table ip static-route Default bfd profile None
+set network virtual-router default routing-table ip static-route Default interface ethernet1/2
+set network virtual-router default routing-table ip static-route Default metric 10
+set network virtual-router default routing-table ip static-route Default destination 0.0.0.0/0
+set network virtual-router default routing-table ip static-route Default route-table unicast
+set network virtual-router default routing-table ip static-route Jeroen bfd profile None
+set network virtual-router default routing-table ip static-route Jeroen interface tunnel.100
+set network virtual-router default routing-table ip static-route Jeroen metric 10
+set network virtual-router default routing-table ip static-route Jeroen destination 192.168.211.0/24
+set network virtual-router default routing-table ip static-route Jeroen route-table unicast
+set network virtual-router default routing-table ip static-route Michael_50 bfd profile None
+set network virtual-router default routing-table ip static-route Michael_50 interface tunnel.101
+set network virtual-router default routing-table ip static-route Michael_50 metric 10
+set network virtual-router default routing-table ip static-route Michael_50 destination 192.168.50.0/24
+set network virtual-router default routing-table ip static-route Michael_50 route-table unicast
+set network virtual-router default routing-table ip static-route Michael_120 bfd profile None
+set network virtual-router default routing-table ip static-route Michael_120 interface tunnel.101
+set network virtual-router default routing-table ip static-route Michael_120 metric 10
+set network virtual-router default routing-table ip static-route Michael_120 destination 192.168.120.0/24
+set network virtual-router default routing-table ip static-route Michael_120 route-table unicast
+set network virtual-router default routing-table ip static-route Flexpod_10.34.153.0_24 nexthop ip-address 10.34.154.161
+set network virtual-router default routing-table ip static-route Flexpod_10.34.153.0_24 bfd profile None
+set network virtual-router default routing-table ip static-route Flexpod_10.34.153.0_24 metric 10
+set network virtual-router default routing-table ip static-route Flexpod_10.34.153.0_24 destination 10.34.153.0/24
+set network virtual-router default routing-table ip static-route Flexpod_10.34.153.0_24 route-table unicast
+set network virtual-router default routing-table ip static-route Flexpod_10.34.155.0_24 nexthop ip-address 10.34.154.161
+set network virtual-router default routing-table ip static-route Flexpod_10.34.155.0_24 bfd profile None
+set network virtual-router default routing-table ip static-route Flexpod_10.34.155.0_24 metric 10
+set network virtual-router default routing-table ip static-route Flexpod_10.34.155.0_24 destination 10.34.155.0/24
+set network virtual-router default routing-table ip static-route Flexpod_10.34.155.0_24 route-table unicast
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.192_26 nexthop ip-address 10.34.154.161
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.192_26 bfd profile None
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.192_26 metric 10
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.192_26 destination 10.34.154.192/26
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.192_26 route-table unicast
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.0_25 nexthop ip-address 10.34.154.161
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.0_25 bfd profile None
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.0_25 metric 10
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.0_25 destination 10.34.154.0/25
+set network virtual-router default routing-table ip static-route Flexpod_10.34.154.0_25 route-table unicast
+set network virtual-router default routing-table ip static-route PCD nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route PCD bfd profile None
+set network virtual-router default routing-table ip static-route PCD metric 10
+set network virtual-router default routing-table ip static-route PCD destination 161.158.35.32/28
+set network virtual-router default routing-table ip static-route PCD route-table unicast
+set network virtual-router default routing-table ip static-route L47 nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route L47 bfd profile None
+set network virtual-router default routing-table ip static-route L47 metric 10
+set network virtual-router default routing-table ip static-route L47 destination sapal47a.africa-me.shell.com
+set network virtual-router default routing-table ip static-route L47 route-table unicast
+set network virtual-router default routing-table ip static-route Default-Backup nexthop ip-address 154.113.211.193
+set network virtual-router default routing-table ip static-route Default-Backup bfd profile None
+set network virtual-router default routing-table ip static-route Default-Backup interface ethernet1/6
+set network virtual-router default routing-table ip static-route Default-Backup metric 200
+set network virtual-router default routing-table ip static-route Default-Backup destination 0.0.0.0/0
+set network virtual-router default routing-table ip static-route Default-Backup route-table unicast
+set network virtual-router default routing-table ip static-route RISE_Primary_DC bfd profile None
+set network virtual-router default routing-table ip static-route RISE_Primary_DC interface tunnel.2
+set network virtual-router default routing-table ip static-route RISE_Primary_DC metric 10
+set network virtual-router default routing-table ip static-route RISE_Primary_DC destination 10.34.160.0/23
+set network virtual-router default routing-table ip static-route RISE_Primary_DC route-table unicast
+set network virtual-router default routing-table ip static-route SPDC_161.158.0.0_16 nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route SPDC_161.158.0.0_16 bfd profile None
+set network virtual-router default routing-table ip static-route SPDC_161.158.0.0_16 metric 10
+set network virtual-router default routing-table ip static-route SPDC_161.158.0.0_16 destination 161.158.0.0/16
+set network virtual-router default routing-table ip static-route SPDC_161.158.0.0_16 route-table unicast
+set network virtual-router default routing-table ip static-route "SOLAR-INSIGHT_NAT RANGE" nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route "SOLAR-INSIGHT_NAT RANGE" bfd profile None
+set network virtual-router default routing-table ip static-route "SOLAR-INSIGHT_NAT RANGE" metric 10
+set network virtual-router default routing-table ip static-route "SOLAR-INSIGHT_NAT RANGE" destination 10.34.152.80/29
+set network virtual-router default routing-table ip static-route "SOLAR-INSIGHT_NAT RANGE" route-table unicast
+set network virtual-router default routing-table ip static-route "Shell SAP P94" nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route "Shell SAP P94" bfd profile None
+set network virtual-router default routing-table ip static-route "Shell SAP P94" metric 10
+set network virtual-router default routing-table ip static-route "Shell SAP P94" destination 193.189.5.134/32
+set network virtual-router default routing-table ip static-route "Shell SAP P94" route-table unicast
+set network virtual-router default routing-table ip static-route Aruba_WIFI nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route Aruba_WIFI bfd profile None
+set network virtual-router default routing-table ip static-route Aruba_WIFI metric 10
+set network virtual-router default routing-table ip static-route Aruba_WIFI destination 10.34.98.0/23
+set network virtual-router default routing-table ip static-route Aruba_WIFI route-table unicast
+set network virtual-router default routing-table ip static-route OpenSpirit nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route OpenSpirit bfd profile None
+set network virtual-router default routing-table ip static-route OpenSpirit metric 10
+set network virtual-router default routing-table ip static-route OpenSpirit destination 10.37.200.76/32
+set network virtual-router default routing-table ip static-route OpenSpirit route-table unicast
+set network virtual-router default routing-table ip static-route Brian_1 bfd profile None
+set network virtual-router default routing-table ip static-route Brian_1 interface tunnel.102
+set network virtual-router default routing-table ip static-route Brian_1 metric 10
+set network virtual-router default routing-table ip static-route Brian_1 destination 192.168.0.0/23
+set network virtual-router default routing-table ip static-route Brian_1 route-table unicast
+set network virtual-router default routing-table ip static-route "Route Jon_110" bfd profile None
+set network virtual-router default routing-table ip static-route "Route Jon_110" interface tunnel.103
+set network virtual-router default routing-table ip static-route "Route Jon_110" metric 10
+set network virtual-router default routing-table ip static-route "Route Jon_110" destination 192.168.110.0/24
+set network virtual-router default routing-table ip static-route "Route Jon_110" route-table unicast
+set network virtual-router default routing-table ip static-route "Azure Secondary IPsec Peer" nexthop ip-address 154.113.211.193
+set network virtual-router default routing-table ip static-route "Azure Secondary IPsec Peer" bfd profile None
+set network virtual-router default routing-table ip static-route "Azure Secondary IPsec Peer" metric 10
+set network virtual-router default routing-table ip static-route "Azure Secondary IPsec Peer" destination 4.221.157.116/32
+set network virtual-router default routing-table ip static-route "Azure Secondary IPsec Peer" route-table unicast
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Prim" bfd profile None
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Prim" interface tunnel.1
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Prim" metric 10
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Prim" destination 192.168.255.102/32
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Prim" route-table unicast
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Sec" bfd profile None
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Sec" interface tunnel.104
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Sec" metric 10
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Sec" destination 192.168.255.202/32
+set network virtual-router default routing-table ip static-route "Azure BGP Loopback Sec" route-table unicast
+set network virtual-router default routing-table ip static-route SwAM14 bfd profile None
+set network virtual-router default routing-table ip static-route SwAM14 interface tunnel.4
+set network virtual-router default routing-table ip static-route SwAM14 metric 10
+set network virtual-router default routing-table ip static-route SwAM14 destination 10.34.144.0/22
+set network virtual-router default routing-table ip static-route SwAM14 route-table unicast
+set network virtual-router default routing-table ip static-route "Route Jon_109" bfd profile None
+set network virtual-router default routing-table ip static-route "Route Jon_109" interface tunnel.103
+set network virtual-router default routing-table ip static-route "Route Jon_109" metric 10
+set network virtual-router default routing-table ip static-route "Route Jon_109" destination 192.168.109.0/24
+set network virtual-router default routing-table ip static-route "Route Jon_109" route-table unicast
+set network virtual-router default routing-table ip static-route SHELL_TRUST4_193.189.13.0_24 nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route SHELL_TRUST4_193.189.13.0_24 bfd profile None
+set network virtual-router default routing-table ip static-route SHELL_TRUST4_193.189.13.0_24 metric 10
+set network virtual-router default routing-table ip static-route SHELL_TRUST4_193.189.13.0_24 destination 193.189.13.0/24
+set network virtual-router default routing-table ip static-route SHELL_TRUST4_193.189.13.0_24 route-table unicast
+set network virtual-router default routing-table ip static-route SHELL_TRUST1_145.26.0.0_16 nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route SHELL_TRUST1_145.26.0.0_16 bfd profile None
+set network virtual-router default routing-table ip static-route SHELL_TRUST1_145.26.0.0_16 metric 10
+set network virtual-router default routing-table ip static-route SHELL_TRUST1_145.26.0.0_16 destination 145.26.0.0/16
+set network virtual-router default routing-table ip static-route SHELL_TRUST1_145.26.0.0_16 route-table unicast
+set network virtual-router default routing-table ip static-route SHELL_TRUST2_144.199.0.0_16 nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route SHELL_TRUST2_144.199.0.0_16 bfd profile None
+set network virtual-router default routing-table ip static-route SHELL_TRUST2_144.199.0.0_16 metric 10
+set network virtual-router default routing-table ip static-route SHELL_TRUST2_144.199.0.0_16 destination 144.199.0.0/16
+set network virtual-router default routing-table ip static-route SHELL_TRUST2_144.199.0.0_16 route-table unicast
+set network virtual-router default routing-table ip static-route SHELL_TRUST3_161.237.0.0_16 nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route SHELL_TRUST3_161.237.0.0_16 bfd profile None
+set network virtual-router default routing-table ip static-route SHELL_TRUST3_161.237.0.0_16 metric 10
+set network virtual-router default routing-table ip static-route SHELL_TRUST3_161.237.0.0_16 destination 161.237.0.0/16
+set network virtual-router default routing-table ip static-route SHELL_TRUST3_161.237.0.0_16 route-table unicast
+set network virtual-router default routing-table ip static-route dns-anycast-1.shell.com nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route dns-anycast-1.shell.com bfd profile None
+set network virtual-router default routing-table ip static-route dns-anycast-1.shell.com metric 10
+set network virtual-router default routing-table ip static-route dns-anycast-1.shell.com destination 134.162.23.1/32
+set network virtual-router default routing-table ip static-route dns-anycast-1.shell.com route-table unicast
+set network virtual-router default routing-table ip static-route dns-anycast-2.shell.com nexthop ip-address 10.34.154.145
+set network virtual-router default routing-table ip static-route dns-anycast-2.shell.com bfd profile None
+set network virtual-router default routing-table ip static-route dns-anycast-2.shell.com metric 10
+set network virtual-router default routing-table ip static-route dns-anycast-2.shell.com destination 134.162.23.2/32
+set network virtual-router default routing-table ip static-route dns-anycast-2.shell.com route-table unicast
+set network virtual-router default routing-table ip static-route Justin bfd profile None
+set network virtual-router default routing-table ip static-route Justin interface tunnel.106
+set network virtual-router default routing-table ip static-route Justin metric 10
+set network virtual-router default routing-table ip static-route Justin destination 192.168.70.0/24
+set network virtual-router default routing-table ip static-route Justin route-table unicast
+set network virtual-router default routing-table ip static-route "Loopback C16" bfd profile None
+set network virtual-router default routing-table ip static-route "Loopback C16" interface tunnel.105
+set network virtual-router default routing-table ip static-route "Loopback C16" metric 10
+set network virtual-router default routing-table ip static-route "Loopback C16" destination 192.168.255.103/32
+set network virtual-router default routing-table ip static-route "Loopback C16" route-table unicast
+set network virtual-router default routing-table ip static-route "Justin AP" bfd profile None
+set network virtual-router default routing-table ip static-route "Justin AP" interface tunnel.106
+set network virtual-router default routing-table ip static-route "Justin AP" metric 10
+set network virtual-router default routing-table ip static-route "Justin AP" destination 192.168.0.9/32
+set network virtual-router default routing-table ip static-route "Justin AP" route-table unicast
+
+
+
+set network ike crypto-profiles ike-crypto-profiles default encryption [ aes-128-cbc 3des ]
+set network ike crypto-profiles ike-crypto-profiles default hash sha1
+set network ike crypto-profiles ike-crypto-profiles default dh-group group2
+set network ike crypto-profiles ike-crypto-profiles default lifetime hours 8
+set network ike crypto-profiles ike-crypto-profiles Swapkit_IKE_Crypto hash sha512
+set network ike crypto-profiles ike-crypto-profiles Swapkit_IKE_Crypto dh-group group20
+set network ike crypto-profiles ike-crypto-profiles Swapkit_IKE_Crypto encryption aes-256-cbc
+set network ike crypto-profiles ike-crypto-profiles Swapkit_IKE_Crypto lifetime hours 8
+set network ike crypto-profiles ike-crypto-profiles IKE_Crypto_Profile_RISE hash sha1
+set network ike crypto-profiles ike-crypto-profiles IKE_Crypto_Profile_RISE dh-group group2
+set network ike crypto-profiles ike-crypto-profiles IKE_Crypto_Profile_RISE encryption aes-256-cbc
+set network ike crypto-profiles ike-crypto-profiles IKE_Crypto_Profile_RISE lifetime seconds 3600
+set network ike crypto-profiles ike-crypto-profiles SHELL_TPA hash sha512
+set network ike crypto-profiles ike-crypto-profiles SHELL_TPA dh-group group20
+set network ike crypto-profiles ike-crypto-profiles SHELL_TPA encryption aes-256-cbc
+set network ike crypto-profiles ike-crypto-profiles SHELL_TPA lifetime hours 24
+set network ike crypto-profiles ipsec-crypto-profiles Swapkit_IPSec_Crypto esp authentication sha512
+set network ike crypto-profiles ipsec-crypto-profiles Swapkit_IPSec_Crypto esp encryption aes-256-cbc
+set network ike crypto-profiles ipsec-crypto-profiles Swapkit_IPSec_Crypto lifetime hours 1
+set network ike crypto-profiles ipsec-crypto-profiles Swapkit_IPSec_Crypto dh-group group20
+set network ike crypto-profiles ipsec-crypto-profiles IPSec_Crypto_Profile_RISE esp authentication none
+set network ike crypto-profiles ipsec-crypto-profiles IPSec_Crypto_Profile_RISE esp encryption aes-256-gcm
+set network ike crypto-profiles ipsec-crypto-profiles IPSec_Crypto_Profile_RISE lifetime seconds 3600
+set network ike crypto-profiles ipsec-crypto-profiles IPSec_Crypto_Profile_RISE dh-group no-pfs
+set network ike crypto-profiles ipsec-crypto-profiles SHELL_TPA_IPSEC esp authentication sha512
+set network ike crypto-profiles ipsec-crypto-profiles SHELL_TPA_IPSEC esp encryption aes-256-cbc
+set network ike crypto-profiles ipsec-crypto-profiles SHELL_TPA_IPSEC lifetime hours 1
+set network ike crypto-profiles ipsec-crypto-profiles SHELL_TPA_IPSEC dh-group group20
+set network ike crypto-profiles global-protect-app-crypto-profiles default encryption aes-128-cbc
+set network ike crypto-profiles global-protect-app-crypto-profiles default authentication sha1
+
+
+
+
+
+set network ike gateway IPSec_Gateway_Azure_Prim authentication pre-shared-key key -AQ==d6iN1LbFRtVqTcSvNYpi8t1WixM=Y0icHhUSk1KaqJ2XgP5f4fBJSCg5OpWzdC6eHaYY0nnL7TKh7Tk9MNt8LuRZy5Kjfp6nl8ryQOOtWpy5Hqw3SZ8kLFC80qJo4RO9iJgRYAA=
+set network ike gateway IPSec_Gateway_Azure_Prim protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_Azure_Prim protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_Azure_Prim protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_Azure_Prim protocol ikev2 pq-kem enable no
+set network ike gateway IPSec_Gateway_Azure_Prim protocol ikev2 pq-kem block-vulnerable-cipher no
+set network ike gateway IPSec_Gateway_Azure_Prim protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPSec_Gateway_Azure_Prim protocol version ikev2
+set network ike gateway IPSec_Gateway_Azure_Prim local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_Azure_Prim local-address interface ethernet1/4
+set network ike gateway IPSec_Gateway_Azure_Prim protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_Azure_Prim protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_Azure_Prim peer-address ip 4.221.154.32
+set network ike gateway IPSec_Gateway_Azure_Prim local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_Azure_Prim local-id type ipaddr
+set network ike gateway IPSec_Gateway_Azure_Prim peer-id id 4.221.154.32
+set network ike gateway IPSec_Gateway_Azure_Prim peer-id type ipaddr
+set network ike gateway IPSec_Gateway_Jeroen authentication pre-shared-key key -AQ==s3dP6rsAkyP+cZ/0pmaAMtF/6Xw=xZSROuZgXlj1MMxhLxHsyQMNAJczJZ57l/CjsiE2MY5DTeXiDbRgjRdX2iTFk0mG
+set network ike gateway IPSec_Gateway_Jeroen protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_Jeroen protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_Jeroen protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_Jeroen protocol ikev2 pq-kem enable no
+set network ike gateway IPSec_Gateway_Jeroen protocol ikev2 pq-kem block-vulnerable-cipher no
+set network ike gateway IPSec_Gateway_Jeroen protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPSec_Gateway_Jeroen protocol version ikev2
+set network ike gateway IPSec_Gateway_Jeroen local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_Jeroen local-address interface ethernet1/4
+set network ike gateway IPSec_Gateway_Jeroen protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_Jeroen protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_Jeroen peer-address ip 188.91.60.190
+set network ike gateway IPSec_Gateway_Jeroen local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_Jeroen local-id type ipaddr
+set network ike gateway IPSec_Gateway_Jeroen peer-id id 188.91.60.190
+set network ike gateway IPSec_Gateway_Jeroen peer-id type ipaddr
+set network ike gateway IPSec_Gateway_Michael authentication pre-shared-key key -AQ==+/cwaPlVJ4Mo+6ZI+gbp16nOmuM=zfS2gFlkX6ZASOlewOfyv4wcvhL/NRI9tnKAG7+UlKAlaG+6gQj2t2YkE/Fa5oXx
+set network ike gateway IPSec_Gateway_Michael protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_Michael protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_Michael protocol ikev2 pq-kem enable no
+set network ike gateway IPSec_Gateway_Michael protocol ikev2 pq-kem block-vulnerable-cipher no
+set network ike gateway IPSec_Gateway_Michael protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPSec_Gateway_Michael protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_Michael protocol version ikev2
+set network ike gateway IPSec_Gateway_Michael protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_Michael protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_Michael local-address interface ethernet1/4
+set network ike gateway IPSec_Gateway_Michael local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_Michael peer-address ip 45.89.86.234
+set network ike gateway IPSec_Gateway_Michael local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_Michael local-id type ipaddr
+set network ike gateway IPSec_Gateway_Michael peer-id id 45.89.86.234
+set network ike gateway IPSec_Gateway_Michael peer-id type ipaddr
+set network ike gateway IPSec_Gateway_SAP_RISE authentication pre-shared-key key -AQ==Mpc4AeM7szFpe5nVEh/6zguJmgE=eEC83kO+n6EJbtTBvGpQsjvMhlA3B/6xu7+pG7VGXv8=
+set network ike gateway IPSec_Gateway_SAP_RISE protocol ikev2 pq-ppk enabled no
+set network ike gateway IPSec_Gateway_SAP_RISE protocol ikev2 pq-ppk negotiation-mode preferred
+set network ike gateway IPSec_Gateway_SAP_RISE protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_SAP_RISE protocol ikev2 ike-crypto-profile IKE_Crypto_Profile_RISE
+set network ike gateway IPSec_Gateway_SAP_RISE protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_SAP_RISE protocol version ikev2
+set network ike gateway IPSec_Gateway_SAP_RISE local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_SAP_RISE local-address interface ethernet1/4
+set network ike gateway IPSec_Gateway_SAP_RISE protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_SAP_RISE protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_SAP_RISE protocol-common passive-mode no
+set network ike gateway IPSec_Gateway_SAP_RISE peer-address ip 57.153.124.232
+set network ike gateway IPSec_Gateway_SAP_RISE local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_SAP_RISE local-id type ipaddr
+set network ike gateway IPSec_Gateway_SAP_RISE peer-id id 57.153.124.232
+set network ike gateway IPSec_Gateway_SAP_RISE peer-id type ipaddr
+set network ike gateway IPSec_Gateway_Brian authentication pre-shared-key key -AQ==yPQLEH/KMdsGRyc9KUqdTSCMxHU=PKAewtEn4wUOPt/6xAriYPqZKTbf1yHwRmPGJ5WO1g/V3BH9CSiImGfHd2rlzkqy
+set network ike gateway IPSec_Gateway_Brian protocol ikev2 pq-kem enable no
+set network ike gateway IPSec_Gateway_Brian protocol ikev2 pq-kem block-vulnerable-cipher yes
+set network ike gateway IPSec_Gateway_Brian protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPSec_Gateway_Brian protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_Brian protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_Brian protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_Brian protocol version ikev2
+set network ike gateway IPSec_Gateway_Brian local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_Brian local-address interface ethernet1/4
+set network ike gateway IPSec_Gateway_Brian protocol-common nat-traversal enable yes
+set network ike gateway IPSec_Gateway_Brian protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_Brian protocol-common passive-mode no
+set network ike gateway IPSec_Gateway_Brian peer-address fqdn brianduran.synology.me
+set network ike gateway IPSec_Gateway_Brian local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_Brian local-id type ipaddr
+set network ike gateway IPSec_Gateway_Brian peer-id id 181.117.11.137
+set network ike gateway IPSec_Gateway_Brian peer-id type ipaddr
+set network ike gateway IPSec_Gateway_Jon authentication pre-shared-key key -AQ==L3QHAk58yxygRJ+kFWY/nJi4/uE=laySWsRatlyDEQ2HI7wNKY0PapS5D8ZfzOP8EH+R68s55QrOJTRvDuLZKe05A/mV
+set network ike gateway IPSec_Gateway_Jon protocol ikev2 pq-kem enable no
+set network ike gateway IPSec_Gateway_Jon protocol ikev2 pq-kem block-vulnerable-cipher yes
+set network ike gateway IPSec_Gateway_Jon protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPSec_Gateway_Jon protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_Jon protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_Jon protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_Jon protocol version ikev2
+set network ike gateway IPSec_Gateway_Jon local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_Jon local-address interface ethernet1/4
+set network ike gateway IPSec_Gateway_Jon protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_Jon protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_Jon protocol-common passive-mode no
+set network ike gateway IPSec_Gateway_Jon peer-address fqdn tredgold.ddns.net
+set network ike gateway IPSec_Gateway_Jon local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_Jon local-id type ipaddr
+set network ike gateway IPSec_Gateway_Jon peer-id id 188.30.38.141
+set network ike gateway IPSec_Gateway_Jon peer-id type ipaddr
+set network ike gateway IPsec_Gateway_Azure_Sec authentication pre-shared-key key -AQ==f71Yp1as1gGRM2kBDRqP715o9o8=FaJPvR0st41r8hjcJXmYn18NtR8E8GRMBMX8NjgZVrWm8zJKcYHZSWaxHN6SnrzJ
+set network ike gateway IPsec_Gateway_Azure_Sec protocol ikev2 pq-kem enable no
+set network ike gateway IPsec_Gateway_Azure_Sec protocol ikev2 pq-kem block-vulnerable-cipher yes
+set network ike gateway IPsec_Gateway_Azure_Sec protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPsec_Gateway_Azure_Sec protocol ikev2 dpd enable yes
+set network ike gateway IPsec_Gateway_Azure_Sec protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPsec_Gateway_Azure_Sec protocol ikev2 pq-ppk enabled no
+set network ike gateway IPsec_Gateway_Azure_Sec protocol ikev2 pq-ppk negotiation-mode preferred
+set network ike gateway IPsec_Gateway_Azure_Sec protocol ikev1 dpd enable yes
+set network ike gateway IPsec_Gateway_Azure_Sec protocol version ikev2
+set network ike gateway IPsec_Gateway_Azure_Sec local-address ip 154.113.211.196/28
+set network ike gateway IPsec_Gateway_Azure_Sec local-address interface ethernet1/6
+set network ike gateway IPsec_Gateway_Azure_Sec protocol-common nat-traversal enable no
+set network ike gateway IPsec_Gateway_Azure_Sec protocol-common fragmentation enable no
+set network ike gateway IPsec_Gateway_Azure_Sec peer-address ip 4.221.157.116
+set network ike gateway IPsec_Gateway_Azure_Sec local-id id 154.113.211.196
+set network ike gateway IPsec_Gateway_Azure_Sec local-id type ipaddr
+set network ike gateway IPsec_Gateway_Azure_Sec peer-id id 4.221.157.116
+set network ike gateway IPsec_Gateway_Azure_Sec peer-id type ipaddr
+set network ike gateway IPSec_Gateway_SWAM14 authentication pre-shared-key key -AQ==f71Yp1as1gGRM2kBDRqP715o9o8=FaJPvR0st41r8hjcJXmYn18NtR8E8GRMBMX8NjgZVrWm8zJKcYHZSWaxHN6SnrzJ
+set network ike gateway IPSec_Gateway_SWAM14 protocol ikev2 pq-kem enable no
+set network ike gateway IPSec_Gateway_SWAM14 protocol ikev2 pq-kem block-vulnerable-cipher yes
+set network ike gateway IPSec_Gateway_SWAM14 protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPSec_Gateway_SWAM14 protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_SWAM14 protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_SWAM14 protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_SWAM14 protocol version ikev2
+set network ike gateway IPSec_Gateway_SWAM14 local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_SWAM14 local-address interface ethernet1/4
+set network ike gateway IPSec_Gateway_SWAM14 protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_SWAM14 protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_SWAM14 peer-address ip 13.81.43.84
+set network ike gateway IPSec_Gateway_SWAM14 local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_SWAM14 local-id type ipaddr
+set network ike gateway IPSec_Gateway_SWAM14 peer-id id 13.81.43.84
+set network ike gateway IPSec_Gateway_SWAM14 peer-id type ipaddr
+set network ike gateway IPSec_Gateway_C16 authentication pre-shared-key key -AQ==WRIOAixnn/D3a7h6EckgRRA46B8=/FSBMD3AJt8tar27ygmJO6nFp1KOBszme1YMTLmZEEEgvSpONcLhLzOj9NIjDSBnWPobqEsy2H6MMxWMrOjbMNoc8tI/6Aot18T+80/6mTQ=
+set network ike gateway IPSec_Gateway_C16 protocol ikev2 pq-ppk enabled no
+set network ike gateway IPSec_Gateway_C16 protocol ikev2 pq-ppk negotiation-mode preferred
+set network ike gateway IPSec_Gateway_C16 protocol ikev2 pq-kem enable no
+set network ike gateway IPSec_Gateway_C16 protocol ikev2 pq-kem block-vulnerable-cipher yes
+set network ike gateway IPSec_Gateway_C16 protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPSec_Gateway_C16 protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_C16 protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_C16 protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_C16 protocol version ikev2
+set network ike gateway IPSec_Gateway_C16 local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_C16 local-address interface ethernet1/4
+set network ike gateway IPSec_Gateway_C16 protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_C16 protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_C16 protocol-common passive-mode yes
+set network ike gateway IPSec_Gateway_C16 peer-address dynamic
+set network ike gateway IPSec_Gateway_C16 local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_C16 local-id type ipaddr
+set network ike gateway IPSec_Gateway_C16 peer-id id jeroen.schellart@shell.com
+set network ike gateway IPSec_Gateway_C16 peer-id type ufqdn
+set network ike gateway IPSec_Gateway_Justin authentication pre-shared-key key -AQ==iGjoe03zJJkZj3uPrsp/mmFJdqo=LeUOT6q8UD27Ix3ZAWePFEbmdlIaACx4MxLM45mHqlkqIFBGPpkzt/CE7DWEOcIN
+set network ike gateway IPSec_Gateway_Justin protocol ikev2 pq-ppk enabled no
+set network ike gateway IPSec_Gateway_Justin protocol ikev2 pq-ppk negotiation-mode preferred
+set network ike gateway IPSec_Gateway_Justin protocol ikev2 pq-kem enable no
+set network ike gateway IPSec_Gateway_Justin protocol ikev2 pq-kem block-vulnerable-cipher yes
+set network ike gateway IPSec_Gateway_Justin protocol ikev2 ikev2-fragment enable no
+set network ike gateway IPSec_Gateway_Justin protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_Justin protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_Justin protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_Justin protocol version ikev2
+set network ike gateway IPSec_Gateway_Justin local-address ip 102.90.33.172/29
+set network ike gateway IPSec_Gateway_Justin local-address interface ethernet1/4
+set network ike gateway IPSec_Gateway_Justin protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_Justin protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_Justin peer-address ip 84.84.100.160
+set network ike gateway IPSec_Gateway_Justin local-id id 102.90.33.172
+set network ike gateway IPSec_Gateway_Justin local-id type ipaddr
+set network ike gateway IPSec_Gateway_Justin peer-id id 84.84.100.160
+set network ike gateway IPSec_Gateway_Justin peer-id type ipaddr
+
+
+
+
+
+
+
+set network tunnel ipsec IPSec_Tunnel_Azure_Prim auto-key ike-gateway IPSec_Gateway_Azure_Prim
+set network tunnel ipsec IPSec_Tunnel_Azure_Prim auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_Azure_Prim tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_Azure_Prim tunnel-interface tunnel.1
+set network tunnel ipsec IPSec_Tunnel_Jeroen auto-key ike-gateway IPSec_Gateway_Jeroen
+set network tunnel ipsec IPSec_Tunnel_Jeroen auto-key proxy-id Jeroen protocol any
+set network tunnel ipsec IPSec_Tunnel_Jeroen auto-key proxy-id Jeroen local 10.34.152.0/22
+set network tunnel ipsec IPSec_Tunnel_Jeroen auto-key proxy-id Jeroen remote 192.168.211.0/24
+set network tunnel ipsec IPSec_Tunnel_Jeroen auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_Jeroen tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_Jeroen tunnel-interface tunnel.100
+set network tunnel ipsec IPSec_Tunnel_Michael auto-key ike-gateway IPSec_Gateway_Michael
+set network tunnel ipsec IPSec_Tunnel_Michael auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_Michael auto-key proxy-id Michael_50 protocol any
+set network tunnel ipsec IPSec_Tunnel_Michael auto-key proxy-id Michael_50 local 10.34.152.0/22
+set network tunnel ipsec IPSec_Tunnel_Michael auto-key proxy-id Michael_50 remote 192.168.50.0/24
+set network tunnel ipsec IPSec_Tunnel_Michael auto-key proxy-id Michael_120 protocol any
+set network tunnel ipsec IPSec_Tunnel_Michael auto-key proxy-id Michael_120 local 10.34.152.0/22
+set network tunnel ipsec IPSec_Tunnel_Michael auto-key proxy-id Michael_120 remote 192.168.120.0/24
+set network tunnel ipsec IPSec_Tunnel_Michael tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_Michael tunnel-interface tunnel.101
+set network tunnel ipsec IPSec_Tunnel_RISE auto-key ike-gateway IPSec_Gateway_SAP_RISE
+set network tunnel ipsec IPSec_Tunnel_RISE auto-key proxy-id RISE protocol any
+set network tunnel ipsec IPSec_Tunnel_RISE auto-key proxy-id RISE local 10.34.152.0/22
+set network tunnel ipsec IPSec_Tunnel_RISE auto-key proxy-id RISE remote 10.34.160.0/23
+set network tunnel ipsec IPSec_Tunnel_RISE auto-key ipsec-crypto-profile IPSec_Crypto_Profile_RISE
+set network tunnel ipsec IPSec_Tunnel_RISE tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_RISE tunnel-interface tunnel.2
+set network tunnel ipsec IPSec_Tunnel_Brian auto-key ike-gateway IPSec_Gateway_Brian
+set network tunnel ipsec IPSec_Tunnel_Brian auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_Brian auto-key proxy-id Brian protocol any
+set network tunnel ipsec IPSec_Tunnel_Brian auto-key proxy-id Brian local 10.34.152.0/22
+set network tunnel ipsec IPSec_Tunnel_Brian auto-key proxy-id Brian remote 192.168.0.0/23
+set network tunnel ipsec IPSec_Tunnel_Brian tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_Brian tunnel-interface tunnel.102
+set network tunnel ipsec IPSec_Tunnel_Jon auto-key ike-gateway IPSec_Gateway_Jon
+set network tunnel ipsec IPSec_Tunnel_Jon auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_Jon tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_Jon tunnel-interface tunnel.103
+set network tunnel ipsec IPSec_Tunnel_Azure_Sec auto-key ike-gateway IPsec_Gateway_Azure_Sec
+set network tunnel ipsec IPSec_Tunnel_Azure_Sec auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_Azure_Sec tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_Azure_Sec tunnel-interface tunnel.104
+set network tunnel ipsec IPSec_Tunnel_SWAM14 auto-key ike-gateway IPSec_Gateway_SWAM14
+set network tunnel ipsec IPSec_Tunnel_SWAM14 auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_SWAM14 tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_SWAM14 tunnel-interface tunnel.4
+set network tunnel ipsec IPSec_Tunnel_C16 auto-key ike-gateway IPSec_Gateway_C16
+set network tunnel ipsec IPSec_Tunnel_C16 auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_C16 tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_C16 tunnel-interface tunnel.105
+set network tunnel ipsec IPSec_Tunnel_Justin auto-key ike-gateway IPSec_Gateway_Justin
+set network tunnel ipsec IPSec_Tunnel_Justin auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_Justin tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_Justin tunnel-interface tunnel.106
+
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" local-address ip ipv4 102.90.33.172/29
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" local-address interface ethernet1/4
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" local-address ip-address-family ipv4
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" client exclude-video-traffic applications
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" client exclude-video-traffic enabled no
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" client dns-server primary 10.34.152.200
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" client dns-server secondary 10.34.152.202
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" client dns-suffix spin-ng.local
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" ipsec third-party-client enable no
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" ip-pool 10.152.120.0/21
+set network tunnel global-protect-gateway "GPC Extternal Gateway-N" tunnel-interface tunnel.99
+set network tunnel global-protect-site-to-site
+
+
+
+set network virtual-router default protocol bgp enable yes
+set network virtual-router default protocol bgp dampening-profile default cutoff 1.25
+set network virtual-router default protocol bgp dampening-profile default reuse 0.5
+set network virtual-router default protocol bgp dampening-profile default max-hold-time 900
+set network virtual-router default protocol bgp dampening-profile default decay-half-life-reachable 300
+set network virtual-router default protocol bgp dampening-profile default decay-half-life-unreachable 900
+set network virtual-router default protocol bgp dampening-profile default enable yes
+set network virtual-router default protocol bgp routing-options graceful-restart enable yes
+set network virtual-router default protocol bgp router-id 192.168.255.101
+set network virtual-router default protocol bgp local-as 65101
+set network virtual-router default protocol bgp redist-rules redist-static address-family-identifier ipv4
+set network virtual-router default protocol bgp redist-rules redist-static enable yes
+set network virtual-router default protocol bgp redist-rules redist-static set-origin incomplete
+set network virtual-router default protocol bgp redist-rules redist-connected address-family-identifier ipv4
+set network virtual-router default protocol bgp redist-rules redist-connected enable yes
+set network virtual-router default protocol bgp redist-rules redist-connected set-origin incomplete
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" type ebgp remove-private-as no
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" type ebgp import-nexthop original
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" type ebgp export-nexthop resolve
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" peer-address ip 192.168.255.102
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options incoming-bgp-connection remote-port 0
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options incoming-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options outgoing-bgp-connection local-port 0
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options outgoing-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options multihop 0
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options keep-alive-interval 30
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options open-delay-time 0
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options hold-time 90
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options idle-hold-time 15
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" connection-options min-route-adv-interval 30
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" subsequent-address-family-identifier unicast yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" subsequent-address-family-identifier multicast no
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" local-address ip 192.168.255.101/32
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" local-address interface loopback.101
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" bfd profile Inherit-vr-global-setting
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" max-prefixes 5000
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" enable yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" peer-as 65102
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" enable-mp-bgp no
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" address-family-identifier ipv4
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" enable-sender-side-loop-detection yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" reflector-client non-client
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" peer "Azure Prim" peering-type unspecified
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" aggregated-confed-as-path yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" soft-reset-with-stored-info no
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Prim" enable yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" type ebgp remove-private-as no
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" type ebgp import-nexthop original
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" type ebgp export-nexthop resolve
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" peer-address ip 192.168.255.202
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options incoming-bgp-connection remote-port 0
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options incoming-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options outgoing-bgp-connection local-port 0
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options outgoing-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options multihop 0
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options keep-alive-interval 30
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options open-delay-time 0
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options hold-time 90
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options idle-hold-time 15
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" connection-options min-route-adv-interval 30
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" subsequent-address-family-identifier unicast yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" subsequent-address-family-identifier multicast no
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" local-address ip 192.168.255.201/32
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" local-address interface loopback.201
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" bfd profile Inherit-vr-global-setting
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" max-prefixes 5000
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" enable yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" peer-as 65102
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" enable-mp-bgp no
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" address-family-identifier ipv4
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" enable-sender-side-loop-detection yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" reflector-client non-client
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" peer "Azure Sec" peering-type unspecified
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" aggregated-confed-as-path yes
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" soft-reset-with-stored-info no
+set network virtual-router default protocol bgp peer-group "Azure BGP Router Sec" enable yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" type ebgp remove-private-as no
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" type ebgp import-nexthop original
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" type ebgp export-nexthop resolve
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" peer-address ip 192.168.255.103
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options incoming-bgp-connection remote-port 0
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options incoming-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options outgoing-bgp-connection local-port 0
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options outgoing-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options multihop 0
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options keep-alive-interval 30
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options open-delay-time 0
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options hold-time 90
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options idle-hold-time 15
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" connection-options min-route-adv-interval 30
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" subsequent-address-family-identifier unicast yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" subsequent-address-family-identifier multicast no
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" local-address ip 192.168.255.101/32
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" local-address interface loopback.101
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" bfd profile Inherit-vr-global-setting
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" max-prefixes 5000
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" enable yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" peer-as 65103
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" enable-mp-bgp no
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" address-family-identifier ipv4
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" enable-sender-side-loop-detection yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" reflector-client non-client
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" peer "C16 BGP Prim" peering-type unspecified
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" aggregated-confed-as-path yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" soft-reset-with-stored-info no
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Prim" enable yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" type ebgp remove-private-as no
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" type ebgp import-nexthop original
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" type ebgp export-nexthop resolve
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" peer-address ip 192.168.255.103
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options incoming-bgp-connection remote-port 0
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options incoming-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options outgoing-bgp-connection local-port 0
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options outgoing-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options multihop 0
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options keep-alive-interval 30
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options open-delay-time 0
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options hold-time 90
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options idle-hold-time 15
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" connection-options min-route-adv-interval 30
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" subsequent-address-family-identifier unicast yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" subsequent-address-family-identifier multicast no
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" local-address ip 192.168.255.201/32
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" local-address interface loopback.201
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" bfd profile Inherit-vr-global-setting
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" max-prefixes 5000
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" enable yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" peer-as 65103
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" enable-mp-bgp no
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" address-family-identifier ipv4
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" enable-sender-side-loop-detection yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" reflector-client non-client
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" peer "C16 BGP Sec" peering-type unspecified
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" aggregated-confed-as-path yes
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" soft-reset-with-stored-info no
+set network virtual-router default protocol bgp peer-group "C16 BGP Router Sec" enable yes
+set network virtual-router default protocol bgp install-route yes
+set network virtual-router default protocol bgp policy export rules "Prepend Sec" action allow update as-path prepend 2
+set network virtual-router default protocol bgp policy export rules "Prepend Sec" action allow update community none
+set network virtual-router default protocol bgp policy export rules "Prepend Sec" action allow update extended-community none
+set network virtual-router default protocol bgp policy export rules "Prepend Sec" match route-table unicast
+set network virtual-router default protocol bgp policy export rules "Prepend Sec" used-by [ "Azure BGP Router Sec" "C16 BGP Router Sec" ]
+set network virtual-router default protocol bgp policy export rules "Prepend Sec" enable yes
+set network virtual-router default protocol rip enable no
+set network virtual-router default protocol ospf enable no
+set network virtual-router default protocol ospfv3 enable no
+set network virtual-router default protocol redist-profile redist-connected filter type connect
+set network virtual-router default protocol redist-profile redist-connected filter interface [ ethernet1/2.10 ethernet1/2.110 ]
+set network virtual-router default protocol redist-profile redist-connected priority 1
+set network virtual-router default protocol redist-profile redist-connected action redist
+set network virtual-router default protocol redist-profile redist-static filter type static
+set network virtual-router default protocol redist-profile redist-static filter interface [ ethernet1/3 ethernet1/5 tunnel.4 tunnel.100 tunnel.101 tunnel.102 tunnel.103 tunnel.105 ]
+set network virtual-router default protocol redist-profile redist-static priority 1
+set network virtual-router default protocol redist-profile redist-static action redist
+set network virtual-router default interface [ ethernet1/2 ethernet1/2.10 ethernet1/2.110 ethernet1/3 ethernet1/4 ethernet1/5 ethernet1/6 ethernet1/7 loopback.1 loopback.101 loopback.201 tunnel.1 tunnel.2 tunnel.3 tunnel.4 tunnel.99 tunnel.100 tunnel.101 tunnel.102 tunnel.103 tunnel.104 tunnel.105 tunnel.106 ]
+set network virtual-router default ecmp algorithm ip-modulo
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,3 @@
+set network interface loopback units loopback.108 adjust-tcp-mss enable no
+set network interface loopback units loopback.108 ip 192.168.255.108/32
+set network interface loopback units loopback.108 interface-management-profile Ping

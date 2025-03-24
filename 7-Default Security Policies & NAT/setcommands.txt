@@ -1,0 +1,32 @@
+set zone {zone_public_network_name} network layer3 {public_network_interface}
+set zone {zone_private_network_name} network layer3 {private_network_interfaces}
+
+set rulebase security rules "{security_rule_name}" to {security_rule_destination_zone}
+set rulebase security rules "{security_rule_name}" from {security_rule_source_zone}
+set rulebase security rules "{security_rule_name}" source any
+set rulebase security rules "{security_rule_name}" destination any
+set rulebase security rules "{security_rule_name}" source-user any
+set rulebase security rules "{security_rule_name}" category any
+set rulebase security rules "{security_rule_name}" application any
+set rulebase security rules "{security_rule_name}" service application-default
+set rulebase security rules "{security_rule_name}" source-hip any
+set rulebase security rules "{security_rule_name}" destination-hip any
+set rulebase security rules "{security_rule_name}" action {security_rule_action_allow}
+set rulebase security rules "{security_rule_name}" log-start no
+set rulebase security rules "{security_rule_name}" log-end yes
+set rulebase security rules "{security_rule_name}" rule-type universal
+
+
+set rulebase nat rules "{nat_rule_name}" source-translation dynamic-ip-and-port interface-address interface {public_network_interface}
+set rulebase nat rules "{nat_rule_name}" to {nat_rule_destination_zone}
+set rulebase nat rules "{nat_rule_name}" from {nat_rule_source_zone}
+set rulebase nat rules "{nat_rule_name}" source any
+set rulebase nat rules "{nat_rule_name}" destination any
+set rulebase nat rules "{nat_rule_name}" service any
+
+set rulebase default-security-rules rules intrazone-default action allow
+set rulebase default-security-rules rules intrazone-default log-start no
+set rulebase default-security-rules rules intrazone-default log-end yes
+set rulebase default-security-rules rules interzone-default action deny
+set rulebase default-security-rules rules interzone-default log-start no
+set rulebase default-security-rules rules interzone-default log-end yes

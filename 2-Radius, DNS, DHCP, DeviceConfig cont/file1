@@ -1,0 +1,82 @@
+set shared server-profile radius SWAF235_RADIUS_SERVER protocol PAP
+set shared server-profile radius SWAF235_RADIUS_SERVER server PHC-S-08017 secret -AQ==KgSVymqi+DyMxtDAR0t4iePcuUg=Hbo9iWRsEDZGYke2ZOKQdg==
+set shared server-profile radius SWAF235_RADIUS_SERVER server PHC-S-08017 port 1812
+set shared server-profile radius SWAF235_RADIUS_SERVER server PHC-S-08017 ip-address 10.34.155.27
+set shared authentication-profile SWAF235_RADIUS_AUTHPROFILE method radius server-profile SWAF235_RADIUS_SERVER
+set shared authentication-profile SWAF235_RADIUS_AUTHPROFILE multi-factor-auth mfa-enable no
+set shared authentication-profile SWAF235_RADIUS_AUTHPROFILE allow-list all
+set shared authentication-profile SWAF235_RADIUS_AUTHPROFILE user-domain spin-ng
+
+set network dns-proxy "DNS Proxy" cache max-ttl enabled no
+set network dns-proxy "DNS Proxy" cache enabled yes
+set network dns-proxy "DNS Proxy" default primary 10.34.152.200
+set network dns-proxy "DNS Proxy" tcp-queries enabled no
+set network dns-proxy "DNS Proxy" interface ethernet1/2
+
+set network dhcp interface ethernet1/2 server ip-pool 10.34.152.112/28
+set network dhcp interface ethernet1/2 server mode auto
+set network dhcp interface ethernet1/2 server option dns primary 10.34.152.113
+set network dhcp interface ethernet1/2 server option lease unlimited
+set network dhcp interface ethernet1/2 server option gateway 10.34.152.114
+set network dhcp interface ethernet1/2 server option subnet-mask 255.255.255.0
+
+
+set deviceconfig system route service autofocus source address 10.34.152.113/28
+set deviceconfig system route service autofocus source interface ethernet1/2
+set deviceconfig system route service crl-status source address 10.34.152.113/28
+set deviceconfig system route service crl-status source interface ethernet1/2
+set deviceconfig system route service data-services source address 10.34.152.113/28
+set deviceconfig system route service data-services source interface ethernet1/2
+set deviceconfig system route service ddns source address 10.34.152.113/28
+set deviceconfig system route service ddns source interface ethernet1/2
+set deviceconfig system route service deployments source address 10.34.152.113/28
+set deviceconfig system route service deployments source interface ethernet1/2
+set deviceconfig system route service dns source address 10.34.152.113/28
+set deviceconfig system route service dns source interface ethernet1/2
+set deviceconfig system route service edl-updates source address 10.34.152.113/28
+set deviceconfig system route service edl-updates source interface ethernet1/2
+set deviceconfig system route service email source address 10.34.152.113/28
+set deviceconfig system route service email source interface ethernet1/2
+set deviceconfig system route service http source address 10.34.152.113/28
+set deviceconfig system route service http source interface ethernet1/2
+set deviceconfig system route service iot source address 10.34.152.113/28
+set deviceconfig system route service iot source interface ethernet1/2
+set deviceconfig system route service ldap source address 10.34.152.113/28
+set deviceconfig system route service ldap source interface ethernet1/2
+set deviceconfig system route service mdm source address 10.34.152.113/28
+set deviceconfig system route service mdm source interface ethernet1/2
+set deviceconfig system route service mfa source address 10.34.152.113/28
+set deviceconfig system route service mfa source interface ethernet1/2
+set deviceconfig system route service netflow source address 10.34.152.113/28
+set deviceconfig system route service netflow source interface ethernet1/2
+set deviceconfig system route service ntp source address 10.34.152.113/28
+set deviceconfig system route service ntp source interface ethernet1/2
+set deviceconfig system route service paloalto-networks-services source address 10.34.152.113/28
+set deviceconfig system route service paloalto-networks-services source interface ethernet1/2
+set deviceconfig system route service proxy source address 10.34.152.113/28
+set deviceconfig system route service proxy source interface ethernet1/2
+set deviceconfig system route service radius source address 10.34.152.113/28
+set deviceconfig system route service radius source interface ethernet1/2
+set deviceconfig system route service scep source address 10.34.152.113/28
+set deviceconfig system route service scep source interface ethernet1/2
+set deviceconfig system route service snmp source address 10.34.152.113/28
+set deviceconfig system route service snmp source interface ethernet1/2
+set deviceconfig system route service syslog source address 10.34.152.113/28
+set deviceconfig system route service syslog source interface ethernet1/2
+set deviceconfig system route service uid-agent source address 10.34.152.113/28
+set deviceconfig system route service uid-agent source interface ethernet1/2
+set deviceconfig system route service url-updates source address 10.34.152.113/28
+set deviceconfig system route service url-updates source interface ethernet1/2
+set deviceconfig system route service vmmonitor source address 10.34.152.113/28
+set deviceconfig system route service vmmonitor source interface ethernet1/2
+set deviceconfig system route service wildfire-private source address 10.34.152.113/28
+set deviceconfig system route service wildfire-private source interface ethernet1/2
+set deviceconfig system route service ztp source address 10.34.152.113/28
+set deviceconfig system route service ztp source interface ethernet1/2
+
+set deviceconfig system authentication-profile SWAF235_RADIUS_AUTHPROFILE
+set deviceconfig system domain spin-ng.local
+
+set deviceconfig system dns-setting dns-proxy-object DNS Proxy
+set deviceconfig setting config rematch yes
+set deviceconfig setting management hostname-type-in-syslog FQDN

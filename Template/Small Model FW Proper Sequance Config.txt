@@ -1,0 +1,511 @@
+set deviceconfig system ip-address 192.168.1.1
+set deviceconfig system netmask 255.255.255.0
+set deviceconfig system update-server updates.paloaltonetworks.com
+set deviceconfig system update-schedule threats recurring weekly action download-only
+set deviceconfig system timezone Europe/Amsterdam
+set deviceconfig system service disable-telnet yes
+set deviceconfig system service disable-http yes
+set deviceconfig system hostname TESTC16
+set deviceconfig system device-telemetry device-health-performance yes
+set deviceconfig system device-telemetry product-usage yes
+set deviceconfig system device-telemetry threat-prevention yes
+set deviceconfig system device-telemetry region Americas
+
+
+
+delete rulebase security rules rule1
+delete zone untrust
+delete zone trust
+delete network virtual-wire default-vwire
+
+delete network virtual-router default interface ethernet1/2
+
+delete network virtual-router default interface ethernet1/1
+
+delete network interface ethernet ethernet1/1
+delete network interface ethernet ethernet1/2
+
+
+
+set network interface ethernet ethernet1/1 layer3 
+set network virtual-router default interface ethernet1/1
+set network interface ethernet ethernet1/1 layer3 ip 10.34.1.1/28
+
+
+
+set network interface ethernet ethernet1/2 layer3 
+set network virtual-router default interface ethernet1/2
+set network interface ethernet ethernet1/2 layer3 ip 10.34.152.113/28
+
+
+
+set network profiles monitor-profile default interval 3
+set network profiles monitor-profile default threshold 5
+set network profiles monitor-profile default action wait-recover
+set network profiles interface-management-profile Ping ping yes
+set network profiles interface-management-profile "PING HTTPS SSH" http no
+set network profiles interface-management-profile "PING HTTPS SSH" https yes
+set network profiles interface-management-profile "PING HTTPS SSH" ssh yes
+set network profiles interface-management-profile "PING HTTPS SSH" ping yes
+
+
+
+
+set network interface ethernet ethernet1/1 layer3 ndp-proxy enabled no
+set network interface ethernet ethernet1/1 layer3 sdwan-link-settings upstream-nat enable no
+set network interface ethernet ethernet1/1 layer3 sdwan-link-settings upstream-nat static-ip
+set network interface ethernet ethernet1/1 layer3 sdwan-link-settings enable no
+set network interface ethernet ethernet1/1 layer3 interface-management-profile Ping
+set network interface ethernet ethernet1/1 layer3 lldp enable no
+
+
+
+
+
+
+
+
+
+set network interface ethernet ethernet1/2 layer3 ndp-proxy enabled no
+set network interface ethernet ethernet1/2 layer3 sdwan-link-settings upstream-nat enable no
+set network interface ethernet ethernet1/2 layer3 sdwan-link-settings upstream-nat static-ip
+set network interface ethernet ethernet1/2 layer3 sdwan-link-settings enable no
+set network interface ethernet ethernet1/2 layer3 ip 10.34.152.113/28
+set network interface ethernet ethernet1/2 layer3 interface-management-profile "PING HTTPS SSH"
+set network interface ethernet ethernet1/2 layer3 lldp enable no
+
+
+
+
+set network interface loopback units loopback.103 adjust-tcp-mss enable no
+set network interface loopback units loopback.103 ip 192.168.255.103/32
+set network interface loopback units loopback.103 interface-management-profile Ping
+
+set network interface tunnel units tunnel.1
+
+
+
+set shared server-profile radius SWAF235_RADIUS_SERVER protocol PAP
+set shared server-profile radius SWAF235_RADIUS_SERVER server PHC-S-08017 secret -AQ==KgSVymqi+DyMxtDAR0t4iePcuUg=Hbo9iWRsEDZGYke2ZOKQdg==
+set shared server-profile radius SWAF235_RADIUS_SERVER server PHC-S-08017 port 1812
+set shared server-profile radius SWAF235_RADIUS_SERVER server PHC-S-08017 ip-address 10.34.155.27
+
+
+set shared authentication-profile SWAF235_RADIUS_AUTHPROFILE method radius server-profile SWAF235_RADIUS_SERVER
+set shared authentication-profile SWAF235_RADIUS_AUTHPROFILE multi-factor-auth mfa-enable no
+set shared authentication-profile SWAF235_RADIUS_AUTHPROFILE allow-list all
+set shared authentication-profile SWAF235_RADIUS_AUTHPROFILE user-domain spin-ng
+
+
+
+set network dns-proxy "DNS Proxy" cache max-ttl enabled no
+set network dns-proxy "DNS Proxy" cache enabled yes
+set network dns-proxy "DNS Proxy" default primary 10.34.152.200
+set network dns-proxy "DNS Proxy" tcp-queries enabled no
+set network dns-proxy "DNS Proxy" interface ethernet1/2
+
+set network dhcp interface ethernet1/2 server ip-pool 10.34.152.112/28
+set network dhcp interface ethernet1/2 server mode auto
+set network dhcp interface ethernet1/2 server option dns primary 10.34.152.113
+set network dhcp interface ethernet1/2 server option lease unlimited
+set network dhcp interface ethernet1/2 server option gateway 10.34.152.113
+set network dhcp interface ethernet1/2 server option subnet-mask 255.255.255.240
+
+
+
+
+
+
+
+
+set deviceconfig system route service autofocus source address 10.34.152.113/28
+set deviceconfig system route service autofocus source interface ethernet1/2
+set deviceconfig system route service crl-status source address 10.34.152.113/28
+set deviceconfig system route service crl-status source interface ethernet1/2
+set deviceconfig system route service data-services source address 10.34.152.113/28
+set deviceconfig system route service data-services source interface ethernet1/2
+set deviceconfig system route service ddns source address 10.34.152.113/28
+set deviceconfig system route service ddns source interface ethernet1/2
+set deviceconfig system route service deployments source address 10.34.152.113/28
+set deviceconfig system route service deployments source interface ethernet1/2
+
+set deviceconfig system route service dns source address 10.34.152.113/28
+set deviceconfig system route service dns source interface ethernet1/2
+set deviceconfig system route service edl-updates source address 10.34.152.113/28
+set deviceconfig system route service edl-updates source interface ethernet1/2
+set deviceconfig system route service email source address 10.34.152.113/28
+set deviceconfig system route service email source interface ethernet1/2
+set deviceconfig system route service http source address 10.34.152.113/28
+set deviceconfig system route service http source interface ethernet1/2
+set deviceconfig system route service iot source address 10.34.152.113/28
+set deviceconfig system route service iot source interface ethernet1/2
+set deviceconfig system route service kerberos source address 10.34.152.113/28
+set deviceconfig system route service kerberos source interface ethernet1/2
+set deviceconfig system route service ldap source address 10.34.152.113/28
+set deviceconfig system route service ldap source interface ethernet1/2
+set deviceconfig system route service mdm source address 10.34.152.113/28
+set deviceconfig system route service mdm source interface ethernet1/2
+set deviceconfig system route service mfa source address 10.34.152.113/28
+set deviceconfig system route service mfa source interface ethernet1/2
+set deviceconfig system route service netflow source address 10.34.152.113/28
+set deviceconfig system route service netflow source interface ethernet1/2
+set deviceconfig system route service ntp source address 10.34.152.113/28
+set deviceconfig system route service ntp source interface ethernet1/2
+set deviceconfig system route service paloalto-networks-services source address 10.34.152.113/28
+set deviceconfig system route service paloalto-networks-services source interface ethernet1/2
+set deviceconfig system route service panorama source address 10.34.152.113/28
+set deviceconfig system route service panorama source interface ethernet1/2
+set deviceconfig system route service proxy source address 10.34.152.113/28
+set deviceconfig system route service proxy source interface ethernet1/2
+set deviceconfig system route service radius source address 10.34.152.113/28
+set deviceconfig system route service radius source interface ethernet1/2
+set deviceconfig system route service scep source address 10.34.152.113/28
+set deviceconfig system route service scep source interface ethernet1/2
+set deviceconfig system route service snmp source address 10.34.152.113/28
+set deviceconfig system route service snmp source interface ethernet1/2
+set deviceconfig system route service syslog source address 10.34.152.113/28
+set deviceconfig system route service syslog source interface ethernet1/2
+set deviceconfig system route service tacplus source address 10.34.152.113/28
+set deviceconfig system route service tacplus source interface ethernet1/2
+set deviceconfig system route service uid-agent source address 10.34.152.113/28
+set deviceconfig system route service uid-agent source interface ethernet1/2
+set deviceconfig system route service url-updates source address 10.34.152.113/28
+set deviceconfig system route service url-updates source interface ethernet1/2
+set deviceconfig system route service vmmonitor source address 10.34.152.113/28
+set deviceconfig system route service vmmonitor source interface ethernet1/2
+set deviceconfig system route service wildfire-private source address 10.34.152.113/28
+set deviceconfig system route service wildfire-private source interface ethernet1/2
+set deviceconfig system route service ztp source address 10.34.152.113/28
+set deviceconfig system route service ztp source interface ethernet1/2
+
+set deviceconfig system authentication-profile SWAF235_RADIUS_AUTHPROFILE
+set deviceconfig system domain spin-ng.local
+
+set deviceconfig system dns-setting dns-proxy-object "DNS Proxy"
+set deviceconfig setting config rematch yes
+set deviceconfig setting management hostname-type-in-syslog FQDN
+
+
+
+
+
+
+
+
+
+
+set network ike crypto-profiles ike-crypto-profiles default encryption [ aes-128-cbc 3des ]
+set network ike crypto-profiles ike-crypto-profiles default hash sha1
+set network ike crypto-profiles ike-crypto-profiles default dh-group group2
+set network ike crypto-profiles ike-crypto-profiles default lifetime hours 8
+set network ike crypto-profiles ike-crypto-profiles Swapkit_IKE_Crypto hash sha512
+set network ike crypto-profiles ike-crypto-profiles Swapkit_IKE_Crypto dh-group group20
+set network ike crypto-profiles ike-crypto-profiles Swapkit_IKE_Crypto encryption aes-256-cbc
+set network ike crypto-profiles ike-crypto-profiles Swapkit_IKE_Crypto lifetime hours 8
+set network ike crypto-profiles ipsec-crypto-profiles default esp encryption [ aes-128-cbc 3des ]
+set network ike crypto-profiles ipsec-crypto-profiles default esp authentication sha1
+set network ike crypto-profiles ipsec-crypto-profiles default dh-group group2
+set network ike crypto-profiles ipsec-crypto-profiles default lifetime hours 1
+set network ike crypto-profiles ipsec-crypto-profiles Suite-B-GCM-128 esp encryption aes-128-gcm
+set network ike crypto-profiles ipsec-crypto-profiles Suite-B-GCM-128 esp authentication none
+set network ike crypto-profiles ipsec-crypto-profiles Suite-B-GCM-128 dh-group group19
+set network ike crypto-profiles ipsec-crypto-profiles Suite-B-GCM-128 lifetime hours 1
+set network ike crypto-profiles ipsec-crypto-profiles Suite-B-GCM-256 esp encryption aes-256-gcm
+set network ike crypto-profiles ipsec-crypto-profiles Suite-B-GCM-256 esp authentication none
+set network ike crypto-profiles ipsec-crypto-profiles Suite-B-GCM-256 dh-group group20
+set network ike crypto-profiles ipsec-crypto-profiles Suite-B-GCM-256 lifetime hours 1
+set network ike crypto-profiles ipsec-crypto-profiles Swapkit_IPSec_Crypto esp authentication sha512
+set network ike crypto-profiles ipsec-crypto-profiles Swapkit_IPSec_Crypto esp encryption aes-256-cbc
+set network ike crypto-profiles ipsec-crypto-profiles Swapkit_IPSec_Crypto lifetime hours 1
+set network ike crypto-profiles ipsec-crypto-profiles Swapkit_IPSec_Crypto dh-group group20
+set network ike crypto-profiles global-protect-app-crypto-profiles default encryption aes-128-cbc
+set network ike crypto-profiles global-protect-app-crypto-profiles default authentication sha1
+
+
+
+
+
+set network ike gateway IPSec_Gateway_PHC authentication pre-shared-key key -AQ==WRIOAixnn/D3a7h6EckgRRA46B8=/FSBMD3AJt8tar27ygmJO6nFp1KOBszme1YMTLmZEEEgvSpONcLhLzOj9NIjDSBnWPobqEsy2H6MMxWMrOjbMNoc8tI/6Aot18T+80/6mTQ=
+
+set network ike gateway IPSec_Gateway_PHC protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_PHC protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_PHC protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_PHC protocol version ikev2
+set network ike gateway IPSec_Gateway_PHC protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_PHC protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_PHC local-address interface ethernet1/1
+set network ike gateway IPSec_Gateway_PHC peer-address ip 102.90.33.172
+set network ike gateway IPSec_Gateway_PHC local-id type ufqdn id jeroen.schellart@shell.com
+set network ike gateway IPSec_Gateway_PHC peer-id  type ipaddr id 102.90.33.172
+
+
+set network tunnel ipsec IPSec_Tunnel_PHC auto-key ike-gateway IPSec_Gateway_PHC
+set network tunnel ipsec IPSec_Tunnel_PHC auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_PHC tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_PHC tunnel-interface tunnel.1
+
+
+
+set network virtual-router default protocol rip enable no
+set network virtual-router default protocol ospf enable no
+set network virtual-router default protocol ospfv3 enable no
+set network virtual-router default protocol redist-profile redist-connected filter type connect
+set network virtual-router default protocol redist-profile redist-connected filter interface ethernet1/2
+set network virtual-router default protocol redist-profile redist-connected priority 1
+set network virtual-router default protocol redist-profile redist-connected action redist
+set network virtual-router default interface [ ethernet1/1 ethernet1/2 loopback.103 tunnel.1 ]
+set network virtual-router default ecmp algorithm ip-modulo
+
+
+
+
+set network virtual-router default routing-table ip static-route "Shell Overload" bfd profile None
+set network virtual-router default routing-table ip static-route "Shell Overload" interface tunnel.1
+set network virtual-router default routing-table ip static-route "Shell Overload" metric 10
+set network virtual-router default routing-table ip static-route "Shell Overload" destination 10.34.154.145/32
+set network virtual-router default routing-table ip static-route "Shell Overload" route-table unicast
+
+set network virtual-router default routing-table ip static-route "PHC Loopback Prim" bfd profile None
+set network virtual-router default routing-table ip static-route "PHC Loopback Prim" interface tunnel.1
+set network virtual-router default routing-table ip static-route "PHC Loopback Prim" metric 10
+set network virtual-router default routing-table ip static-route "PHC Loopback Prim" destination 192.168.255.101/32
+set network virtual-router default routing-table ip static-route "PHC Loopback Prim" route-table unicast
+set network virtual-router default routing-table ip static-route "PHC Loopback Sec" bfd profile None
+set network virtual-router default routing-table ip static-route "PHC Loopback Sec" interface tunnel.1
+set network virtual-router default routing-table ip static-route "PHC Loopback Sec" metric 10
+set network virtual-router default routing-table ip static-route "PHC Loopback Sec" destination 192.168.255.201/32
+set network virtual-router default routing-table ip static-route "PHC Loopback Sec" route-table unicast
+
+
+
+
+
+
+
+set network virtual-router default protocol bgp enable yes
+set network virtual-router default protocol bgp dampening-profile default cutoff 1.25
+set network virtual-router default protocol bgp dampening-profile default reuse 0.5
+set network virtual-router default protocol bgp dampening-profile default max-hold-time 900
+set network virtual-router default protocol bgp dampening-profile default decay-half-life-reachable 300
+set network virtual-router default protocol bgp dampening-profile default decay-half-life-unreachable 900
+set network virtual-router default protocol bgp dampening-profile default enable yes
+set network virtual-router default protocol bgp routing-options graceful-restart enable yes
+
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" type ebgp remove-private-as no
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" type ebgp import-nexthop original
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" type ebgp export-nexthop resolve
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim peer-address ip 192.168.255.101
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim connection-options incoming-bgp-connection remote-port 0
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim connection-options incoming-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim connection-options outgoing-bgp-connection local-port 0
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim connection-options outgoing-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim connection-options multihop 0
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim connection-options keep-alive-interval 30
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim connection-options open-delay-time 0
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim connection-options hold-time 90
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim connection-options idle-hold-time 15
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim connection-options min-route-adv-interval 30
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim subsequent-address-family-identifier unicast yes
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim subsequent-address-family-identifier multicast no
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim local-address ip 192.168.255.103/32
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim local-address interface loopback.103
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim bfd profile Inherit-vr-global-setting
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim max-prefixes 5000
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim enable yes
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim peer-as 65101
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim enable-mp-bgp no
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim address-family-identifier ipv4
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim enable-sender-side-loop-detection yes
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim reflector-client non-client
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" peer PHC_Prim peering-type unspecified
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" aggregated-confed-as-path yes
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" soft-reset-with-stored-info no
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Prim" enable yes
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" type ebgp remove-private-as no
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" type ebgp import-nexthop original
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" type ebgp export-nexthop resolve
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec peer-address ip 192.168.255.201
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec connection-options incoming-bgp-connection remote-port 0
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec connection-options incoming-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec connection-options outgoing-bgp-connection local-port 0
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec connection-options outgoing-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec connection-options multihop 0
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec connection-options keep-alive-interval 30
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec connection-options open-delay-time 0
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec connection-options hold-time 90
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec connection-options idle-hold-time 15
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec connection-options min-route-adv-interval 30
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec subsequent-address-family-identifier unicast yes
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec subsequent-address-family-identifier multicast no
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec local-address ip 192.168.255.103/32
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec local-address interface loopback.103
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec bfd profile Inherit-vr-global-setting
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec max-prefixes 5000
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec enable yes
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec peer-as 65101
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec enable-mp-bgp no
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec address-family-identifier ipv4
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec enable-sender-side-loop-detection yes
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec reflector-client non-client
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" peer PHC_Sec peering-type unspecified
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" aggregated-confed-as-path yes
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" soft-reset-with-stored-info no
+set network virtual-router default protocol bgp peer-group "PHC BGP Router Sec" enable yes
+
+set network virtual-router default protocol bgp router-id 192.168.255.103
+set network virtual-router default protocol bgp local-as 65103
+set network virtual-router default protocol bgp install-route yes
+set network virtual-router default protocol bgp redist-rules redist-connected address-family-identifier ipv4
+set network virtual-router default protocol bgp redist-rules redist-connected enable yes
+set network virtual-router default protocol bgp redist-rules redist-connected set-origin incomplete
+
+
+set zone Public network layer3 ethernet1/1
+set zone Private network layer3 [ ethernet1/2 tunnel.1 loopback.103 ]
+
+
+set rulebase security rules "Allow Private to Internet" to Public
+set rulebase security rules "Allow Private to Internet" from Private
+set rulebase security rules "Allow Private to Internet" source any
+set rulebase security rules "Allow Private to Internet" destination any
+set rulebase security rules "Allow Private to Internet" source-user any
+set rulebase security rules "Allow Private to Internet" category any
+set rulebase security rules "Allow Private to Internet" application any
+set rulebase security rules "Allow Private to Internet" service application-default
+set rulebase security rules "Allow Private to Internet" source-hip any
+set rulebase security rules "Allow Private to Internet" destination-hip any
+set rulebase security rules "Allow Private to Internet" action allow
+set rulebase security rules "Allow Private to Internet" log-start no
+set rulebase security rules "Allow Private to Internet" log-end yes
+set rulebase security rules "Allow Private to Internet" rule-type universal
+set rulebase default-security-rules rules intrazone-default action allow
+set rulebase default-security-rules rules intrazone-default log-start no
+set rulebase default-security-rules rules intrazone-default log-end yes
+set rulebase default-security-rules rules interzone-default action deny
+set rulebase default-security-rules rules interzone-default log-start no
+set rulebase default-security-rules rules interzone-default log-end yes
+set rulebase nat rules "Allow Private to Internet" source-translation dynamic-ip-and-port interface-address interface ethernet1/1
+set rulebase nat rules "Allow Private to Internet" to Public
+set rulebase nat rules "Allow Private to Internet" from Private
+set rulebase nat rules "Allow Private to Internet" source any
+set rulebase nat rules "Allow Private to Internet" destination any
+set rulebase nat rules "Allow Private to Internet" service any
+
+
+
+
+
+set import network interface [ ethernet1/1 ethernet1/2 tunnel.1 loopback.103 ]
+
+set mgt-config users admin phash $5$ulumppkv$mF5t2JtK.tlJHOVFhjtmU39DVwa.Gmk7RMZpzpETfT6
+set mgt-config users admin permissions role-based superuser yes
+set mgt-config users r.soliman permissions role-based superuser yes
+set mgt-config users r.soliman phash $5$fpxwfrye$Fts4eLFLE37uHyZsXQNNNo4nNLhNt0NhvnX8ADe3ZA3
+set mgt-config password-complexity enabled yes
+set mgt-config password-complexity minimum-length 8
+
+
+------------------------------------------------------------------------------------------------------
+
+
+
+set shared certificate "SPIN-NG Root CA" subject-hash 0c8a5660
+set shared certificate "SPIN-NG Root CA" issuer-hash 0c8a5660
+set shared certificate "SPIN-NG Root CA" not-valid-before "Jun 14 13:41:25 2024 GMT"
+set shared certificate "SPIN-NG Root CA" issuer /DC=local/DC=spin-ng/CN=spin-ng-SWAF235CA01-CA
+set shared certificate "SPIN-NG Root CA" not-valid-after "Jun 14 13:51:24 2029 GMT"
+set shared certificate "SPIN-NG Root CA" common-name spin-ng-SWAF235CA01-CA
+set shared certificate "SPIN-NG Root CA" expiry-epoch 1876139484
+set shared certificate "SPIN-NG Root CA" ca yes
+set shared certificate "SPIN-NG Root CA" subject /DC=local/DC=spin-ng/CN=spin-ng-SWAF235CA01-CA
+set shared certificate "SPIN-NG Root CA" public-key "-----BEGIN CERTIFICATE-----
+MIIDfTCCAmWgAwIBAgIQTtAZbYtWf6dN+kb8sKqDJzANBgkqhkiG9w0BAQsFADBR
+MRUwEwYKCZImiZPyLGQBGRYFbG9jYWwxFzAVBgoJkiaJk/IsZAEZFgdzcGluLW5n
+MR8wHQYDVQQDExZzcGluLW5nLVNXQUYyMzVDQTAxLUNBMB4XDTI0MDYxNDEzNDEy
+NVoXDTI5MDYxNDEzNTEyNFowUTEVMBMGCgmSJomT8ixkARkWBWxvY2FsMRcwFQYK
+CZImiZPyLGQBGRYHc3Bpbi1uZzEfMB0GA1UEAxMWc3Bpbi1uZy1TV0FGMjM1Q0Ew
+MS1DQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM80oPht13/DHU4X
+cwPT6WHzQnPlt2PhCY2ptmoNVBxZ5/3vpy4TQ3VmlfpOc0TpWFCxsLMYWfe1EgdM
+jE3r8/pnB8e1asAVe9GxnrUj9jVaGydoNSNS2Ts9lzckHHmYw8xrez2uqYUCKv/L
+9E1w7yBkEH1UFIaLZwzrXuVQiryxxxfahrixV1F9Z+Rkah3Lvw4H+JvbR3kk/p3q
+f0ITZt8IXgMhGYxubeYC8UscDfbtULvvKQX4l2hbdQX+yFYmmmaS42Tfpnt7wY/o
+axMCkCT4lu2qdJhWyzkGwFd7qS27tXt4eeHyCobh0nO84qccglrSbAsuM0YJVCpC
+l7mG7BUCAwEAAaNRME8wCwYDVR0PBAQDAgGGMA8GA1UdEwEB/wQFMAMBAf8wHQYD
+VR0OBBYEFNCl0xQZRt2LlaGsshSAMTQXgIL2MBAGCSsGAQQBgjcVAQQDAgEAMA0G
+CSqGSIb3DQEBCwUAA4IBAQAHd1xflNlklkB5qkfrmdlOvUGHxrJIidpJtkp4wEc1
+ZzVCgCkPRQi4b1a8hxme8LyjPHXjxMQqiuuzcwONUuUl5DuaUHh/mRqmNf797TY/
+AxANnO/cOz1Q15gRfRjAvaTDAyfqIByub9ClZ5tPQmATRcA+QJtgtgaVfhNbEXGx
+k1Z67NbxZIAdEIStElKW9c75YTFsB/itHS/kT7JtqYecRgZnDTAaU4IQLDHk+wFe
+JwNI9cybU81eo3efrIcsdVXo/wTIlleU9x5DkxsAMBKaBtP/P4pqK0GNBQyfqzJA
+HhbHbfFes+IFjHEvPzgW6uQYfC5dwCi4COItzU+bvMTm
+-----END CERTIFICATE-----
+"
+set shared certificate "SPIN-NG Root CA" algorithm RSA
+set shared certificate "SPIN-NG Root CA" private-key -AQ==i1NvhZBWl/Xp6Cj34XD/W3L6vQE=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
+set shared certificate nlc16fw110 common-name nlc16fw110.spin-ng.local
+set shared certificate nlc16fw110 subject "/C=NL/ST=Zuid Holland/L=Den Haag/O=MAD/OU=IT/CN=nlc16fw110.spin-ng.local"
+set shared certificate nlc16fw110 algorithm RSA
+set shared certificate nlc16fw110 private-key -AQ==HoLwhDBdwOM4eAfunSwiBk386R8=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
+set shared certificate nlc16fw110 subject-hash 5bdca840
+set shared certificate nlc16fw110 issuer-hash 0c8a5660
+set shared certificate nlc16fw110 not-valid-before "Mar 11 12:30:10 2025 GMT"
+set shared certificate nlc16fw110 issuer /DC=local/DC=spin-ng/CN=spin-ng-SWAF235CA01-CA
+set shared certificate nlc16fw110 not-valid-after "Mar 11 12:30:10 2027 GMT"
+set shared certificate nlc16fw110 expiry-epoch 1804768210
+set shared certificate nlc16fw110 ca no
+set shared certificate nlc16fw110 public-key "-----BEGIN CERTIFICATE-----
+MIIFtjCCBJ6gAwIBAgITWwAAVLCLH9YXz4jCKQAAAABUsDANBgkqhkiG9w0BAQsF
+ADBRMRUwEwYKCZImiZPyLGQBGRYFbG9jYWwxFzAVBgoJkiaJk/IsZAEZFgdzcGlu
+LW5nMR8wHQYDVQQDExZzcGluLW5nLVNXQUYyMzVDQTAxLUNBMB4XDTI1MDMxMTEy
+MzAxMFoXDTI3MDMxMTEyMzAxMFowdTELMAkGA1UEBhMCTkwxFTATBgNVBAgTDFp1
+aWQgSG9sbGFuZDERMA8GA1UEBxMIRGVuIEhhYWcxDDAKBgNVBAoTA01BRDELMAkG
+A1UECxMCSVQxITAfBgNVBAMTGG5sYzE2ZncxMTAuc3Bpbi1uZy5sb2NhbDCCASIw
+DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALZV1oa0WJ9ier93kZH3BzsQBzg1
+kwCZ1Sm+ZTlGdvaOWCXTTlb9FiDFCJ6PnWHZDaJ2WmMWgCw0VKSXvhisoEhRctWW
+LqxAe/v5wtb7/+CzXlt5Y/NDG215L++MfkfFwg/8q8kOO5Hhv24McMts1DrGG59B
+s+XcnzSKuFWjlD1oW/o3Wxxtvwl8pZji+/go+/rgz33nbbavThFyC6iJ5FukuIRT
+3z8dorVSJFFKl123QQm+oLoRH/+P8u7RN80ywUm1pMX41W6p+a1BU3If05LYlIRJ
+zXIDKakVXfcjDqZL9xdFgbNFHixDDSwqLk2Tb7x4zvLkeJPac0ifNCtpxGkCAwEA
+AaOCAmEwggJdMCkGA1UdEQQiMCCCGG5sYzE2ZncxMTAuc3Bpbi1uZy5sb2NhbIcE
+CiKYcTAdBgNVHQ4EFgQUCJNsrHFddPOH3SgVyFwBVOq0clgwHwYDVR0jBBgwFoAU
+0KXTFBlG3YuVoayyFIAxNBeAgvYwgdoGA1UdHwSB0jCBzzCBzKCByaCBxoaBw2xk
+YXA6Ly8vQ049c3Bpbi1uZy1TV0FGMjM1Q0EwMS1DQSxDTj1zd2FmMjM1Y2EwMSxD
+Tj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049
+Q29uZmlndXJhdGlvbixEQz1zcGluLW5nLERDPWxvY2FsP2NlcnRpZmljYXRlUmV2
+b2NhdGlvbkxpc3Q/YmFzZT9vYmplY3RDbGFzcz1jUkxEaXN0cmlidXRpb25Qb2lu
+dDCBygYIKwYBBQUHAQEEgb0wgbowgbcGCCsGAQUFBzAChoGqbGRhcDovLy9DTj1z
+cGluLW5nLVNXQUYyMzVDQTAxLUNBLENOPUFJQSxDTj1QdWJsaWMlMjBLZXklMjBT
+ZXJ2aWNlcyxDTj1TZXJ2aWNlcyxDTj1Db25maWd1cmF0aW9uLERDPXNwaW4tbmcs
+REM9bG9jYWw/Y0FDZXJ0aWZpY2F0ZT9iYXNlP29iamVjdENsYXNzPWNlcnRpZmlj
+YXRpb25BdXRob3JpdHkwIQYJKwYBBAGCNxQCBBQeEgBXAGUAYgBTAGUAcgB2AGUA
+cjAOBgNVHQ8BAf8EBAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDQYJKoZIhvcN
+AQELBQADggEBAM1HaVTzymQZ3rpu9RqT2I0tWLCD1NqPeGKKlrLyXplblmpd7lWw
+G1qttNaCApdnOtDubItqzm7JFUy32sXH3Lzidxtc055n7V2KtsoPy7hi4ZG2WqQz
+4dTaxWyaEJ8yhIrojcNUkN6f/m2EJmd1l4n8U+jN6Zp5HWBadPwO/CNB+dP8mNnx
+w4WitfxeuleqY3ih2SK3Kx3jI1dzdT+yo0bRqUqjn6pcHDcxCL0EmOeAOryJ5Rv9
+Av+VZPs4N13q5qOrlCrEOkukFtm49AuXNNcs0u2bGLEY8jKiyUD3j2p9awYt6xaJ
+S4Yvjf6IctGc6IzZzC67a32dg9Kuh4LbdUw=
+-----END CERTIFICATE-----
+"
+set shared ssl-tls-service-profile nlc16fw110 protocol-settings min-version tls1-2
+set shared ssl-tls-service-profile nlc16fw110 protocol-settings max-version tls1-3
+set shared ssl-tls-service-profile nlc16fw110 protocol-settings keyxchg-algo-rsa yes
+set shared ssl-tls-service-profile nlc16fw110 protocol-settings keyxchg-algo-dhe yes
+set shared ssl-tls-service-profile nlc16fw110 protocol-settings keyxchg-algo-ecdhe yes
+set shared ssl-tls-service-profile nlc16fw110 protocol-settings enc-algo-aes-128-cbc yes
+set shared ssl-tls-service-profile nlc16fw110 protocol-settings enc-algo-aes-128-gcm yes
+set shared ssl-tls-service-profile nlc16fw110 protocol-settings enc-algo-aes-chacha20-poly1305 yes
+set shared ssl-tls-service-profile nlc16fw110 protocol-settings enc-algo-aes-256-cbc yes
+set shared ssl-tls-service-profile nlc16fw110 protocol-settings enc-algo-aes-256-gcm yes
+set shared ssl-tls-service-profile nlc16fw110 protocol-settings auth-algo-sha1 yes
+set shared ssl-tls-service-profile nlc16fw110 protocol-settings auth-algo-sha256 yes
+set shared ssl-tls-service-profile nlc16fw110 protocol-settings auth-algo-sha384 yes
+set shared ssl-tls-service-profile nlc16fw110 certificate nlc16fw110
+
+
+set service-group
+set service
+set schedule
+
+
+

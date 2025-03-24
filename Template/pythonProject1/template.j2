@@ -1,0 +1,9 @@
+{% for row in data %}
+! switch: {{ row['Core'] }}
+interface vlan {{ row['VLAN'] }}
+ no  ip helper-address 156.31.105.35
+ no ip helper-address 156.31.24.15
+ ip helper-address  10.34.60.12 
+ ip helper-address  10.34.60.13
+{% endfor %}
+

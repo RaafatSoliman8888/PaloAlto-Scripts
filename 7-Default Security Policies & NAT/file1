@@ -1,0 +1,32 @@
+set zone Public network layer3 ethernet1/1
+set zone Private network layer3 [ethernet1/2, tunnel.1, loopback.103]
+
+set rulebase security rules "Allow Private to Internet" to Public
+set rulebase security rules "Allow Private to Internet" from Private
+set rulebase security rules "Allow Private to Internet" source any
+set rulebase security rules "Allow Private to Internet" destination any
+set rulebase security rules "Allow Private to Internet" source-user any
+set rulebase security rules "Allow Private to Internet" category any
+set rulebase security rules "Allow Private to Internet" application any
+set rulebase security rules "Allow Private to Internet" service application-default
+set rulebase security rules "Allow Private to Internet" source-hip any
+set rulebase security rules "Allow Private to Internet" destination-hip any
+set rulebase security rules "Allow Private to Internet" action allow
+set rulebase security rules "Allow Private to Internet" log-start no
+set rulebase security rules "Allow Private to Internet" log-end yes
+set rulebase security rules "Allow Private to Internet" rule-type universal
+
+
+set rulebase nat rules "Allow Private to Internet" source-translation dynamic-ip-and-port interface-address interface ethernet1/1
+set rulebase nat rules "Allow Private to Internet" to Public
+set rulebase nat rules "Allow Private to Internet" from {nat_rule_source_zone}
+set rulebase nat rules "Allow Private to Internet" source any
+set rulebase nat rules "Allow Private to Internet" destination any
+set rulebase nat rules "Allow Private to Internet" service any
+
+set rulebase default-security-rules rules intrazone-default action allow
+set rulebase default-security-rules rules intrazone-default log-start no
+set rulebase default-security-rules rules intrazone-default log-end yes
+set rulebase default-security-rules rules interzone-default action deny
+set rulebase default-security-rules rules interzone-default log-start no
+set rulebase default-security-rules rules interzone-default log-end yes

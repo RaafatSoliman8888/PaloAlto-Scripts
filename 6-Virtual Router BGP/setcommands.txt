@@ -1,0 +1,81 @@
+set network virtual-router default protocol bgp enable yes
+set network virtual-router default protocol bgp dampening-profile default cutoff 1.25
+set network virtual-router default protocol bgp dampening-profile default reuse 0.5
+set network virtual-router default protocol bgp dampening-profile default max-hold-time 900
+set network virtual-router default protocol bgp dampening-profile default decay-half-life-reachable 300
+set network virtual-router default protocol bgp dampening-profile default decay-half-life-unreachable 900
+set network virtual-router default protocol bgp dampening-profile default enable yes
+set network virtual-router default protocol bgp routing-options graceful-restart enable yes
+
+set network virtual-router default protocol bgp router-id {bgp_router_id}
+set network virtual-router default protocol bgp local-as {bgp_local_as}
+set network virtual-router default protocol bgp install-route yes
+
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" type ebgp remove-private-as no
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" type ebgp import-nexthop original
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" type ebgp export-nexthop resolve
+
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} peer-address ip {bgp_peer_address_primary}
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} connection-options incoming-bgp-connection remote-port 0
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} connection-options incoming-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} connection-options outgoing-bgp-connection local-port 0
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} connection-options outgoing-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} connection-options multihop 0
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} connection-options keep-alive-interval 30
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} connection-options open-delay-time 0
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} connection-options hold-time 90
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} connection-options idle-hold-time 15
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} connection-options min-route-adv-interval 30
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} subsequent-address-family-identifier unicast yes
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} subsequent-address-family-identifier multicast no
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} local-address ip {bgp_local_address_primary}
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} local-address interface {bgp_local_interface_primary}
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} bfd profile Inherit-vr-global-setting
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} max-prefixes 5000
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} enable yes
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} peer-as {bgp_peer_as_primary}
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} enable-mp-bgp no
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} address-family-identifier ipv4
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} enable-sender-side-loop-detection yes
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} reflector-client non-client
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" peer {bgp_peer_primary} peering-type unspecified
+
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" aggregated-confed-as-path yes
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" soft-reset-with-stored-info no
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_primary}" enable yes
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" type ebgp remove-private-as no
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" type ebgp import-nexthop original
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" type ebgp export-nexthop resolve
+
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} peer-address ip {bgp_peer_address_secondary}
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} connection-options incoming-bgp-connection remote-port 0
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} connection-options incoming-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} connection-options outgoing-bgp-connection local-port 0
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} connection-options outgoing-bgp-connection allow yes
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} connection-options multihop 0
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} connection-options keep-alive-interval 30
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} connection-options open-delay-time 0
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} connection-options hold-time 90
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} connection-options idle-hold-time 15
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} connection-options min-route-adv-interval 30
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} subsequent-address-family-identifier unicast yes
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} subsequent-address-family-identifier multicast no
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} local-address ip {bgp_local_address_secondary}
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} local-address interface {bgp_local_interface_secondary}
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} bfd profile Inherit-vr-global-setting
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} max-prefixes 5000
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} enable yes
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} peer-as {bgp_peer_as_secondary}
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} enable-mp-bgp no
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} address-family-identifier ipv4
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} enable-sender-side-loop-detection yes
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} reflector-client non-client
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" peer {bgp_peer_secondary} peering-type unspecified
+
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" aggregated-confed-as-path yes
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" soft-reset-with-stored-info no
+set network virtual-router default protocol bgp peer-group "{bgp_peer_group_secondary}" enable yes
+
+set network virtual-router default protocol bgp redist-rules redist-connected address-family-identifier ipv4
+set network virtual-router default protocol bgp redist-rules redist-connected enable yes
+set network virtual-router default protocol bgp redist-rules redist-connected set-origin incomplete
