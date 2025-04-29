@@ -1,0 +1,330 @@
+
+
+set network interface ethernet ethernet1/21 layer3 units ethernet1/21.{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units ethernet1/21.{VLAN} ip 10.252.32.1/23
+set network interface ethernet Interface} layer3 units ethernet1/21.{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 ethernet1/21.{VLAN}
+set network virtual-router default interface ethernet1/21.{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface ethernet1/21.{VLAN}
+set network dhcp interface ethernet1/21.{VLAN} server ip-pool 10.252.32.0/23
+set network dhcp interface ethernet1/21.{VLAN} server option gateway 10.252.32.1
+set network dhcp interface ethernet1/21.{VLAN} server option subnet-mask 255.255.254.0
+set network dhcp interface ethernet1/21.{VLAN} server option dns primary 10.252.32.1
+
+
+
+
+
+set network interface ethernet ethernet1/21 layer3 units ethernet1/21.{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units ethernet1/21.{VLAN} ip 10.252.34.1/23
+set network interface ethernet Interface} layer3 units ethernet1/21.{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 ethernet1/21.{VLAN}
+set network virtual-router default interface ethernet1/21.{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface ethernet1/21.{VLAN}
+set network dhcp interface ethernet1/21.{VLAN} server ip-pool 10.252.34.0/23
+set network dhcp interface ethernet1/21.{VLAN} server option gateway 10.252.34.1
+set network dhcp interface ethernet1/21.{VLAN} server option subnet-mask 255.255.254.0
+set network dhcp interface ethernet1/21.{VLAN} server option dns primary 10.252.34.1
+
+
+
+
+
+set network interface ethernet ethernet1/21 layer3 units ethernet1/21.{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units ethernet1/21.{VLAN} ip 10.252.36.1/23
+set network interface ethernet Interface} layer3 units ethernet1/21.{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 ethernet1/21.{VLAN}
+set network virtual-router default interface ethernet1/21.{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface ethernet1/21.{VLAN}
+set network dhcp interface ethernet1/21.{VLAN} server ip-pool 10.252.36.0/23
+set network dhcp interface ethernet1/21.{VLAN} server option gateway 10.252.36.1
+set network dhcp interface ethernet1/21.{VLAN} server option subnet-mask 255.255.254.0
+set network dhcp interface ethernet1/21.{VLAN} server option dns primary 10.252.36.1
+
+
+
+
+
+set network interface ethernet ethernet1/21 layer3 units ethernet1/21.{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units ethernet1/21.{VLAN} ip 10.252.38.1/23
+set network interface ethernet Interface} layer3 units ethernet1/21.{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 ethernet1/21.{VLAN}
+set network virtual-router default interface ethernet1/21.{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface ethernet1/21.{VLAN}
+set network dhcp interface ethernet1/21.{VLAN} server ip-pool 10.252.38.0/23
+set network dhcp interface ethernet1/21.{VLAN} server option gateway 10.252.38.1
+set network dhcp interface ethernet1/21.{VLAN} server option subnet-mask 255.255.254.0
+set network dhcp interface ethernet1/21.{VLAN} server option dns primary 10.252.38.1
+
+
+
+
+
+set network interface ethernet ethernet1/21 layer3 units ethernet1/21.{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units ethernet1/21.{VLAN} ip 10.252.40.1/23
+set network interface ethernet Interface} layer3 units ethernet1/21.{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 ethernet1/21.{VLAN}
+set network virtual-router default interface ethernet1/21.{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface ethernet1/21.{VLAN}
+set network dhcp interface ethernet1/21.{VLAN} server ip-pool 10.252.40.0/23
+set network dhcp interface ethernet1/21.{VLAN} server option gateway 10.252.40.1
+set network dhcp interface ethernet1/21.{VLAN} server option subnet-mask 255.255.254.0
+set network dhcp interface ethernet1/21.{VLAN} server option dns primary 10.252.40.1
+
+
+
+
+
+set network interface ethernet ethernet1/21 layer3 units ethernet1/21.{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units ethernet1/21.{VLAN} ip 10.252.42.1/23
+set network interface ethernet Interface} layer3 units ethernet1/21.{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 ethernet1/21.{VLAN}
+set network virtual-router default interface ethernet1/21.{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface ethernet1/21.{VLAN}
+set network dhcp interface ethernet1/21.{VLAN} server ip-pool 10.252.42.0/23
+set network dhcp interface ethernet1/21.{VLAN} server option gateway 10.252.42.1
+set network dhcp interface ethernet1/21.{VLAN} server option subnet-mask 255.255.254.0
+set network dhcp interface ethernet1/21.{VLAN} server option dns primary 10.252.42.1
+
+
+
+
+
+set network interface ethernet  layer3 units .{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units .{VLAN} ip 
+set network interface ethernet Interface} layer3 units .{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 .{VLAN}
+set network virtual-router default interface .{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface .{VLAN}
+set network dhcp interface .{VLAN} server ip-pool 
+set network dhcp interface .{VLAN} server option gateway 
+set network dhcp interface .{VLAN} server option subnet-mask 
+set network dhcp interface .{VLAN} server option dns primary 
+
+
+
+
+
+set network interface ethernet  layer3 units .{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units .{VLAN} ip 
+set network interface ethernet Interface} layer3 units .{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 .{VLAN}
+set network virtual-router default interface .{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface .{VLAN}
+set network dhcp interface .{VLAN} server ip-pool 
+set network dhcp interface .{VLAN} server option gateway 
+set network dhcp interface .{VLAN} server option subnet-mask 
+set network dhcp interface .{VLAN} server option dns primary 
+
+
+
+
+
+set network interface ethernet  layer3 units .{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units .{VLAN} ip 
+set network interface ethernet Interface} layer3 units .{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 .{VLAN}
+set network virtual-router default interface .{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface .{VLAN}
+set network dhcp interface .{VLAN} server ip-pool 
+set network dhcp interface .{VLAN} server option gateway 
+set network dhcp interface .{VLAN} server option subnet-mask 
+set network dhcp interface .{VLAN} server option dns primary 
+
+
+
+
+
+set network interface ethernet  layer3 units .{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units .{VLAN} ip 
+set network interface ethernet Interface} layer3 units .{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 .{VLAN}
+set network virtual-router default interface .{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface .{VLAN}
+set network dhcp interface .{VLAN} server ip-pool 
+set network dhcp interface .{VLAN} server option gateway 
+set network dhcp interface .{VLAN} server option subnet-mask 
+set network dhcp interface .{VLAN} server option dns primary 
+
+
+
+
+
+set network interface ethernet  layer3 units .{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units .{VLAN} ip 
+set network interface ethernet Interface} layer3 units .{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 .{VLAN}
+set network virtual-router default interface .{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface .{VLAN}
+set network dhcp interface .{VLAN} server ip-pool 
+set network dhcp interface .{VLAN} server option gateway 
+set network dhcp interface .{VLAN} server option subnet-mask 
+set network dhcp interface .{VLAN} server option dns primary 
+
+
+
+
+
+set network interface ethernet  layer3 units .{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units .{VLAN} ip 
+set network interface ethernet Interface} layer3 units .{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 .{VLAN}
+set network virtual-router default interface .{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface .{VLAN}
+set network dhcp interface .{VLAN} server ip-pool 
+set network dhcp interface .{VLAN} server option gateway 
+set network dhcp interface .{VLAN} server option subnet-mask 
+set network dhcp interface .{VLAN} server option dns primary 
+
+
+
+
+
+set network interface ethernet  layer3 units .{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units .{VLAN} ip 
+set network interface ethernet Interface} layer3 units .{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 .{VLAN}
+set network virtual-router default interface .{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface .{VLAN}
+set network dhcp interface .{VLAN} server ip-pool 
+set network dhcp interface .{VLAN} server option gateway 
+set network dhcp interface .{VLAN} server option subnet-mask 
+set network dhcp interface .{VLAN} server option dns primary 
+
+
+
+
+
+set network interface ethernet  layer3 units .{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units .{VLAN} ip 
+set network interface ethernet Interface} layer3 units .{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 .{VLAN}
+set network virtual-router default interface .{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface .{VLAN}
+set network dhcp interface .{VLAN} server ip-pool 
+set network dhcp interface .{VLAN} server option gateway 
+set network dhcp interface .{VLAN} server option subnet-mask 
+set network dhcp interface .{VLAN} server option dns primary 
+
+
+
+
+
+set network interface ethernet  layer3 units .{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units .{VLAN} ip 
+set network interface ethernet Interface} layer3 units .{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 .{VLAN}
+set network virtual-router default interface .{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface .{VLAN}
+set network dhcp interface .{VLAN} server ip-pool 
+set network dhcp interface .{VLAN} server option gateway 
+set network dhcp interface .{VLAN} server option subnet-mask 
+set network dhcp interface .{VLAN} server option dns primary 
+
+
+
+
+
+set network interface ethernet  layer3 units .{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units .{VLAN} ip 
+set network interface ethernet Interface} layer3 units .{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 .{VLAN}
+set network virtual-router default interface .{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface .{VLAN}
+set network dhcp interface .{VLAN} server ip-pool 
+set network dhcp interface .{VLAN} server option gateway 
+set network dhcp interface .{VLAN} server option subnet-mask 
+set network dhcp interface .{VLAN} server option dns primary 
+
+
+
+
+
+set network interface ethernet  layer3 units .{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units .{VLAN} ip 
+set network interface ethernet Interface} layer3 units .{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 .{VLAN}
+set network virtual-router default interface .{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface .{VLAN}
+set network dhcp interface .{VLAN} server ip-pool 
+set network dhcp interface .{VLAN} server option gateway 
+set network dhcp interface .{VLAN} server option subnet-mask 
+set network dhcp interface .{VLAN} server option dns primary 
+
+
+
+
+
+set network interface ethernet  layer3 units .{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units .{VLAN} ip 
+set network interface ethernet Interface} layer3 units .{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 .{VLAN}
+set network virtual-router default interface .{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface .{VLAN}
+set network dhcp interface .{VLAN} server ip-pool 
+set network dhcp interface .{VLAN} server option gateway 
+set network dhcp interface .{VLAN} server option subnet-mask 
+set network dhcp interface .{VLAN} server option dns primary 
+
+
+
+
+
+set network interface ethernet  layer3 units .{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units .{VLAN} ip 
+set network interface ethernet Interface} layer3 units .{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 .{VLAN}
+set network virtual-router default interface .{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface .{VLAN}
+set network dhcp interface .{VLAN} server ip-pool 
+set network dhcp interface .{VLAN} server option gateway 
+set network dhcp interface .{VLAN} server option subnet-mask 
+set network dhcp interface .{VLAN} server option dns primary 
+
+
+
+
+
+set network interface ethernet  layer3 units .{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units .{VLAN} ip 
+set network interface ethernet Interface} layer3 units .{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 .{VLAN}
+set network virtual-router default interface .{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface .{VLAN}
+set network dhcp interface .{VLAN} server ip-pool 
+set network dhcp interface .{VLAN} server option gateway 
+set network dhcp interface .{VLAN} server option subnet-mask 
+set network dhcp interface .{VLAN} server option dns primary 
+
+
+
+
+
+set network interface ethernet  layer3 units .{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units .{VLAN} ip 
+set network interface ethernet Interface} layer3 units .{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 .{VLAN}
+set network virtual-router default interface .{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface .{VLAN}
+set network dhcp interface .{VLAN} server ip-pool 
+set network dhcp interface .{VLAN} server option gateway 
+set network dhcp interface .{VLAN} server option subnet-mask 
+set network dhcp interface .{VLAN} server option dns primary 
+
+
+
+
+
+set network interface ethernet  layer3 units .{VLAN} tag {VLAN}
+set network interface ethernet Interface} layer3 units .{VLAN} ip 
+set network interface ethernet Interface} layer3 units .{VLAN} interface-management-profile `Allow ping`
+set zone OFFICEGSTSK network layer3 .{VLAN}
+set network virtual-router default interface .{VLAN}
+set network dns-proxy OFFICEGST_DNS_Proxy interface .{VLAN}
+set network dhcp interface .{VLAN} server ip-pool 
+set network dhcp interface .{VLAN} server option gateway 
+set network dhcp interface .{VLAN} server option subnet-mask 
+set network dhcp interface .{VLAN} server option dns primary 
+
+
+

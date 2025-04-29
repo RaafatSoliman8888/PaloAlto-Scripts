@@ -1,0 +1,26 @@
+set network interface tunnel units tunnel.{interface_tunnel_id}
+set network interface loopback units loopback.{loopback_interface_ID} adjust-tcp-mss enable no
+set network interface loopback units loopback.{loopback_interface_ID} ip {loopback_ip_address}
+set network interface loopback units loopback.{loopback_interface_ID} interface-management-profile Ping
+
+set network ike gateway IPSec_Gateway_{ipsec_gateway_name} authentication pre-shared-key key {sharedkey}
+set network ike gateway IPSec_Gateway_{ipsec_gateway_name} protocol ikev2 pq-ppk enabled no
+set network ike gateway IPSec_Gateway_{ipsec_gateway_name} protocol ikev2 pq-ppk negotiation-mode preferred
+set network ike gateway IPSec_Gateway_{ipsec_gateway_name} protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_{ipsec_gateway_name} protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_{ipsec_gateway_name} protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_{ipsec_gateway_name} protocol version ikev2
+set network ike gateway IPSec_Gateway_{ipsec_gateway_name} protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_{ipsec_gateway_name} protocol-common fragmentation enable no
+
+set network ike gateway IPSec_Gateway_{ipsec_gateway_name} local-address interface ethernet{interface}
+set network ike gateway IPSec_Gateway_{ipsec_gateway_name} local-id type ipaddr id {local_id}
+
+set network ike gateway IPSec_Gateway_{ipsec_gateway_name} peer-id type ipaddr id {peer_id}
+set network ike gateway IPSec_Gateway_{ipsec_gateway_name} peer-address ip {peer_ip}
+
+
+set network tunnel ipsec IPSec_Tunnel_{ipsec_gateway_name} auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_{ipsec_gateway_name} tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_{ipsec_gateway_name} tunnel-interface tunnel.{interface_tunnel_id}
+set network tunnel ipsec IPSec_Tunnel_{ipsec_gateway_name} auto-key ike-gateway IPSec_Gateway_{ipsec_gateway_name}

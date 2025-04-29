@@ -1,0 +1,63 @@
+Perfect, thanks for sharing the diagram! Let’s use your real example to build a full working IPSec VPN configuration between your Palo Alto Firewall at home (Raafat Home) and the Remote Firewall on Azure.
+Topology Summary from Diagram
+
+Step 1: Palo Alto CLI Configuration (Raafat Home)
+A. IKE Crypto Profile
+set network ike crypto-profiles ike-crypto-profiles IKE-AZURE encryption aes-256
+set network ike crypto-profiles ike-crypto-profiles IKE-AZURE hash sha256
+set network ike crypto-profiles ike-crypto-profiles IKE-AZURE dh-group group14
+set network ike crypto-profiles ike-crypto-profiles IKE-AZURE lifetime-seconds 28800
+B. IPSec Crypto Profile
+set network ipsec crypto-profiles ipsec-crypto-profiles IPSEC-AZURE esp encryption aes-256
+set network ipsec crypto-profiles ipsec-crypto-profiles IPSEC-AZURE esp authentication sha256
+set network ipsec crypto-profiles ipsec-crypto-profiles IPSEC-AZURE dh-group group14
+set network ipsec crypto-profiles ipsec-crypto-profiles IPSEC-AZURE lifetime-seconds 3600
+C. Tunnel Interface
+set network interface tunnel units tunnel.1 ip 169.254.21.1/30
+set network interface tunnel.1 security-zone VPN
+set network interface tunnel.1 virtual-router default
+D. IKE Gateway (NAT-T Enabled)
+set network ike gateway IKE-GW-AZURE authentication pre-shared-key key @MySharedKey123
+set network ike gateway IKE-GW-AZURE ike-crypto-profile IKE-AZURE
+set network ike gateway IKE-GW-AZURE peer-address 213.46.228.196
+set network ike gateway IKE-GW-AZURE interface ethernet1/1
+set network ike gateway IKE-GW-AZURE local-address 192.168.178.156
+set network ike gateway IKE-GW-AZURE enable-nat-traversal yes
+set network ike gateway IKE-GW-AZURE protocol ikev2
+E. IPSec Tunnel
+set network tunnel ipsec ipsec-tunnel IPSEC-TUNNEL-AZURE auto-key ike-gateway IKE-GW-AZURE
+set network tunnel ipsec ipsec-tunnel IPSEC-TUNNEL-AZURE tunnel-interface tunnel.1
+set network tunnel ipsec ipsec-tunnel IPSEC-TUNNEL-AZURE ipsec-crypto-profile IPSEC-AZURE
+F. Proxy ID
+set network tunnel ipsec ipsec-tunnel IPSEC-TUNNEL-AZURE proxy-id 1 local 192.168.178.0/24 remote 10.34.0.0/16 protocol any
+G. Static Route to Azure
+set network virtual-router default routing-table ip static-route AZURE-ROUTE destination 10.34.0.0/16 interface tunnel.1 next-hop 169.254.21.2
+
+
+Step 2: Azure Firewall / VPN Gateway Configuration
+Assuming Azure uses a Route-Based VPN and the gateway public IP is 213.46.228.196.
+A. On Azure (via CLI or portal)
+Create Local Network Gateway (representing your home network):
+az network local-gateway create --resource-group MyRG --name RaafatHomeGW \
+--gateway-ip-address 165.225.241.65 \
+--local-address-prefixes 192.168.178.0/24
+Create Connection:
+az network vpn-connection create --resource-group MyRG --name AzureToRaafatHome \
+  --vnet-gateway1 AzureVNetGW \
+  --local-gateway2 RaafatHomeGW \
+  --shared-key @MySharedKey123 \
+  --enable-bgp false
+Step 3: Security Rules (on Palo Alto)
+Allow VPN Traffic
+set rulebase security rules Allow-VPN from LAN to VPN source 192.168.178.0/24 destination 10.34.0.0/16 application any action allow
+set rulebase security rules Allow-VPN-Return from VPN to LAN source 10.34.0.0/16 destination 192.168.178.0/24 application any action allow
+Allow IKE & IPSec from Untrust Zone
+set rulebase security rules Allow-IPSec-IKE from Untrust to Untrust source any destination any application ike ipsec-esp ipsec-udp action allow
+Final Check
+On Palo Alto CLI, use:
+show vpn ike-sa
+show vpn ipsec-sa
+To debug issues:
+less mp-log ikemgr.log
+less mp-log sysd.log
+Would you like me to also generate the corresponding XML config snippet or commands for Panorama push?
