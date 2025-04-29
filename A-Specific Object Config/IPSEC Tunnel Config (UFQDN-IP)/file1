@@ -1,0 +1,26 @@
+set network interface tunnel units tunnel.7
+set network interface loopback units loopback.7 adjust-tcp-mss enable no
+set network interface loopback units loopback.7 ip 192.168.255.107/32
+set network interface loopback units loopback.7 interface-management-profile Ping
+
+set network ike gateway IPSec_Gateway_PHC11 authentication pre-shared-key key -AQ==WRIOAixnn/D3a7h6EckgRRA46B8=/FSBMD3AJt8tar27ygmJO6nFp1KOBszme1YMTLmZEEEgvSpONcLhLzOj9NIjDSBnWPobqEsy2H6MMxWMrOjbMNoc8tI/6Aot18T+80/6mTQ=
+set network ike gateway IPSec_Gateway_PHC11 protocol ikev2 pq-ppk enabled no
+set network ike gateway IPSec_Gateway_PHC11 protocol ikev2 pq-ppk negotiation-mode preferred
+set network ike gateway IPSec_Gateway_PHC11 protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_PHC11 protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_PHC11 protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_PHC11 protocol version ikev2
+set network ike gateway IPSec_Gateway_PHC11 protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_PHC11 protocol-common fragmentation enable no
+
+set network ike gateway IPSec_Gateway_PHC11 local-address interface ethernet1/1
+set network ike gateway IPSec_Gateway_PHC11 local-id type ufqdn id someone@shell.com
+
+set network ike gateway IPSec_Gateway_PHC11 peer-id type ipaddr id 22.22.22.22
+set network ike gateway IPSec_Gateway_PHC11 peer-address ip 22.22.22.22
+
+
+set network tunnel ipsec IPSec_Tunnel_PHC11 auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_PHC11 tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_PHC11 tunnel-interface tunnel.7
+set network tunnel ipsec IPSec_Tunnel_PHC11 auto-key ike-gateway IPSec_Gateway_{ipsec_gate
