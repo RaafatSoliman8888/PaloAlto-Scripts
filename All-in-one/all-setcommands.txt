@@ -1,3 +1,5 @@
+#Start of Stage-1 Config
+
 set deviceconfig system ip-address {device_ip}
 set deviceconfig system netmask {device_netmask}
 set deviceconfig system update-server updates.paloaltonetworks.com
@@ -11,32 +13,40 @@ set deviceconfig system device-telemetry product-usage yes
 set deviceconfig system device-telemetry threat-prevention yes
 set deviceconfig system device-telemetry region Americas
 
+
 delete rulebase security rules rule1
 delete zone untrust
 delete zone trust
 delete network virtual-wire default-vwire
-delete network virtual-router default interface ethernet1/2
 delete network virtual-router default interface ethernet1/1
+delete network virtual-router default interface ethernet1/2
+delete network virtual-router default interface ethernet1/6
 delete network interface ethernet ethernet1/1
 delete network interface ethernet ethernet1/2
+delete network interface ethernet ethernet1/6
+
+
 
 set network interface ethernet {interface_ethernet1_1} layer3
 set network virtual-router default interface {interface_ethernet1_1}
-set network interface ethernet {interface_ethernet1_1} layer3 ip {ethernet1_1_ip}
+set network interface ethernet {interface_ethernet1_1} layer3 dhcp-client
 
 set network interface ethernet {interface_ethernet1_2} layer3
 set network virtual-router default interface {interface_ethernet1_2}
 set network interface ethernet {interface_ethernet1_2} layer3 ip {ethernet1_2_ip}
 
+set network interface ethernet {interface_ethernet1_6} layer3
+set network virtual-router default interface {interface_ethernet1_6}
+set network interface ethernet {interface_ethernet1_6} layer3 ip {ethernet1_6_ip}
 
 set network profiles monitor-profile default interval 3
 set network profiles monitor-profile default threshold 5
 set network profiles monitor-profile default action wait-recover
-set network profiles interface-management-profile Ping ping yes
-set network profiles interface-management-profile "PING HTTPS SSH" http no
-set network profiles interface-management-profile "PING HTTPS SSH" https yes
-set network profiles interface-management-profile "PING HTTPS SSH" ssh yes
-set network profiles interface-management-profile "PING HTTPS SSH" ping yes
+set network profiles interface-management-profile {interface_management_profile_ethernet1_1} ping yes
+set network profiles interface-management-profile {interface_management_profile_ethernet1_2} http no
+set network profiles interface-management-profile {interface_management_profile_ethernet1_2} https yes
+set network profiles interface-management-profile {interface_management_profile_ethernet1_2} ssh yes
+set network profiles interface-management-profile {interface_management_profile_ethernet1_2} ping yes
 
 set network interface ethernet {interface_ethernet1_1} layer3 ndp-proxy enabled no
 set network interface ethernet {interface_ethernet1_1} layer3 sdwan-link-settings upstream-nat enable no
@@ -52,11 +62,72 @@ set network interface ethernet {interface_ethernet1_2} layer3 sdwan-link-setting
 set network interface ethernet {interface_ethernet1_2} layer3 interface-management-profile {interface_management_profile_ethernet1_2}
 set network interface ethernet {interface_ethernet1_2} layer3 lldp enable no
 
+set network interface ethernet {interface_ethernet1_6} layer3 ndp-proxy enabled no
+set network interface ethernet {interface_ethernet1_6} layer3 sdwan-link-settings upstream-nat enable no
+set network interface ethernet {interface_ethernet1_6} layer3 sdwan-link-settings upstream-nat static-ip
+set network interface ethernet {interface_ethernet1_6} layer3 sdwan-link-settings enable no
+set network interface ethernet {interface_ethernet1_6} layer3 interface-management-profile {interface_management_profile_ethernet1_6}
+set network interface ethernet {interface_ethernet1_6} layer3 lldp enable no
+
 set network interface loopback units {loopback_interface} adjust-tcp-mss enable no
 set network interface loopback units {loopback_interface} ip {loopback_ip}
-set network interface loopback units {loopback_interface} interface-management-profile {loopback_management_profile}
+set network virtual-router default interface {loopback_interface}
+set network interface loopback units {loopback_interface} interface-management-profile {interface_management_profile_ethernet1_2}
 
 set network interface tunnel units {tunnel_interface}
+
+
+set network dhcp interface {dhcp_interface_A} server ip-pool {dhcp_ip_pool_A}
+set network dhcp interface {dhcp_interface_A} server mode auto
+set network dhcp interface {dhcp_interface_A} server option dns primary {dhcp_dns_primary_A}
+set network dhcp interface {dhcp_interface_A} server option lease unlimited
+set network dhcp interface {dhcp_interface_A} server option gateway {dhcp_gateway_A}
+set network dhcp interface {dhcp_interface_A} server option subnet-mask {dhcp_subnet_mask_A}
+
+set network dhcp interface {dhcp_interface_B} server ip-pool {dhcp_ip_pool_B}
+set network dhcp interface {dhcp_interface_B} server mode auto
+set network dhcp interface {dhcp_interface_B} server option dns primary {dhcp_dns_primary_B}
+set network dhcp interface {dhcp_interface_B} server option lease unlimited
+set network dhcp interface {dhcp_interface_B} server option gateway {dhcp_gateway_B}
+set network dhcp interface {dhcp_interface_B} server option subnet-mask {dhcp_subnet_mask_B}
+
+
+
+
+set zone {zone_public_network_name} network layer3 {public_network_interface}
+set zone {zone_private_network_name} network layer3 [ {private_network_interfaces} ]
+
+set rulebase security rules "{security_rule_name}" to {security_rule_destination_zone}
+set rulebase security rules "{security_rule_name}" from {security_rule_source_zone}
+set rulebase security rules "{security_rule_name}" source any
+set rulebase security rules "{security_rule_name}" destination any
+set rulebase security rules "{security_rule_name}" source-user any
+set rulebase security rules "{security_rule_name}" category any
+set rulebase security rules "{security_rule_name}" application any
+set rulebase security rules "{security_rule_name}" service application-default
+set rulebase security rules "{security_rule_name}" source-hip any
+set rulebase security rules "{security_rule_name}" destination-hip any
+set rulebase security rules "{security_rule_name}" action {security_rule_action_allow}
+set rulebase security rules "{security_rule_name}" log-start no
+set rulebase security rules "{security_rule_name}" log-end yes
+set rulebase security rules "{security_rule_name}" rule-type universal
+
+
+set rulebase nat rules "{nat_rule_name}" source-translation dynamic-ip-and-port interface-address interface {public_network_interface}
+set rulebase nat rules "{nat_rule_name}" to {nat_rule_destination_zone}
+set rulebase nat rules "{nat_rule_name}" from {nat_rule_source_zone}
+set rulebase nat rules "{nat_rule_name}" source any
+set rulebase nat rules "{nat_rule_name}" destination any
+set rulebase nat rules "{nat_rule_name}" service any
+
+set rulebase default-security-rules rules intrazone-default action allow
+set rulebase default-security-rules rules intrazone-default log-start no
+set rulebase default-security-rules rules intrazone-default log-end yes
+set rulebase default-security-rules rules interzone-default action deny
+set rulebase default-security-rules rules interzone-default log-start no
+set rulebase default-security-rules rules interzone-default log-end yes
+
+#End of Stage-1 Config
 
 
 
@@ -74,14 +145,6 @@ set network dns-proxy "{dns_proxy_name}" cache enabled yes
 set network dns-proxy "{dns_proxy_name}" default primary {dns_primary}
 set network dns-proxy "{dns_proxy_name}" tcp-queries enabled no
 set network dns-proxy "{dns_proxy_name}" interface {dns_interface}
-
-set network dhcp interface {dhcp_interface} server ip-pool {dhcp_ip_pool}
-set network dhcp interface {dhcp_interface} server mode auto
-set network dhcp interface {dhcp_interface} server option dns primary {dhcp_dns_primary}
-set network dhcp interface {dhcp_interface} server option lease unlimited
-set network dhcp interface {dhcp_interface} server option gateway {dhcp_gateway}
-set network dhcp interface {dhcp_interface} server option subnet-mask {dhcp_subnet_mask}
-
 
 set deviceconfig system route service autofocus source address {service_ip_address}
 set deviceconfig system route service autofocus source interface {service_interface}
@@ -146,6 +209,18 @@ set deviceconfig setting management hostname-type-in-syslog FQDN
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 set network ike crypto-profiles ike-crypto-profiles default encryption [ aes-128-cbc 3des ]
 set network ike crypto-profiles ike-crypto-profiles default hash sha1
 set network ike crypto-profiles ike-crypto-profiles default dh-group group2
@@ -183,17 +258,19 @@ set network ike gateway {ike_gateway_name} protocol ikev1 dpd enable yes
 set network ike gateway {ike_gateway_name} protocol version ikev2
 set network ike gateway {ike_gateway_name} protocol-common nat-traversal enable no
 set network ike gateway {ike_gateway_name} protocol-common fragmentation enable no
+
 set network ike gateway {ike_gateway_name} local-address interface {local_interface}
+set network ike gateway {ike_gateway_name} local-id type {Local_type}} id {local_id}
+
 set network ike gateway {ike_gateway_name} peer-address ip {peer_address}
-set network ike gateway {ike_gateway_name} local-id type ufqdn id {ufqdn_local_id}
-set network ike gateway {ike_gateway_name} peer-id type ipaddr id {peer_id}
+set network ike gateway {ike_gateway_name} peer-id type {Peer_type} id {peer_id}
 
 set network tunnel ipsec {ipsec_tunnel_name} auto-key ike-gateway {ike_gateway_name}
 set network tunnel ipsec {ipsec_tunnel_name} auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
 set network tunnel ipsec {ipsec_tunnel_name} tunnel-monitor enable no
 set network tunnel ipsec {ipsec_tunnel_name} tunnel-interface {ike_tunnel_interface}
 
-set network tunnel ipsec IPSec_Tunnel_{ipsec_tunnel_name} auto-key ike-gateway IPSec_Gateway_{ike_gateway_name}
+set network tunnel ipsec {ipsec_tunnel_name} auto-key ike-gateway {ike_gateway_name}
 
 
 
@@ -293,37 +370,4 @@ set network virtual-router default protocol bgp redist-rules redist-connected en
 set network virtual-router default protocol bgp redist-rules redist-connected set-origin incomplete
 
 
-
-set zone {zone_public_network_name} network layer3 {public_network_interface}
-set zone {zone_private_network_name} network layer3 {private_network_interfaces}
-
-set rulebase security rules "{security_rule_name}" to {security_rule_destination_zone}
-set rulebase security rules "{security_rule_name}" from {security_rule_source_zone}
-set rulebase security rules "{security_rule_name}" source any
-set rulebase security rules "{security_rule_name}" destination any
-set rulebase security rules "{security_rule_name}" source-user any
-set rulebase security rules "{security_rule_name}" category any
-set rulebase security rules "{security_rule_name}" application any
-set rulebase security rules "{security_rule_name}" service application-default
-set rulebase security rules "{security_rule_name}" source-hip any
-set rulebase security rules "{security_rule_name}" destination-hip any
-set rulebase security rules "{security_rule_name}" action {security_rule_action_allow}
-set rulebase security rules "{security_rule_name}" log-start no
-set rulebase security rules "{security_rule_name}" log-end yes
-set rulebase security rules "{security_rule_name}" rule-type universal
-
-
-set rulebase nat rules "{nat_rule_name}" source-translation dynamic-ip-and-port interface-address interface {public_network_interface}
-set rulebase nat rules "{nat_rule_name}" to {nat_rule_destination_zone}
-set rulebase nat rules "{nat_rule_name}" from {nat_rule_source_zone}
-set rulebase nat rules "{nat_rule_name}" source any
-set rulebase nat rules "{nat_rule_name}" destination any
-set rulebase nat rules "{nat_rule_name}" service any
-
-set rulebase default-security-rules rules intrazone-default action allow
-set rulebase default-security-rules rules intrazone-default log-start no
-set rulebase default-security-rules rules intrazone-default log-end yes
-set rulebase default-security-rules rules interzone-default action deny
-set rulebase default-security-rules rules interzone-default log-start no
-set rulebase default-security-rules rules interzone-default log-end yes
 

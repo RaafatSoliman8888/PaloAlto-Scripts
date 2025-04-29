@@ -2,6 +2,7 @@ set network interface tunnel units tunnel.7
 set network interface loopback units loopback.7 adjust-tcp-mss enable no
 set network interface loopback units loopback.7 ip 192.168.255.107/32
 set network interface loopback units loopback.7 interface-management-profile Ping
+
 set network ike gateway IPSec_Gateway_PHC1 authentication pre-shared-key key -AQ==WRIOAixnn/D3a7h6EckgRRA46B8=/FSBMD3AJt8tar27ygmJO6nFp1KOBszme1YMTLmZEEEgvSpONcLhLzOj9NIjDSBnWPobqEsy2H6MMxWMrOjbMNoc8tI/6Aot18T+80/6mTQ=
 set network ike gateway IPSec_Gateway_PHC1 protocol ikev2 pq-ppk enabled no
 set network ike gateway IPSec_Gateway_PHC1 protocol ikev2 pq-ppk negotiation-mode preferred
@@ -15,6 +16,7 @@ set network ike gateway IPSec_Gateway_PHC1 local-address interface ethernet1/1
 set network ike gateway IPSec_Gateway_PHC1 peer-address ip 102.90.33.172
 set network ike gateway IPSec_Gateway_PHC1 local-id type ufqdn id jeroen.schellart@shell.com
 set network ike gateway IPSec_Gateway_PHC1 peer-id type ipaddr id 102.90.33.172
+
 set network tunnel ipsec IPSec_Tunnel_PHC1 auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
 set network tunnel ipsec IPSec_Tunnel_PHC1 tunnel-monitor enable no
 set network tunnel ipsec IPSec_Tunnel_PHC1 tunnel-interface tunnel.7

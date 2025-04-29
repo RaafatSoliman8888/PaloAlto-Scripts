@@ -146,58 +146,58 @@ set network dns-proxy "DNS Proxy" default primary 10.34.152.200
 set network dns-proxy "DNS Proxy" tcp-queries enabled no
 set network dns-proxy "DNS Proxy" interface ethernet1/2
 
-set deviceconfig system route service autofocus source address 192.168.178.156/24
-set deviceconfig system route service autofocus source interface ethernet1/1
-set deviceconfig system route service crl-status source address 192.168.178.156/24
-set deviceconfig system route service crl-status source interface ethernet1/1
-set deviceconfig system route service data-services source address 192.168.178.156/24
-set deviceconfig system route service data-services source interface ethernet1/1
-set deviceconfig system route service ddns source address 192.168.178.156/24
-set deviceconfig system route service ddns source interface ethernet1/1
-set deviceconfig system route service deployments source address 192.168.178.156/24
-set deviceconfig system route service deployments source interface ethernet1/1
-set deviceconfig system route service dns source address 192.168.178.156/24
-set deviceconfig system route service dns source interface ethernet1/1
-set deviceconfig system route service edl-updates source address 192.168.178.156/24
-set deviceconfig system route service edl-updates source interface ethernet1/1
-set deviceconfig system route service email source address 192.168.178.156/24
-set deviceconfig system route service email source interface ethernet1/1
-set deviceconfig system route service http source address 192.168.178.156/24
-set deviceconfig system route service http source interface ethernet1/1
-set deviceconfig system route service iot source address 192.168.178.156/24
-set deviceconfig system route service iot source interface ethernet1/1
-set deviceconfig system route service ldap source address 192.168.178.156/24
-set deviceconfig system route service ldap source interface ethernet1/1
-set deviceconfig system route service mdm source address 192.168.178.156/24
-set deviceconfig system route service mdm source interface ethernet1/1
-set deviceconfig system route service mfa source address 192.168.178.156/24
-set deviceconfig system route service mfa source interface ethernet1/1
-set deviceconfig system route service netflow source address 192.168.178.156/24
-set deviceconfig system route service netflow source interface ethernet1/1
-set deviceconfig system route service ntp source address 192.168.178.156/24
-set deviceconfig system route service ntp source interface ethernet1/1
-set deviceconfig system route service paloalto-networks-services source address 192.168.178.156/24
-set deviceconfig system route service paloalto-networks-services source interface ethernet1/1
-set deviceconfig system route service proxy source address 192.168.178.156/24
-set deviceconfig system route service proxy source interface ethernet1/1
-set deviceconfig system route service radius source address 192.168.178.156/24
-set deviceconfig system route service radius source interface ethernet1/1
-set deviceconfig system route service scep source address 192.168.178.156/24
-set deviceconfig system route service scep source interface ethernet1/1
-set deviceconfig system route service snmp source address 192.168.178.156/24
-set deviceconfig system route service snmp source interface ethernet1/1
-set deviceconfig system route service syslog source address 192.168.178.156/24
-set deviceconfig system route service syslog source interface ethernet1/1
-set deviceconfig system route service uid-agent source address 192.168.178.156/24
-set deviceconfig system route service uid-agent source interface ethernet1/1
-set deviceconfig system route service url-updates source address 192.168.178.156/24
-set deviceconfig system route service url-updates source interface ethernet1/1
-set deviceconfig system route service vmmonitor source address 192.168.178.156/24
-set deviceconfig system route service vmmonitor source interface ethernet1/1
-set deviceconfig system route service wildfire-private source address 192.168.178.156/24
-set deviceconfig system route service wildfire-private source interface ethernet1/1
-set deviceconfig system route service ztp source address 192.168.178.156/24
-set deviceconfig system route service ztp source interface ethernet1/1
+set deviceconfig system route service autofocus source address {service_ip_address}
+set deviceconfig system route service autofocus source interface {service_interface}
+set deviceconfig system route service crl-status source address {service_ip_address}
+set deviceconfig system route service crl-status source interface {service_interface}
+set deviceconfig system route service data-services source address {service_ip_address}
+set deviceconfig system route service data-services source interface {service_interface}
+set deviceconfig system route service ddns source address {service_ip_address}
+set deviceconfig system route service ddns source interface {service_interface}
+set deviceconfig system route service deployments source address {service_ip_address}
+set deviceconfig system route service deployments source interface {service_interface}
+set deviceconfig system route service dns source address {service_ip_address}
+set deviceconfig system route service dns source interface {service_interface}
+set deviceconfig system route service edl-updates source address {service_ip_address}
+set deviceconfig system route service edl-updates source interface {service_interface}
+set deviceconfig system route service email source address {service_ip_address}
+set deviceconfig system route service email source interface {service_interface}
+set deviceconfig system route service http source address {service_ip_address}
+set deviceconfig system route service http source interface {service_interface}
+set deviceconfig system route service iot source address {service_ip_address}
+set deviceconfig system route service iot source interface {service_interface}
+set deviceconfig system route service ldap source address {service_ip_address}
+set deviceconfig system route service ldap source interface {service_interface}
+set deviceconfig system route service mdm source address {service_ip_address}
+set deviceconfig system route service mdm source interface {service_interface}
+set deviceconfig system route service mfa source address {service_ip_address}
+set deviceconfig system route service mfa source interface {service_interface}
+set deviceconfig system route service netflow source address {service_ip_address}
+set deviceconfig system route service netflow source interface {service_interface}
+set deviceconfig system route service ntp source address {service_ip_address}
+set deviceconfig system route service ntp source interface {service_interface}
+set deviceconfig system route service paloalto-networks-services source address {service_ip_address}
+set deviceconfig system route service paloalto-networks-services source interface {service_interface}
+set deviceconfig system route service proxy source address {service_ip_address}
+set deviceconfig system route service proxy source interface {service_interface}
+set deviceconfig system route service radius source address {service_ip_address}
+set deviceconfig system route service radius source interface {service_interface}
+set deviceconfig system route service scep source address {service_ip_address}
+set deviceconfig system route service scep source interface {service_interface}
+set deviceconfig system route service snmp source address {service_ip_address}
+set deviceconfig system route service snmp source interface {service_interface}
+set deviceconfig system route service syslog source address {service_ip_address}
+set deviceconfig system route service syslog source interface {service_interface}
+set deviceconfig system route service uid-agent source address {service_ip_address}
+set deviceconfig system route service uid-agent source interface {service_interface}
+set deviceconfig system route service url-updates source address {service_ip_address}
+set deviceconfig system route service url-updates source interface {service_interface}
+set deviceconfig system route service vmmonitor source address {service_ip_address}
+set deviceconfig system route service vmmonitor source interface {service_interface}
+set deviceconfig system route service wildfire-private source address {service_ip_address}
+set deviceconfig system route service wildfire-private source interface {service_interface}
+set deviceconfig system route service ztp source address {service_ip_address}
+set deviceconfig system route service ztp source interface {service_interface}
 
 set deviceconfig system authentication-profile SWAF235_RADIUS_AUTHPROFILE
 set deviceconfig system domain spin-ng.local
@@ -250,27 +250,25 @@ set network ike crypto-profiles global-protect-app-crypto-profiles default authe
 
 
 
-set network ike gateway IPSec_Gateway_Raafat-FW authentication pre-shared-key key -AQ==WRIOAixnn/D3a7h6EckgRRA46B8=/FSBMD3AJt8tar27ygmJO6nFp1KOBszme1YMTLmZEEEgvSpONcLhLzOj9NIjDSBnWPobqEsy2H6MMxWMrOjbMNoc8tI/6Aot18T+80/6mTQ=
+set network ike gateway IPSec_Gateway_swtestfw111 authentication pre-shared-key key -AQ==WRIOAixnn/D3a7h6EckgRRA46B8=/FSBMD3AJt8tar27ygmJO6nFp1KOBszme1YMTLmZEEEgvSpONcLhLzOj9NIjDSBnWPobqEsy2H6MMxWMrOjbMNoc8tI/6Aot18T+80/6mTQ=
 
-set network ike gateway IPSec_Gateway_Raafat-FW protocol ikev2 dpd enable yes
-set network ike gateway IPSec_Gateway_Raafat-FW protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
-set network ike gateway IPSec_Gateway_Raafat-FW protocol ikev1 dpd enable yes
-set network ike gateway IPSec_Gateway_Raafat-FW protocol version ikev2
-set network ike gateway IPSec_Gateway_Raafat-FW protocol-common nat-traversal enable no
-set network ike gateway IPSec_Gateway_Raafat-FW protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_swtestfw111 protocol ikev2 dpd enable yes
+set network ike gateway IPSec_Gateway_swtestfw111 protocol ikev2 ike-crypto-profile Swapkit_IKE_Crypto
+set network ike gateway IPSec_Gateway_swtestfw111 protocol ikev1 dpd enable yes
+set network ike gateway IPSec_Gateway_swtestfw111 protocol version ikev2
+set network ike gateway IPSec_Gateway_swtestfw111 protocol-common nat-traversal enable no
+set network ike gateway IPSec_Gateway_swtestfw111 protocol-common fragmentation enable no
+set network ike gateway IPSec_Gateway_swtestfw111 local-address interface ethernet1/1
+set network ike gateway IPSec_Gateway_swtestfw111 peer-address ip  213.46.228.196
+set network ike gateway IPSec_Gateway_swtestfw111 local-id type ufqdn id RAAFAT.SOLIMAN@shell.com
+set network ike gateway IPSec_Gateway_swtestfw111 peer-id type ipaddr id  213.46.228.196
 
-set network ike gateway IPSec_Gateway_Raafat-FW local-address interface ethernet1/1
-set network ike gateway IPSec_Gateway_Raafat-FW local-id type {Local_type}} id 213.46.228.196
+set network tunnel ipsec IPSec_Tunnel_swtestfw111 auto-key ike-gateway IPSec_Gateway_swtestfw111
+set network tunnel ipsec IPSec_Tunnel_swtestfw111 auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
+set network tunnel ipsec IPSec_Tunnel_swtestfw111 tunnel-monitor enable no
+set network tunnel ipsec IPSec_Tunnel_swtestfw111 tunnel-interface tunnel.1
 
-set network ike gateway IPSec_Gateway_Raafat-FW peer-address ip RAAFAT.SOLIMAN@shell.com
-set network ike gateway IPSec_Gateway_Raafat-FW peer-id type {Peer_type} id 10.1.1.1
-
-set network tunnel ipsec IPSec_Tunnel_Raafat-FW auto-key ike-gateway IPSec_Gateway_Raafat-FW
-set network tunnel ipsec IPSec_Tunnel_Raafat-FW auto-key ipsec-crypto-profile Swapkit_IPSec_Crypto
-set network tunnel ipsec IPSec_Tunnel_Raafat-FW tunnel-monitor enable no
-set network tunnel ipsec IPSec_Tunnel_Raafat-FW tunnel-interface tunnel.11
-
-set network tunnel ipsec IPSec_Tunnel_Raafat-FW auto-key ike-gateway IPSec_Gateway_Raafat-FW
+set network tunnel ipsec IPSec_Tunnel_swtestfw111 auto-key ike-gateway IPSec_Gateway_swtestfw111
 
 
 
